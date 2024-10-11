@@ -1,0 +1,90 @@
+body {
+  position: relative;
+}
+.submit {
+  width: 480px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: var(--maincolor);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+
+article {
+  width: 550px;
+  height: 292px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  position: relative;
+  top: 304px;
+  left: 685px;
+  z-index: 10;
+  background-color: white;
+}
+
+article form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article form input:nth-child(1) {
+  margin-bottom: 6px;
+  margin-top: 35px;
+}
+article form input:nth-child(2) {
+  margin-bottom: 36px;
+}
+
+.userLogin {
+  display: flex;
+  position: absolute;
+  top: 244px;
+  left: 685px;
+  z-index: 0;
+}
+.buybtn,
+.sellbtn {
+  width: 275px;
+  height: 90px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #c4c4c4;
+  border-bottom: none;
+  background-color: white;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.buybtn {
+  position: absolute;
+  top: 244px;
+  left: 685px;
+  z-index: 20;
+}
+
+.sellbtn {
+  position: absolute;
+  top: 244px;
+  left: 960px;
+  background-color: #f2f2f2;
+}
+
+img {
+  position: absolute;
+  top: 100px;
+  left: 841px;
+}
+
+.userinfo {
+  position: relative;
+  left: 868px;
+  top: 346px;
+  margin-bottom: 500px;
+}
+
+.userinfo a:nth-child(1)::after {
+  content: "|";
+  margin-left: 14px;
+  margin-right: 14px;
+}
