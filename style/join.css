@@ -49,9 +49,9 @@
 
   z-index: 15;
 }
-.white_box_R {
+.join_white_box_R {
   width: 274px;
-  height: 10px;
+  height: 7px;
   background-color: white;
   position: absolute;
   right: 1px;

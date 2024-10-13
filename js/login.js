@@ -70,48 +70,61 @@ sellerLogin.addEventListener("click", () => {
 const joinBtn = document.querySelector(".joinPage");
 
 joinBtn.addEventListener("click", () => {
-  document.body.innerHTML = `<header class="header">
-  <h2 class="sr-only">HODU!</h2>
-  <a href="#" alt="HODU!"></a>
-</header>
-  <ul class="join_tablist">
-    <li class="buyer_join btn_on">구매회원가입</li>
-    <div class="join_white_box"></div>
-    <li class="seller_join btn_off">판매회원가입</li>
-  </ul>
-  <form action="" class="join_box" method="post">
-    <div class="idForm"><div class="idAlign">
-    <label for="id">아이디</label>
-      <input type="text" name="id" id="id"  class="join_id"/>
-    </div><button type="button" class="checkId">중복확인</button>
+  document.body.innerHTML = `
+    <header class="header">
+      <h2 class="sr-only">HODU!</h2>
+      <a href="#" alt="HODU!"></a>
+    </header>
+    <ul class="join_tablist">
+      <li class="buyer_join btn_on">구매회원가입</li>
+      <div class="join_white_box"></div>
+      <li class="seller_join btn_off">판매회원가입</li>
+    </ul>
+    <form action="" class="join_box" method="post">
+      <div class="idForm">
+        <div class="idAlign">
+          <label for="id">아이디</label>
+          <input type="text" name="id" id="id" class="join_id" />
+        </div>
+        <button type="button" class="checkId">중복확인</button>
+      </div>
+      <span class="idMessage hide"></span>
+      <div class="pwForm">
+        <label for="pw">비밀번호</label>
+        <input type="password" name="pw" id="pw" class="join_pw" />
+      </div>
+      <span class="idMessage hide"></span>
+      <div class="pwForm">
+        <label for="pwConfirm">비밀번호 재확인</label>
+        <input type="password" name="pwConfirm" id="pwConfirm" class="join_pwConfirm" />
+      </div>
+      <div class="nameForm">
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" class="join_name" />
+      </div>
+      <div class="numberForm">
+        <label for="firstPhoneNumber">휴대폰 번호</label>
+        <div class="phonNumber">
+          <select name="fistPhoneNumber" id="firstPhoneNumber">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="016">016</option>
+            <option value="017">017</option>
+          </select>
+          <input type="text" class="numInput" />
+          <input type="text" class="numInput" />
+        </div>
+      </div>
+    </form>
+    <div class="agreeArea">
+      <p class="agreeCheck">
+        <input type="checkbox" id="check_agree">호두샵의 <span class="strong">이용약관</span> 및 <span class="strong">개인정보처리방침</span>에 대한 내용을 확인하였고 동의합니다.
+      </p>
+      <button type="submit" class="joinBtn" disabled>가입하기 </button>
     </div>
-    <span class="idMessage hide"></span>
-    <div class="pwForm"><label for="pw">비밀번호</label>
-    <input type="password" name="pw" id="pw" class="join_pw"></div>
-    <span class="idMessage hide"></span>
-    <div class="pwForm"><label for="pwConfirm">비밀번호 재확인</label>
-      <input type="password" name="pwConfirm" id="pwConfirm" class="join_pwConfirm"></div>
-    <div class="nameForm"><label for="name">이름</label>
-      <input type="text" name="name" id="name" class="join_name"></div>
-      
-    
+  `;
 
-<div class="numberForm">
-  <label for="firstPhoneNumber">휴대폰 번호</label>
-  <div class="phonNumber">
-      <select name="fistPhoneNumber" id="firstPhoneNumber">
-        <option value="010">010</option>
-        <option value="011">011</option>
-        <option value="016">016</option>
-        <option value="017">017</option>
-      </select><input type="text" class="numInput"><input type="text" class="numInput">
-  </div>
-</div>
-
-  </form>
-<div class="agreeArea">
-    <p class="agreeCheck"><input type="checkbox">호두샵의 <span class="strong">이용약관</span> 및 <span class="strong">개인정보처리방침</span>에 대한 내용을 확인하였고 동의합니다.</p>
-    <button type="submit" class="joinBtn">가입하기 </button>
-</div>
-`;
+  const script = document.createElement("script");
+  script.src = "./js/join.js";
+  document.body.append(script);
 });
