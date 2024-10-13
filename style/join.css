@@ -3,23 +3,34 @@
 .numInput {
   width: 152px;
 }
+
 .join_tablist {
-  display: table;
+  display: flex;
+  justify-content: space-between; /* 요소들을 양쪽 끝에 배치 */
   margin: auto;
+  width: 550px;
   position: relative;
 }
 .join_tablist li {
-  display: table-cell;
   border: 1px solid #c4c4c4;
-  padding: 20px 66px 38px 87px;
+  padding: 20px 87px 38px 88px;
   border-radius: 10px 10px 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
   line-height: 22px;
   font-size: 18px;
-  width: 275px;
+  text-align: center;
 }
-
+.join_tablist .buyer_join {
+  left: 0px;
+  top: -60px;
+  position: absolute;
+}
+.join_tablist .seller_join {
+  position: absolute;
+  right: 0px;
+  top: -60px;
+}
 .btn_on {
   background-color: white;
   z-index: 5;
@@ -35,7 +46,7 @@
   background-color: white;
   position: absolute;
   left: 1px;
-  top: 82px;
+
   z-index: 15;
 }
 .white_box_R {
