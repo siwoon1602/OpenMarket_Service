@@ -44,19 +44,21 @@ header a {
   z-index: 0;
 }
 .white_box {
-  width: 274px;
+  width: 273px;
   height: 10px;
   background-color: white;
   position: absolute;
   left: 1px;
+  top: -3px;
   z-index: 15;
 }
 .white_box_R {
-  width: 274px;
+  width: 272.5px;
   height: 10px;
   background-color: white;
   position: absolute;
   right: 1px;
+  top: -3px;
   z-index: 15;
 }
 .login_box {
