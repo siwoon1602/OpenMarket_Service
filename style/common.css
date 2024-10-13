@@ -10,6 +10,7 @@
 * {
   font-family: "SpoqaHanSansNeo-Regular";
   font-size: 18px;
+  box-sizing: border-box;
 }
 
 .sr-only {
@@ -26,10 +27,4 @@
 
 :root {
   --maincolor: #21bf48;
-}
-
-input {
-  width: 480px;
-  height: 60px;
-  border-bottom: 1px solid #c4c4c4;
 }
