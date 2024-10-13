@@ -43,3 +43,26 @@ loginForm.addEventListener("submit", (event) => {
 });
 
 // ------------------------ 로그인 validation 종료 ------------------------
+
+// ------------------------ 회원 로그인 TAP 시작 ------------------------
+
+const buyerLogin = document.querySelector(".buyer_login");
+const sellerLogin = document.querySelector(".seller_login");
+const whiteArea = document.querySelector(".white_box");
+
+buyerLogin.addEventListener("click", () => {
+  buyerLogin.classList.add("btn_on");
+  buyerLogin.classList.remove("btn_off");
+  whiteArea.classList.remove("white_box");
+  whiteArea.classList.add("white_box");
+  sellerLogin.classList.add("btn_off");
+});
+sellerLogin.addEventListener("click", () => {
+  sellerLogin.classList.add("btn_on");
+  sellerLogin.classList.remove("btn_off");
+  whiteArea.classList.remove("white_box");
+  whiteArea.classList.add("white_box_R");
+  buyerLogin.classList.add("btn_off");
+});
+
+// ------------------------ 회원 로그인 TAP 종료------------------------
