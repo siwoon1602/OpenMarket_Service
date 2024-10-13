@@ -24,23 +24,36 @@ header img {
   position: absolute;
   left: 0px;
   top: -60px;
-  background-color: white;
-  z-index: 5;
 }
 .seller_login {
-  background-color: #f2f2f2;
-  z-index: 0;
   position: absolute;
   right: 0px;
   top: -60px;
 }
 
+.btn_on {
+  background-color: white;
+  z-index: 5;
+}
+
+.btn_off {
+  background-color: #f2f2f2;
+  z-index: 0;
+}
 .white_box {
   width: 274px;
   height: 10px;
   background-color: white;
   position: absolute;
   left: 1px;
+  z-index: 15;
+}
+.white_box_R {
+  width: 274px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  right: 1px;
   z-index: 15;
 }
 .login_box {
