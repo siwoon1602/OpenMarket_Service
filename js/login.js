@@ -66,3 +66,7 @@ sellerLogin.addEventListener("click", () => {
 });
 
 // ------------------------ 회원 로그인 TAP 종료------------------------
+
+const joinBtn = document.querySelector(".joinBtn");
+
+joinBtn.addEventListener("click", () => {});
