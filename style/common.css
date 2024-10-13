@@ -28,3 +28,7 @@
 :root {
   --maincolor: #21bf48;
 }
+
+.hide {
+  display: none;
+}
