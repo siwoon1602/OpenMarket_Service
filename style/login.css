@@ -1,7 +1,75 @@
-body {
-  position: relative;
+header img {
+  display: flex;
+  width: 238px;
+  height: 74px;
+  margin: 106px auto 130px;
 }
-.submit {
+.tablist {
+  display: table;
+  margin: auto;
+  position: relative;
+  width: 550px;
+}
+.tablist li {
+  display: table-cell;
+  border: 1px solid #c4c4c4;
+  padding: 20px 77px 38px;
+  border-radius: 10px 10px 0 0;
+  font-family: "SpoqaHanSansNeo-Regular";
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 18px;
+}
+.buyer_login {
+  position: absolute;
+  left: 0px;
+  top: -60px;
+  background-color: white;
+  z-index: 5;
+}
+.seller_login {
+  background-color: #f2f2f2;
+  z-index: 0;
+  position: absolute;
+  right: 0px;
+  top: -60px;
+}
+
+.white_box {
+  width: 274px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  left: 1px;
+  z-index: 15;
+}
+.login_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  padding: 34px 35px 36px 35px;
+  z-index: 10;
+  background-color: white;
+  max-width: 550px;
+  margin: auto;
+  align-items: center;
+}
+
+.login_box input:nth-child(1) {
+  margin-bottom: 6px;
+}
+.login_box input:nth-child(2) {
+  margin-bottom: 36px;
+}
+
+.login_box input {
+  width: 480px;
+  height: 60px;
+  border-bottom: 1px solid #c4c4c4;
+}
+.btn_login {
   width: 480px;
   height: 60px;
   border-radius: 5px;
@@ -11,80 +79,17 @@ body {
   font-weight: 700;
 }
 
-article {
-  width: 550px;
-  height: 292px;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  position: relative;
-  top: 304px;
-  left: 685px;
-  z-index: 10;
-  background-color: white;
-}
-
-article form {
+.join_warp {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.03px;
+  font-family: "SpoqaHanSansNeo-Regular";
 }
 
-article form input:nth-child(1) {
-  margin-bottom: 6px;
-  margin-top: 35px;
-}
-article form input:nth-child(2) {
-  margin-bottom: 36px;
-}
-
-.userLogin {
-  display: flex;
-  position: absolute;
-  top: 244px;
-  left: 685px;
-  z-index: 0;
-}
-.buybtn,
-.sellbtn {
-  width: 275px;
-  height: 90px;
-  border-radius: 10px 10px 0 0;
-  border: 1px solid #c4c4c4;
-  border-bottom: none;
-  background-color: white;
-  line-height: 22px;
-  font-weight: 500;
-}
-
-.buybtn {
-  position: absolute;
-  top: 244px;
-  left: 685px;
-  z-index: 20;
-}
-
-.sellbtn {
-  position: absolute;
-  top: 244px;
-  left: 960px;
-  background-color: #f2f2f2;
-}
-
-img {
-  position: absolute;
-  top: 100px;
-  left: 841px;
-}
-
-.userinfo {
-  position: relative;
-  left: 868px;
-  top: 346px;
-  margin-bottom: 500px;
-}
-
-.userinfo a:nth-child(1)::after {
+.join_warp li:nth-child(1) a:after {
   content: "|";
-  margin-left: 14px;
-  margin-right: 14px;
+  margin: auto 14px;
 }
