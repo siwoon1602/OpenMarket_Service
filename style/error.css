@@ -1,0 +1,51 @@
+.errorBox {
+  font-family: "SpoqaHanSansNeo-Regular";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 342px 0 342px 0;
+  gap: 50px;
+}
+
+.errorIcon {
+  background-image: url(/assets/icon-404.png);
+  width: 276px;
+  height: 236px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contentArea p:nth-child(1) {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.contentArea p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.03px;
+  color: #767676;
+  margin-bottom: 40px;
+}
+
+.buttonArea {
+  display: flex;
+  gap: 14px;
+}
+.buttonArea a {
+  padding: 19px 66px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.buttonArea a:nth-child(1) {
+  background-color: var(--maincolor);
+  color: white;
+}
+.buttonArea a:nth-child(2) {
+  color: #767676;
+  border: 1px solid #c4c4c4;
+}
