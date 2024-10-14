@@ -215,13 +215,14 @@ select {
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 550px;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 400;
   color: #767676;
   font-size: 16px;
+  position: absolute;
+  top: 600px;
 }
-.agreeArea span {
+.agreeCheck .strong {
   font-weight: 700;
   text-decoration: underline;
 }
@@ -233,6 +234,15 @@ select {
   margin-top: 34px;
   background-color: #c4c4c4;
   color: white;
-  padding: 19px 207px;
+  padding: 19px 197px;
   border-radius: 10px;
+}
+
+.agreeCheck {
+  display: flex;
+  align-items: self-end;
+}
+
+.agreeCheck p {
+  width: 454px;
 }
