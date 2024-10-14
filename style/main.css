@@ -1,7 +1,14 @@
 .header_content {
   display: flex;
-  padding: 20px 320px;
-  box-shadow: 0px 4px 5px rgba(0, 4, 5, 0.1);
+  justify-content: space-between;
+  box-shadow: 0px 4px 5px #0000001a;
+  align-items: center;
+  padding: 26px 320px;
+}
+
+.header_contet_left {
+  display: flex;
+  gap: 30px;
 }
 
 .header_content .search {
@@ -17,7 +24,7 @@
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 400;
   font-size: 16px;
-  padding-left: 22px;
+  padding: 22px;
 }
 
 .search-icon {
@@ -36,14 +43,12 @@
   background-repeat: no-repeat;
   width: 124px;
   height: 38px;
-  margin-right: 30px;
 }
 
 .header_content .user_menu {
   display: flex;
   gap: 26px;
   align-items: center;
-  margin-left: 598px;
 }
 .header_content .user_menu li a img:nth-child(1) {
   width: 26.67px;
@@ -63,19 +68,45 @@
   height: 500px;
   background-color: #f2f2f2;
   margin-bottom: 80px;
+  position: relative;
+}
+
+.slide_left {
+  background-image: url(/assets/icon-swiper-1.svg);
+  width: 60px;
+  height: 124px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  left: 30px;
+  top: 188px;
+}
+.slide_right {
+  background-image: url(/assets/icon-swiper-2.svg);
+  width: 60px;
+  height: 124px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 188px;
 }
 .container_1 {
   display: flex;
   gap: 70px;
-  margin-left: 302px;
+  padding: 0 302px;
   margin-bottom: 78px;
+  justify-content: center;
 }
 
 .container_2 {
   display: flex;
   gap: 70px;
-  margin-left: 302px;
+  padding: 0 302px;
   margin-bottom: 180px;
+  justify-content: center;
 }
 .product_info {
   display: flex;
@@ -87,6 +118,7 @@ article ul li:nth-child(1) {
   color: #767676;
   font-weight: 400;
   line-height: 22px;
+  margin-top: 16px;
 }
 article ul li:nth-child(2) {
   color: black;
@@ -105,13 +137,18 @@ article ul li:nth-child(3) span {
 }
 
 .footer {
-  padding: 60px 320px;
   background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 200px;
 }
 footer .footer_top {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
 .footer_top .info {
   display: flex;
   font-weight: 400;
@@ -119,7 +156,6 @@ footer .footer_top {
   font-size: 14px;
   color: black;
   font-family: "SpoqaHanSansNeo-Regular";
-  margin-right: 470px;
 }
 .footer_top .info li strong {
   font-weight: 700;
