@@ -49,10 +49,9 @@ const checkBox = document.querySelector("#check_agree");
 
 // 초기화 - 가입하기 버튼 비활성화 및 초기 CSS 스타일 설정
 joinResult.disabled = true;
-joinResult.style.backgroundColor = "#ccc"; // 비활성화 상태 배경색
-joinResult.style.color = "#fff"; // 비활성화 상태 글자색
+joinResult.style.backgroundColor = "#ccc";
+joinResult.style.color = "#fff";
 
-// 유효성 검사를 위한 함수
 function validateForm() {
   // 인풋 요소 선택
   const joinId = joinForm.querySelector("#id");
@@ -163,11 +162,10 @@ function validateForm() {
 
 // 포커스 아웃 이벤트를 통해 유효성 검사
 joinForm.addEventListener("focusout", validateForm);
+checkBox.addEventListener("click", validateForm);
 
 // 가입하기 버튼 클릭 이벤트 리스너
 joinResult.addEventListener("click", (event) => {
-  event.preventDefault(); // 기본 제출 방지
-
-  // 폼 제출
-  joinForm.submit(); // 유효성 검사를 통과했을 때만 이 코드에 도달합니다.
+  event.preventDefault();
+  joinForm.submit();
 });
