@@ -59,8 +59,7 @@
 }
 .join_box {
   position: relative;
-  display: flex;
-  flex-direction: column;
+
   border: 1px solid #c4c4c4;
   border-radius: 10px;
   padding: 34px 35px 36px 35px;
@@ -80,6 +79,11 @@ label {
   border-radius: 5px;
   border: 1px solid #c4c4c4;
   height: 54px;
+  padding-left: 16px;
+  font-family: "SpoqaHanSansNeo-Regular";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.03px;
 }
 .join_box .join_id {
   width: 346px;
@@ -97,8 +101,8 @@ label {
   height: 28px;
   background-size: cover;
   position: absolute;
-  right: 51px;
-  top: 165px;
+  right: 16px;
+  top: 40px;
 }
 .confirmCircle_pwC {
   background-image: url(/assets/icon-check-off.svg);
@@ -106,16 +110,13 @@ label {
   height: 28px;
   background-size: cover;
   position: absolute;
-  right: 51px;
-  top: 260px;
+  right: 16px;
+  top: 40px;
 }
+
 .join_box .join_pw {
   margin-bottom: 12px;
   position: relative;
-}
-
-.join_box .join_pwConfirm {
-  margin-bottom: 50px;
 }
 
 .join_box .join_pw {
@@ -125,16 +126,18 @@ label {
 .idForm {
   display: flex;
   gap: 10px;
-  align-items: last baseline;
+  align-items: center;
+  position: relative;
 }
 .pwForm {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .nameForm {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  position: relative;
 }
 .numberForm {
   display: flex;
@@ -145,6 +148,24 @@ label {
   flex-direction: column;
 }
 
+.idMessage,
+.pwMessage,
+.pwcMessage,
+.nameMessage {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20.03px;
+  font-weight: 400;
+  display: block;
+}
+
+.pwcMessage {
+  margin: 10px 0 20px;
+}
+
+.nameMessage {
+  margin: 10px 0 20px;
+}
 select {
   width: 152px;
   height: 54px;

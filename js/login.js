@@ -92,7 +92,7 @@ joinBtn.addEventListener("click", () => {
   document.body.innerHTML = `
     <header class="header">
       <h2 class="sr-only">HODU!</h2>
-      <a href="#" alt="HODU!"></a>
+      <a href="/" alt="HODU!"></a>
     </header>
     <ul class="join_tablist">
       <li class="buyer_join btn_on">구매회원가입</li>
@@ -107,24 +107,25 @@ joinBtn.addEventListener("click", () => {
         </div>
         <button type="button" class="checkId">중복확인</button>
       </div>
-      <span class="idMessage hide"></span>
+      <span class="idMessage"></span>
       <div class="pwForm">
         <label for="pw">비밀번호</label>
         <input type="password" name="pw" id="pw" class="join_pw" />
         <div class="confirmCircle_pw"></div>
       </div>
-      <span class="pwMessage hide"></span>
+      <span class="pwMessage"></span>
       <div class="pwForm">
         <label for="pwConfirm">비밀번호 재확인</label>
         <input type="password" name="pwConfirm" id="pwConfirm" class="join_pwConfirm" />
            <div class="confirmCircle_pwC"></div>
       </div>
-          <span class="pwcMessage hide"></span>
+          <span class="pwcMessage"></span>
       <div class="nameForm">
         <label for="name">이름</label>
         <input type="text" name="name" id="name" class="join_name" />
-             <span class="nameMessage hide"></span>
+
       </div>
+                   <span class="nameMessage"></span>
       <div class="numberForm">
         <label for="firstPhoneNumber">휴대폰 번호</label>
         <div class="phonNumber">
@@ -134,9 +135,10 @@ joinBtn.addEventListener("click", () => {
             <option value="016">016</option>
             <option value="017">017</option>
           </select>
-          <input type="text" class="numInput" />
-          <input type="text" class="numInput" />
+          <input type="text" class="numInput" maxlength="4" />
+          <input type="text" class="numInput" maxlength="4"/>
         </div>
+        <span class="numberMessage"></span>
       </div>
     </form>
     <div class="agreeArea">
