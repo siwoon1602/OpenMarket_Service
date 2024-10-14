@@ -102,24 +102,24 @@ function validateForm() {
   if (!joinPw.value) {
     joinPw.setCustomValidity("필수 정보입니다.");
     pwError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   } else if (!passwordPattern.test(joinPw.value)) {
     joinPw.setCustomValidity(
       "8자 이상, 영문 대,소문자, 숫자, 특수문자를 사용하세요."
     );
     pwError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   }
 
   // 비밀번호 확인 창을 입력하지 않은 경우
   if (!joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("필수 정보입니다.");
     pwConfirmError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   } else if (joinPw.value !== joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("비밀번호가 일치하지 않습니다.");
     pwConfirmError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   }
 
   // 이름을 입력하지 않은 경우
@@ -144,20 +144,20 @@ function validateForm() {
   }
 
   if (!checkBox.checked) {
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   } else {
     isValid = true;
   }
 
   // 유효성 검사 통과 시 가입하기 버튼 활성화
   if (isValid) {
-    joinResult.disabled = false; // 버튼 활성화
-    joinResult.style.backgroundColor = "#21BF48"; // 활성화 상태 배경색
-    joinResult.style.color = "#fff"; // 활성화 상태 글자색
+    joinResult.disabled = false;
+    joinResult.style.backgroundColor = "#21BF48";
+    joinResult.style.color = "#fff";
   } else {
-    joinResult.disabled = true; // 버튼 비활성화
-    joinResult.style.backgroundColor = "#ccc"; // 비활성화 상태 배경색
-    joinResult.style.color = "#fff"; // 비활성화 상태 글자색
+    joinResult.disabled = true;
+    joinResult.style.backgroundColor = "#ccc";
+    joinResult.style.color = "#fff";
   }
 }
 

@@ -52,7 +52,7 @@ userId.addEventListener("input", () => {
   if (loginError.textContent === userId.validationMessage) {
     loginError.textContent = "";
   }
-  userId.setCustomValidity(""); // 커스텀 메시지 초기화
+  userId.setCustomValidity("");
 });
 
 userPw.addEventListener("input", () => {
@@ -86,6 +86,7 @@ sellerLogin.addEventListener("click", () => {
 
 // ------------------------ 회원 로그인 TAP 종료------------------------
 
+// ------------------------ 회원가입 페이지로 변경------------------------
 const joinBtn = document.querySelector(".joinPage");
 
 joinBtn.addEventListener("click", () => {
@@ -153,3 +154,4 @@ joinBtn.addEventListener("click", () => {
   script.src = "./js/join.js";
   document.body.append(script);
 });
+// ------------------------ 회원가입 페이지로 변경------------------------
