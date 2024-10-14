@@ -91,9 +91,27 @@ label {
   width: 480px;
   height: 54px;
 }
-
+.confirmCircle_pw {
+  background-image: url(/assets/icon-check-off.svg);
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  position: absolute;
+  right: 51px;
+  top: 165px;
+}
+.confirmCircle_pwC {
+  background-image: url(/assets/icon-check-off.svg);
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  position: absolute;
+  right: 51px;
+  top: 260px;
+}
 .join_box .join_pw {
   margin-bottom: 12px;
+  position: relative;
 }
 
 .join_box .join_pwConfirm {

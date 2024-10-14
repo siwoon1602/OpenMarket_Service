@@ -15,6 +15,7 @@ loginForm.addEventListener("submit", (event) => {
   userPw.setCustomValidity("");
   loginError.textContent = "";
 
+  // 에러 메세지 셋팅
   if (!userId.value) {
     userId.setCustomValidity("아이디를 입력해주세요");
   }
@@ -23,7 +24,7 @@ loginForm.addEventListener("submit", (event) => {
     userPw.setCustomValidity("비밀번호를 입력해주세요");
   }
 
-  // 메세지를 출력
+  // 에러 메세지 출력
   if (!userId.checkValidity()) {
     loginError.textContent = userId.validationMessage;
     loginError.style.cssText =
@@ -42,6 +43,24 @@ loginForm.addEventListener("submit", (event) => {
   }
 });
 
+const userId = loginForm.querySelector("#id");
+const userPw = loginForm.querySelector("#password");
+const loginError = loginForm.querySelector(".loginerror");
+
+// input 이벤트로 에러 메시지 초기화
+userId.addEventListener("input", () => {
+  if (loginError.textContent === userId.validationMessage) {
+    loginError.textContent = "";
+  }
+  userId.setCustomValidity(""); // 커스텀 메시지 초기화
+});
+
+userPw.addEventListener("input", () => {
+  if (loginError.textContent === userPw.validationMessage) {
+    loginError.textContent = "";
+  }
+  userPw.setCustomValidity(""); // 커스텀 메시지 초기화
+});
 // ------------------------ 로그인 validation 종료 ------------------------
 
 // ------------------------ 회원 로그인 TAP 시작 ------------------------
@@ -92,15 +111,19 @@ joinBtn.addEventListener("click", () => {
       <div class="pwForm">
         <label for="pw">비밀번호</label>
         <input type="password" name="pw" id="pw" class="join_pw" />
+        <div class="confirmCircle_pw"></div>
       </div>
-      <span class="idMessage hide"></span>
+      <span class="pwMessage hide"></span>
       <div class="pwForm">
         <label for="pwConfirm">비밀번호 재확인</label>
         <input type="password" name="pwConfirm" id="pwConfirm" class="join_pwConfirm" />
+           <div class="confirmCircle_pwC"></div>
       </div>
+          <span class="pwcMessage hide"></span>
       <div class="nameForm">
         <label for="name">이름</label>
         <input type="text" name="name" id="name" class="join_name" />
+             <span class="nameMessage hide"></span>
       </div>
       <div class="numberForm">
         <label for="firstPhoneNumber">휴대폰 번호</label>
