@@ -130,7 +130,7 @@ joinBtn.addEventListener("click", () => {
       <div class="join_white_box"></div>
       <li class="seller_join btn_off">판매회원가입</li>
     </ul>
-    <form action="https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/" class="join_box">
+    <form action="https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/" class="join_box" method="POST">
       <div class="idForm">
         <div class="idAlign">
           <label for="id">아이디</label>
@@ -166,8 +166,8 @@ joinBtn.addEventListener("click", () => {
             <option value="016">016</option>
             <option value="017">017</option>
           </select>
-          <input type="text" class="numInput" maxlength="4" />
-          <input type="text" class="numInput" maxlength="4"/>
+          <input type="text" class="numInput" id="secondPhoneNumber" maxlength="4" />
+          <input type="text" class="numInput" id="thirdPhoneNumber" maxlength="4"/>
         </div>
         <span class="numberMessage"></span>
       </div>

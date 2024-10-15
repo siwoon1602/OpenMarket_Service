@@ -151,7 +151,8 @@ label {
 .idMessage,
 .pwMessage,
 .pwcMessage,
-.nameMessage {
+.nameMessage,
+.numberMessage {
   margin-bottom: 12px;
   font-size: 16px;
   line-height: 20.03px;
@@ -159,6 +160,9 @@ label {
   display: block;
 }
 
+.numberMessage {
+  margin: 10px 0 20px;
+}
 .pwcMessage {
   margin: 10px 0 20px;
 }
