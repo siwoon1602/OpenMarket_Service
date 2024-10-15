@@ -20,28 +20,54 @@ sellerJoin.addEventListener("click", () => {
 
 // ------------------------ 회원가입 TAP 종료------------------------
 
-// ------------------------ 가입하기 버튼 ------------------------
+// ------------------------ 아이디 중복검사------------------------
 
-// document.getElementById("check_agree").addEventListener("change", () => {
-//   const checkBox = document.querySelector("#check_agree");
-//   const joinResult = document.querySelector(".joinBtn");
-//   if (checkBox.checked) {
-//     // 체크박스가 체크되면 버튼의 disabled 속성 제거
-//     joinResult.removeAttribute("disabled");
-//     joinResult.style.cssText =
-//       " margin-top: 34px;  background-color: var(--maincolor);color: white; padding: 19px 207px;border-radius: 10px;";
-//   } else {
-//     // 체크박스가 체크 해제되면 버튼을 다시 disabled 상태로 설정
-//     joinResult.setAttribute("disabled", true);
-//     joinResult.style.cssText =
-//       " margin-top: 34px;background-color: #c4c4c4;color: white;padding: 19px 207px;border-radius: 10px;";
-//   }
-// });
+const idCheck = document.querySelector(".checkId");
 
-// ------------------------ 가입하기 버튼 종료------------------------
+idCheck.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const joinId = joinForm.querySelector("#id");
+  const idError = joinForm.querySelector(".idMessage");
+
+  const response = await fetch(
+    "https://estapi.openmarket.weniv.co.kr/accounts/validate-username/",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: joinId.value,
+      }),
+    }
+  );
+
+  if (response.ok) {
+    const data = await response.json();
+
+    if (data.message) {
+      joinId.setCustomValidity("");
+      idError.textContent = "멋진 아이디네요! :)";
+      idError.style.color = "#21BF48";
+    } else {
+      idError.textContent = "알 수 없는 오류가 발생했습니다.";
+      idError.style.color = "#EB5757";
+    }
+  } else {
+    const errorData = await response.json();
+
+    if (errorData.error) {
+      idError.textContent = "이미 사용중인 아이디 입니다";
+      idError.style.color = "#EB5757";
+      idError.style.cssText =
+        "font-size: 16px; margin-bottom:26px; align-self: flex-start; ";
+    }
+  }
+});
+
+// ------------------------ 아이디 중복검사------------------------
 
 // ------------------------ 유효성 검사------------------------
-// 1. 경우에 따른 메세지를 등록할겁니다. 2. 에러메세지를 출력합니다.
 
 const joinForm = document.querySelector("form");
 const joinResult = document.querySelector(".joinBtn");
@@ -85,17 +111,19 @@ function validateForm() {
   if (!joinId.value) {
     joinId.setCustomValidity("필수 정보입니다.");
     idError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
+    isValid = false;
   } else if (!idPattern.test(joinId.value)) {
     joinId.setCustomValidity(
       "20자 이내의 영문 소문자, 대문자, 숫자만 사용가능합니다."
     );
     idError.style.color = "#eb5757";
-    isValid = false; // 유효성 체크를 통과하지 못함
-  } else {
-    joinId.setCustomValidity("멋진 아이디네요 :)");
-    idError.style.color = "#21BF48";
+    isValid = false;
   }
+
+  // else {
+  //   joinId.setCustomValidity("멋진 아이디네요 :)");
+  //   idError.style.color = "#21BF48";
+  // }
 
   // 비밀번호를 입력하지 않은 경우
   if (!joinPw.value) {
