@@ -36,12 +36,25 @@
   justify-content: center;
 }
 
+.container_2 li article img {
+  width: 380px;
+  height: 380px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
 .container_2 {
   display: flex;
   gap: 70px;
   padding: 0 302px;
   margin-bottom: 180px;
   justify-content: center;
+}
+
+.container_1 li article img {
+  width: 380px;
+  height: 380px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
 }
 .product_info {
   display: flex;
