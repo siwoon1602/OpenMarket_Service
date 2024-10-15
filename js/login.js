@@ -1,67 +1,3 @@
-// ------------------------ 로그인 validation 시작 ------------------------
-// const loginForm = document.querySelector(".login_box");
-
-// loginForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   // 인풋요소 선택
-//   const userId = loginForm.querySelector("#id");
-//   const userPw = loginForm.querySelector("#password");
-
-//   // 에러 메세지 출력 요소 선택
-//   const loginError = loginForm.querySelector(".loginerror");
-
-//   userId.setCustomValidity("");
-//   userPw.setCustomValidity("");
-//   loginError.textContent = "";
-
-//   // 에러 메세지 셋팅
-//   if (!userId.value) {
-//     userId.setCustomValidity("아이디를 입력해주세요");
-//   }
-
-//   if (!userPw.value) {
-//     userPw.setCustomValidity("비밀번호를 입력해주세요");
-//   }
-
-//   // 에러 메세지 출력
-//   if (!userId.checkValidity()) {
-//     loginError.textContent = userId.validationMessage;
-//     loginError.style.cssText =
-//       "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
-//   }
-
-//   if (!userPw.checkValidity()) {
-//     loginError.textContent = userPw.validationMessage;
-//     loginError.style.cssText =
-//       "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
-//   }
-
-//   // 폼 내용 제출
-//   if (userId.checkValidity() && userPw.checkValidity()) {
-//     event.target.submit();
-//   }
-// });
-
-// const userId = loginForm.querySelector("#id");
-// const userPw = loginForm.querySelector("#password");
-// const loginError = loginForm.querySelector(".loginerror");
-
-// // input 이벤트로 에러 메시지 초기화
-// userId.addEventListener("input", () => {
-//   if (loginError.textContent === userId.validationMessage) {
-//     loginError.textContent = "";
-//   }
-//   userId.setCustomValidity("");
-// });
-
-// userPw.addEventListener("input", () => {
-//   if (loginError.textContent === userPw.validationMessage) {
-//     loginError.textContent = "";
-//   }
-//   userPw.setCustomValidity(""); // 커스텀 메시지 초기화
-// });
-
 const loginForm = document.querySelector(".login_box");
 
 loginForm.addEventListener("submit", async (event) => {
@@ -92,18 +28,18 @@ loginForm.addEventListener("submit", async (event) => {
   if (!userId.checkValidity()) {
     loginError.textContent = userId.validationMessage;
     loginError.style.cssText =
-      "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+      "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
     return;
   }
 
   if (!userPw.checkValidity()) {
     loginError.textContent = userPw.validationMessage;
     loginError.style.cssText =
-      "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+      "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
     return;
   }
 
-  // 폼 내용 제출
+  // 로그인 요청
   if (userId.checkValidity() && userPw.checkValidity()) {
     try {
       const response = await fetch(
@@ -124,23 +60,20 @@ loginForm.addEventListener("submit", async (event) => {
         const data = await response.json();
         console.log("로그인 성공:", data);
 
-        localStorage.setItem("token", data.token);
-        // window.location.href = "/index.html";
+        localStorage.setItem("token", data.access);
+        window.location.href = "/index.html";
       } else {
         loginError.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
         loginError.style.cssText =
-          "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+          "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
       }
     } catch (error) {
-      console.error("오류 발생:", error);
-      loginError.textContent = "서버에 문제가 발생했습니다. 다시 시도하세요.";
-      loginError.style.cssText =
-        "color: red; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+      window.location.href = "/error.html";
     }
   }
 });
 
-// input 이벤트로 에러 메시지 초기화
+// 에러 메시지 초기화
 const userId = loginForm.querySelector("#id");
 const userPw = loginForm.querySelector("#password");
 const loginError = loginForm.querySelector(".loginerror");
@@ -197,13 +130,13 @@ joinBtn.addEventListener("click", () => {
       <div class="join_white_box"></div>
       <li class="seller_join btn_off">판매회원가입</li>
     </ul>
-    <form action="" class="join_box" method="post">
+    <form action="https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/" class="join_box">
       <div class="idForm">
         <div class="idAlign">
           <label for="id">아이디</label>
           <input type="text" name="id" id="id" class="join_id" />
         </div>
-        <button type="button" class="checkId">중복확인</button>
+        <button type="submit" class="checkId">중복확인</button>
       </div>
       <span class="idMessage"></span>
       <div class="pwForm">
