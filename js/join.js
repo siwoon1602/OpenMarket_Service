@@ -29,8 +29,6 @@ idCheck.addEventListener("click", async (event) => {
   const joinId = joinForm.querySelector("#id");
   const idError = joinForm.querySelector(".idMessage");
 
-  const idPattern = /^[a-zA-Z0-9]{1,20}$/;
-
   const response = await fetch(
     "https://estapi.openmarket.weniv.co.kr/accounts/validate-username/",
     {
@@ -244,7 +242,7 @@ joinResult.addEventListener("click", async (event) => {
         window.location.href = "/index.html";
       } else {
         const errorData = await response.json();
-        console.error("회원가입 실패:", errorData);
+
         console.log(
           `${document.getElementById("firstPhoneNumber").value}-${
             joinForm.querySelector("#secondPhoneNumber").value
