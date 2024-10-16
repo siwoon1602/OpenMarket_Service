@@ -61,7 +61,7 @@ loginForm.addEventListener("submit", async (event) => {
         console.log("로그인 성공:", data);
 
         localStorage.setItem("token", data.access);
-        window.location.href = "/index.html";
+        window.history.back();
       } else {
         loginError.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
         loginError.style.cssText =
