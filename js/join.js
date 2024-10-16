@@ -60,12 +60,13 @@ idCheck.addEventListener("click", async (event) => {
       idError.textContent = "이미 사용중인 아이디 입니다";
       idError.style.color = "#EB5757";
       idError.style.cssText =
-        "font-size: 16px; margin-bottom:26px; align-self: flex-start; ";
+        "font-size: 16px; margin-bottom:26px; align-self: flex-start; ; ";
+      joinId.style.cssText = "border:1px solid #eb5757";
     }
   }
 });
 
-// ------------------------ 아이디 중복검사------------------------
+// ------------------------ 아이디 중복검사 종료------------------------
 
 // ------------------------ 유효성 검사------------------------
 
@@ -88,6 +89,8 @@ function validateForm() {
   const firstPhoneNumber = document.getElementById("firstPhoneNumber");
   const secondPhoneNumber = document.getElementById("secondPhoneNumber");
   const thirdPhoneNumber = document.getElementById("thirdPhoneNumber");
+  const checkBoxOne = document.querySelector(".confirmCircle_pw");
+  const checkBoxTwo = document.querySelector(".confirmCircle_pwC");
 
   // 에러 메세지 출력 요소 선택
   const idError = joinForm.querySelector(".idMessage");
@@ -98,8 +101,11 @@ function validateForm() {
 
   // 초기화
   joinId.setCustomValidity("");
+  joinId.style.cssText = "border:1px solid #C4C4C4;";
   joinPw.setCustomValidity("");
+  joinPw.style.cssText = "border:1px solid #C4C4C4;";
   joinPwConfirm.setCustomValidity("");
+  joinPwConfirm.style.cssText = "border:1px solid #C4C4C4;";
   joinName.setCustomValidity("");
   idError.textContent = "";
   pwError.textContent = "";
@@ -123,6 +129,7 @@ function validateForm() {
       "20자 이내의 영문 소문자, 대문자, 숫자만 사용가능합니다."
     );
     idError.style.color = "#eb5757";
+    joinId.style.cssText = "border:1px solid #eb5757";
     isValid = false;
   }
 
@@ -136,10 +143,10 @@ function validateForm() {
       "8자 이상, 영문 대,소문자, 숫자, 특수문자를 사용하세요."
     );
     pwError.style.color = "#eb5757";
+    joinPw.style.cssText = "border:1px solid #eb5757";
     isValid = false;
   }
 
-  // 비밀번호 확인 유효성 검사
   if (!joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("필수 정보입니다.");
     pwConfirmError.style.color = "#eb5757";
@@ -147,8 +154,14 @@ function validateForm() {
   } else if (joinPw.value !== joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("비밀번호가 일치하지 않습니다.");
     pwConfirmError.style.color = "#eb5757";
+    joinPwConfirm.style.cssText = "border:1px solid #eb5757";
     isValid = false;
+    // checkBoxTwo.classList.replace("confirmCircle_pwC_on", "confirmCircle_pwC");
   }
+  // else {
+  //   checkBoxOne.classList.replace("confirmCircle_pw", "confirmCircle_pw_on");
+  //   checkBoxTwo.classList.replace("confirmCircle_pwC", "confirmCircle_pwC_on");
+  // }
 
   // 이름 유효성 검사
   if (!joinName.value) {
@@ -174,7 +187,6 @@ function validateForm() {
     numError.style.color = "#eb5757";
     isValid = false;
   }
-
   // 메세지를 출력합니다.
   if (!joinId.checkValidity()) {
     idError.textContent = joinId.validationMessage;
@@ -182,9 +194,11 @@ function validateForm() {
   if (!joinPw.checkValidity()) {
     pwError.textContent = joinPw.validationMessage;
   }
+
   if (!joinPwConfirm.checkValidity()) {
     pwConfirmError.textContent = joinPwConfirm.validationMessage;
   }
+
   if (!joinName.checkValidity()) {
     nameError.textContent = joinName.validationMessage;
   }
@@ -210,19 +224,106 @@ function validateForm() {
 joinForm.addEventListener("focusout", validateForm);
 checkBox.addEventListener("click", validateForm);
 
+// ------------------------ 휴대폰번호 중복검사 시작------------------------
+
+// joinForm.addEventListener("focusout", async (event) => {
+//   event.preventDefault();
+//   const numError = joinForm.querySelector(".numberMessage");
+//   const firstNum = document.getAnimations("firstPhoneNumber");
+//   const secondNum = joinForm.querySelector("#secondPhoneNumber");
+//   const thirdNum = joinForm.querySelector("#thirdPhoneNumber");
+//   const fullNumber = {
+//     phone_number: `${firstNum.value}${secondNum.value}${thirdNum.value}`,
+//   };
+
+//   const response = await fetch(
+//     "https://estapi.openmarket.weniv.co.kr/accounts/validate-username/",
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(fullNumber),
+//     }
+//   );
+
+//   if (response.ok) {
+//     const data = await response.json();
+
+//     if (!firstNum.value && secondNum.value && thirdNum.value) {
+//       numError.textContent = "중복된 번호입니다..";
+//       numError.style.color = "#EB5757";
+//     } else {
+//       idError.textContent = "알 수 없는 오류가 발생했습니다.";
+//       idError.style.color = "#EB5757";
+//     }
+//   } else {
+//     const errorData = await response.json();
+//   }
+// });
+
+// ------------------------ 휴대폰번호 중복검사 종료------------------------
+
+// 제출하기 이벤트리스너
+// 제출하기 이벤트리스너
 joinResult.addEventListener("click", async (event) => {
   event.preventDefault();
 
   validateForm();
 
   if (!joinResult.disabled) {
+    const fullPhoneNumber = `${
+      document.getElementById("firstPhoneNumber").value
+    }${joinForm.querySelector("#secondPhoneNumber").value}${
+      joinForm.querySelector("#thirdPhoneNumber").value
+    }`;
+
+    // 전화번호 중복 검사
+    try {
+      const phoneResponse = await fetch(
+        "https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: joinForm.querySelector("#id").value,
+            password: joinForm.querySelector("#pw").value,
+            name: joinForm.querySelector("#name").value,
+            phone_number: fullPhoneNumber,
+            user_type: "BUYER",
+          }),
+        }
+      );
+
+      if (phoneResponse.ok) {
+        const phoneData = await phoneResponse.json();
+        if (!phoneData) {
+          console.error(phoneData);
+          const numError = joinForm.querySelector(".numberMessage");
+          numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
+          numError.style.color = "#EB5757";
+          return;
+        }
+      } else {
+        const errorData = await phoneResponse.json();
+        const numError = joinForm.querySelector(".numberMessage");
+        numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
+        numError.style.color = "#EB5757";
+        return;
+      }
+    } catch (error) {
+      console.error("에러:", error);
+      return;
+    }
+
     const data = {
       username: joinForm.querySelector("#id").value,
       password: joinForm.querySelector("#pw").value,
       name: joinForm.querySelector("#name").value,
-      phone_number: `${document.getElementById("firstPhoneNumber").value}${
-        joinForm.querySelector("#secondPhoneNumber").value
-      }${joinForm.querySelector("#thirdPhoneNumber").value}`,
+      phone_number: fullPhoneNumber,
+      user_type: "BUYER",
     };
 
     try {
@@ -239,18 +340,16 @@ joinResult.addEventListener("click", async (event) => {
 
       if (response.ok) {
         const result = await response.json();
+        console.log("회원가입 성공:", result);
+
         window.location.href = "/login.html";
       } else {
         const errorData = await response.json();
-
-        console.log(
-          `${document.getElementById("firstPhoneNumber").value}-${
-            joinForm.querySelector("#secondPhoneNumber").value
-          }-${joinForm.querySelector("#thirdPhoneNumber").value}`
-        );
+        console.error("회원가입 중 오류 발생:", errorData);
       }
     } catch (error) {
       console.error("서버와 통신 중 오류 발생:", error);
+
       window.location.href = "/error.html";
     }
   }
