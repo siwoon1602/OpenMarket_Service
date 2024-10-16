@@ -29,6 +29,7 @@ loginForm.addEventListener("submit", async (event) => {
     loginError.textContent = userId.validationMessage;
     loginError.style.cssText =
       "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+    userId.focus();
     return;
   }
 
@@ -36,6 +37,7 @@ loginForm.addEventListener("submit", async (event) => {
     loginError.textContent = userPw.validationMessage;
     loginError.style.cssText =
       "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+    userPw.focus();
     return;
   }
 
@@ -58,14 +60,14 @@ loginForm.addEventListener("submit", async (event) => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("로그인 성공:", data);
-
         localStorage.setItem("token", data.access);
         window.history.back();
       } else {
         loginError.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
         loginError.style.cssText =
           "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+        userPw.focus();
+        userPw.value = "";
       }
     } catch (error) {
       window.location.href = "/error.html";
@@ -89,7 +91,7 @@ userPw.addEventListener("input", () => {
   if (loginError.textContent === userPw.validationMessage) {
     loginError.textContent = "";
   }
-  userPw.setCustomValidity(""); // 커스텀 메시지 초기화
+  userPw.setCustomValidity("");
 });
 // ------------------------ 로그인 validation 종료 ------------------------
 
