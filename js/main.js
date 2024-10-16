@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="./login.html" target="_self" ><img src="./assets/icon-user.svg" alt="login"  /><span id="userinerface_first">로그인</span></a>
         </li>
       </div>
+       </header>
   <main class="main">
     <h2 class="sr-only">상품 리스트</h2>
           <section class="slide_banner">
@@ -144,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </address>
     </div>
   </footer>
-    </header>`;
+   `;
     })
     .catch((error) => {
       console.error(error);
