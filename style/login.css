@@ -115,3 +115,8 @@ header a {
 .loginerror {
   font-family: "SpoqaHanSansNeo-Regular";
 }
+
+.border_red {
+  border: 2px solid #eb5757;
+  border-bottom: 2px solid;
+}
