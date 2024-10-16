@@ -1,6 +1,4 @@
-/* 레이아웃 */
-
-section {
+.product {
   display: flex;
   padding: 80px 320px;
   gap: 50px;
@@ -10,7 +8,6 @@ section {
   gap: 14px;
 }
 
-/* 레이아웃 종료 */
 .img_area img {
   width: 600px;
   height: 600px;
@@ -100,11 +97,14 @@ section {
 
 .price_area {
   margin-bottom: 22px;
+  display: flex;
+  align-items: baseline;
 }
 .price_area span {
   font-size: 18px;
   font-weight: 700;
   line-height: 22.54px;
+  margin-right: 269px;
 }
 .price_area em {
   font-size: 18px;
@@ -136,7 +136,8 @@ section {
   content: " | ";
   font-size: 18px;
   font-weight: 500;
-  color: #767676;
+  color: #c4c4c4;
+  margin-left: 11px;
 }
 .price::after {
   content: "원";
@@ -161,4 +162,28 @@ section {
   background-color: #767676;
   width: 200px;
   height: 60px;
+}
+
+.product_detail ul {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.54px;
+  display: flex;
+  padding: 0 320px;
+  margin-bottom: 359px;
+}
+.product_detail ul li {
+  border-bottom: 6px solid;
+  width: 320px;
+  height: 60px;
+  text-align: center;
+}
+
+.btn_on {
+  color: var(--maincolor);
+  border-bottom: 6px solid var(--maincolor);
+}
+.btn_off {
+  color: #767676;
+  border-bottom: 6px solid #767676;
 }
