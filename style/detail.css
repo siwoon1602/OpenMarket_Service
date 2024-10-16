@@ -1,0 +1,164 @@
+/* 레이아웃 */
+
+section {
+  display: flex;
+  padding: 80px 320px;
+  gap: 50px;
+}
+.button_area {
+  display: flex;
+  gap: 14px;
+}
+
+/* 레이아웃 종료 */
+.img_area img {
+  width: 600px;
+  height: 600px;
+}
+
+.product_info li:nth-child(1) {
+  font-size: 18px;
+  color: #767676;
+  font-weight: 400;
+  line-height: 22.54px;
+  margin-bottom: 16px;
+}
+.product_info li:nth-child(2) {
+  color: black;
+  font-size: 36px;
+  line-height: 45.07px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.product_info li:nth-child(3) {
+  font-size: 36px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 138px;
+}
+.product_info li:nth-child(3)::after {
+  content: "원";
+  font-size: 18px;
+  line-height: 22.54px;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.shipping_area {
+  color: #767676;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.03px;
+  margin-bottom: 20px;
+}
+.shipping_area {
+  color: #767676;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.03px;
+  margin-bottom: 20px;
+}
+
+.shipping_fee::before {
+  content: " / ";
+}
+
+.count_area {
+  padding: 30px 0;
+  border-top: 2px solid #c4c4c4;
+  border-bottom: 2px solid #c4c4c4;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.count_area .minus,
+.count_area .plus,
+.count_area .ea {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c4c4c4;
+}
+
+.count_area .ea {
+  text-align: center;
+}
+
+.count_area .minus {
+  background-image: url(/assets/icon-minus-line.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 5px 0px 0px 5px;
+}
+.count_area .plus {
+  background-image: url(/assets/icon-plus-line.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.price_area {
+  margin-bottom: 22px;
+}
+.price_area span {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.54px;
+}
+.price_area em {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.54px;
+  color: var(--maincolor);
+}
+.price_area .price {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45.07px;
+  color: var(--maincolor);
+}
+
+.count::before {
+  content: "총 수량 ";
+  font-size: 18px;
+  font-weight: 500;
+  color: #767676;
+}
+.count::after {
+  content: "개 ";
+  font-size: 18px;
+  font-weight: 500;
+  color: #767676;
+}
+
+.price::before {
+  content: " | ";
+  font-size: 18px;
+  font-weight: 500;
+  color: #767676;
+}
+.price::after {
+  content: "원";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.54px;
+}
+
+.now_sell,
+.in_cart {
+  color: white;
+  line-height: 22px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.now_sell {
+  background-color: var(--maincolor);
+  width: 416px;
+  height: 60px;
+}
+.in_cart {
+  background-color: #767676;
+  width: 200px;
+  height: 60px;
+}
