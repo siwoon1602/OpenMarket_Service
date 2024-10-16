@@ -292,16 +292,13 @@ joinResult.addEventListener("click", async (event) => {
             password: joinForm.querySelector("#pw").value,
             name: joinForm.querySelector("#name").value,
             phone_number: fullPhoneNumber,
-            user_type: "BUYER",
           }),
         }
       );
 
       if (phoneResponse.ok) {
         const phoneData = await phoneResponse.json();
-        if (!phoneData) {
-          console.error(phoneData);
-          const numError = joinForm.querySelector(".numberMessage");
+        if (phoneData.phone_number === fullPhoneNumber) {
           numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
           numError.style.color = "#EB5757";
           return;
@@ -309,8 +306,9 @@ joinResult.addEventListener("click", async (event) => {
       } else {
         const errorData = await phoneResponse.json();
         const numError = joinForm.querySelector(".numberMessage");
-        numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
+        numError.textContent = "오류가발생했습니다.";
         numError.style.color = "#EB5757";
+        console.log(errorData);
         return;
       }
     } catch (error) {
