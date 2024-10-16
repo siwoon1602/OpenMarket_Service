@@ -1,5 +1,67 @@
 /* 회원가입 페이지 스타일 시작 */
+header a {
+  display: flex;
+  background-image: url(/assets/Logo-hodu.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 238px;
+  height: 74px;
+  margin: 106px auto 130px;
+}
+.tablist {
+  display: table;
+  margin: auto;
+  position: relative;
+  width: 550px;
+}
+.tablist li {
+  display: table-cell;
+  border: 1px solid #c4c4c4;
+  padding: 20px 77px 38px;
+  border-radius: 10px 10px 0 0;
+  font-family: "SpoqaHanSansNeo-Regular";
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 18px;
+}
+.buyer_login {
+  position: absolute;
+  left: 0px;
+  top: -60px;
+}
+.seller_login {
+  position: absolute;
+  right: 0px;
+  top: -60px;
+}
 
+.btn_on {
+  background-color: white;
+  z-index: 5;
+}
+
+.btn_off {
+  background-color: #f2f2f2;
+  z-index: 0;
+}
+.white_box {
+  width: 273px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  left: 1px;
+  top: -3px;
+  z-index: 15;
+}
+.white_box_R {
+  width: 272.5px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  right: 1px;
+  top: -3px;
+  z-index: 15;
+}
 .numInput {
   width: 152px;
 }
@@ -104,6 +166,7 @@ label {
   right: 16px;
   top: 40px;
 }
+
 .confirmCircle_pwC {
   background-image: url(/assets/icon-check-off.svg);
   width: 28px;
@@ -113,7 +176,24 @@ label {
   right: 16px;
   top: 40px;
 }
-
+.confirmCircle_pwC_on {
+  background-image: url(/assets/icon-check-onsvg);
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  position: absolute;
+  right: 16px;
+  top: 40px;
+}
+.confirmCircle_pw_on {
+  background-image: url(/assets/icon-check-on.svg);
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  position: absolute;
+  right: 16px;
+  top: 40px;
+}
 .join_box .join_pw {
   margin-bottom: 12px;
   position: relative;
