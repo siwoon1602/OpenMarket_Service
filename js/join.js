@@ -239,7 +239,7 @@ joinResult.addEventListener("click", async (event) => {
 
       if (response.ok) {
         const result = await response.json();
-        window.location.href = "/index.html";
+        window.location.href = "/login.html";
       } else {
         const errorData = await response.json();
 
@@ -248,11 +248,10 @@ joinResult.addEventListener("click", async (event) => {
             joinForm.querySelector("#secondPhoneNumber").value
           }-${joinForm.querySelector("#thirdPhoneNumber").value}`
         );
-        // 에러 메시지 출력
       }
     } catch (error) {
       console.error("서버와 통신 중 오류 발생:", error);
-      // 에러 처리
+      window.location.href = "/error.html";
     }
   }
 });

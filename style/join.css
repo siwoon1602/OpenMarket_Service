@@ -6,7 +6,7 @@
 
 .join_tablist {
   display: flex;
-  justify-content: space-between; /* 요소들을 양쪽 끝에 배치 */
+  justify-content: space-between;
   margin: auto;
   width: 550px;
   position: relative;
@@ -189,6 +189,7 @@ select {
   width: 122px;
   height: 54px;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 .btn_login {
