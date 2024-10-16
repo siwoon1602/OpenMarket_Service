@@ -296,16 +296,16 @@ joinResult.addEventListener("click", async (event) => {
         }
       );
 
-      if (phoneResponse.ok) {
-        const phoneData = await phoneResponse.json();
-        if (phoneData.phone_number === fullPhoneNumber) {
+      if (!phoneResponse.ok) {
+        const errorData = await phoneResponse.json();
+        const numError = joinForm.querySelector(".numberMessage");
+        if (errorData.phone_number && errorData.phone_number != null) {
           numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
           numError.style.color = "#EB5757";
           return;
         }
       } else {
         const errorData = await phoneResponse.json();
-        const numError = joinForm.querySelector(".numberMessage");
         numError.textContent = "오류가발생했습니다.";
         numError.style.color = "#EB5757";
         console.log(errorData);
