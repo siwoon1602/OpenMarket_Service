@@ -17,7 +17,7 @@ header a {
 .tablist li {
   display: table-cell;
   border: 1px solid #c4c4c4;
-  padding: 20px 77px 38px;
+  padding: 20px 77px 38px;  
   border-radius: 10px 10px 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
@@ -307,6 +307,44 @@ select {
   max-width: 550px;
   position: relative;
 }
+
+.agreeCheck {
+  display: flex;
+  align-content: baseline;
+}
+.agreeArea #check_agree {
+  display: none;
+}
+
+.agreeArea #check_agree + label {
+  cursor: pointer;
+}
+
+.agreeArea #check_agree + label > span {
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+.agreeArea #check_agree + label:before {
+  content: "";
+  background-image: url(/assets/check-box.svg);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.agreeArea #check_agree:checked + label::before {
+  content: "";
+  background-image: url(/assets/check-fill-box.svg);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 .agreeCheck .strong {
   font-weight: 700;
   text-decoration: underline;
@@ -322,11 +360,6 @@ select {
   color: white;
   padding: 19px 207px;
   border-radius: 10px;
-}
-
-.agreeCheck {
-  display: flex;
-  align-items: self-end;
 }
 
 .agreeCheck p {
