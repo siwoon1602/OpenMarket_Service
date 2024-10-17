@@ -15,7 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 // ----------------------------------------------------------------------------
+const userMenuTwo = document
+  .querySelector("#userMenu2")
+  .addEventListener("click", () => {
+    const headerModal = document.querySelector(".header_modal");
+    const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
+    const userMenuOneIcon = document.querySelector("#userMenu1 a img");
+    const userMenuTwoText = document.querySelector("#userinterface_second");
+    const userMenuOneText = document.querySelector("#userinterface_first");
 
+    const userBasicColor = "/assets/icon-user-2.svg";
+    const userChangeColor = "/assets/icon-user.svg";
+    const cartBasicColor = "/assets/icon-shopping-cart-2.svg";
+    const cartChangeColor = "/assets/icon-shopping-cart.svg";
+
+    headerModal.classList.toggle("hide");
+    userMenuTwoText.classList.toggle("maincolor");
+    userMenuOneText.classList.toggle("maincolor");
+
+    if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+      userMenuTwoIcon.setAttribute("src", userChangeColor);
+      userMenuOneIcon.setAttribute("src", cartChangeColor);
+    } else {
+      userMenuTwoIcon.setAttribute("src", userBasicColor);
+      userMenuOneIcon.setAttribute("src", cartBasicColor);
+    }
+  });
 // ------------------------ 상품 리스트 불러오기 ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
