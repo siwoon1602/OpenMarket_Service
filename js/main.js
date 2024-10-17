@@ -11,6 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+window.addEventListener("load", () => {
+  const token = localStorage.getItem("token");
+  const userMenuTwo = document.querySelector("#userinterface_first");
+  console.log(token);
+  console.log(userMenuTwo);
+  if (token) {
+    console.log("토큰있음22");
+    userMenuTwo.textContent = "마이페이지";
+  }
+});
+
 // ----------------------------------------------------------------------------
 
 const userMenuTwo = document
