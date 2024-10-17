@@ -1,6 +1,6 @@
 // ------------------------ 토큰 보유 시 화면 변경 ----------------------------
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
   const userMenuTwo = document.querySelector("#userMenu2");
 
