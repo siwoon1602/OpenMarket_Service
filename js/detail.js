@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const yesBtn = document.querySelector(".yes_btn");
   yesBtn.addEventListener("click", () => {
     modal.close();
-    window.location.href = "./login.html";
+    window.location.href = "../login.index";
   });
 
   //----------------------------------------------------

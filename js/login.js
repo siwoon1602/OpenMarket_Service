@@ -70,7 +70,7 @@ loginForm.addEventListener("submit", async (event) => {
         userPw.value = "";
       }
     } catch (error) {
-      window.location.href = "./error.html";
+      window.location.href = "../error.html";
     }
   }
 });
@@ -122,5 +122,5 @@ sellerLogin.addEventListener("click", () => {
 const joinBtn = document.querySelector(".joinPage");
 
 joinBtn.addEventListener("click", () => {
-  window.location.href = "/join.html";
+  window.location.href = "../join.html";
 });
