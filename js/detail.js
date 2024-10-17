@@ -128,6 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.showModal();
           }
         });
+        const minusBtn = document.querySelector(".minus");
+        const plusBtn = document.querySelector(".plus");
+        const eaInput = document.querySelector(".ea");
+        const eaSum = document.querySelector(".count");
+        const price = document.querySelector(".price");
+
+        plusBtn.addEventListener("click", () => {
+          eaInput.value = parseInt(eaInput.value) + 1;
+          eaSum.textContent = eaInput.value;
+          price.textContent = parseInt(eaInput.value) * data.price;
+        });
+        minusBtn.addEventListener("click", () => {
+          if (eaInput.value > 1) eaInput.value = parseInt(eaInput.value) - 1;
+          eaSum.textContent = eaInput.value;
+          price.textContent = parseInt(eaInput.value) * data.price;
+        });
       } else {
         productArea.innerHTML = `상품정보를 모르겠습니다!`;
       }
