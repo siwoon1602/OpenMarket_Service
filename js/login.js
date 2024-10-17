@@ -61,9 +61,6 @@ loginForm.addEventListener("submit", async (event) => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.access);
-
-        sessionStorage.setItem("needsUpdate", "true");
-
         window.history.back();
       } else {
         loginError.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
