@@ -37,7 +37,7 @@ const userMenuTwo = document
     userMenuTwoText.classList.toggle("maincolor");
     userMenuOneText.classList.toggle("maincolor");
 
-    if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+    if (token && userMenuTwoIcon.getAttribute("src") === userBasicColor) {
       userMenuTwoIcon.setAttribute("src", userChangeColor);
       userMenuOneIcon.setAttribute("src", cartChangeColor);
     } else {
