@@ -70,7 +70,7 @@ loginForm.addEventListener("submit", async (event) => {
         userPw.value = "";
       }
     } catch (error) {
-      window.location.href = "/error.html";
+      window.location.href = "./error.html";
     }
   }
 });
