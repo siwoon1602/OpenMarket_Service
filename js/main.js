@@ -34,15 +34,16 @@ const userMenuTwo = document
       headerModal.classList.toggle("hide");
     }
 
-    userMenuTwoText.classList.toggle("maincolor");
-    userMenuOneText.classList.toggle("maincolor");
-
     if (token && userMenuTwoIcon.getAttribute("src") === userBasicColor) {
       userMenuTwoIcon.setAttribute("src", userChangeColor);
       userMenuOneIcon.setAttribute("src", cartChangeColor);
+      userMenuTwoText.classList.add("maincolor");
+      userMenuOneText.classList.add("maincolor");
     } else {
       userMenuTwoIcon.setAttribute("src", userBasicColor);
       userMenuOneIcon.setAttribute("src", cartBasicColor);
+      userMenuTwoText.classList.remove("maincolor");
+      userMenuOneText.classList.remove("maincolor");
     }
   });
 // ------------------------ 상품 리스트 불러오기 ----------------------------
