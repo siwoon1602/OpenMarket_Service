@@ -66,3 +66,71 @@ tapFour.addEventListener("click", () => {
   tapThree.classList.replace("btn_on", "btn_off");
 });
 // ---------------------------- 상세페이지 TAP 종료---------------------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+
+  if (!productId) {
+    document.querySelector(".product_area").innerHTML =
+      "상품 ID가 유효하지 않습니다.";
+    return;
+  }
+
+  fetch(`https://estapi.openmarket.weniv.co.kr/products/${productId}/`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(typeof productId);
+      console.log(typeof data.id);
+      const productArea = document.querySelector(".product");
+      if (data.id == productId) {
+        productArea.innerHTML = `    <section class="product">
+      <h2 class="sr-only">상품 상세정보</h2>
+      <div class="img_area">
+        <img src="${data.image}" alt="" class="thumbnail">
+      </div>
+      <div class="info_area">
+        <ul class="product_info">
+          <li>${data.seller.store_name}</li>
+          <li>${data.name}</li>
+          <li>${data.price}</li>
+        </ul>
+        <ul>
+          <li class="shipping_area">
+            <span class="shipping_method">${data.shipping_method}</span>
+            <span class="shipping_fee">${data.shipping_fee}원</span>
+          </li>
+          <li class="count_area">
+            <button class="minus"></button>
+            <input type="text" value="1" class="ea">
+            <button class="plus"></button>
+          </li>
+          <li class="price_area">
+            <span>총 상품 금액</span>
+            <em class="count">1</em>
+            <strong class="price">${data.price}</strong>
+          </li>
+          <li class="button_area">
+            <button type="button" class="now_sell">바로 구매</button>
+            <button type="button" class="in_cart">장바구니</button>
+
+          </li>
+          </ul>
+      </div>
+    </section>`;
+      } else {
+        document.querySelector(
+          ".product"
+        ).innerHTML = `상품정보를 모르겠습니다!`;
+      }
+
+      if (data.shipping_method == "PARCEL") {
+        data.shipping_method = "무료배송";
+      }
+    })
+    .catch((error) => {
+      console.error("에러발생!!!!!!", error);
+      document.querySelector(".product").innerHTML =
+        "상품 정보를 찾을 수 없습니다.";
+    });
+});

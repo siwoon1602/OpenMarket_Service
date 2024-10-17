@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index < 6) {
           productHTML += `
             <li class="product_list">
-            <a href="/details.html">
+            <a href="details.html?id=${product.id}">
               <article>
                 <img src="${product.image}" alt="product_${index}" class="item_image}">
                 <ul class="product_info">
