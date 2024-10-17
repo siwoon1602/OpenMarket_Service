@@ -1,23 +1,21 @@
 // ------------------------ 토큰 보유 시 화면 변경 ----------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-  const token = localStorage.getItem("token");
-  const userMenuTwo = document.querySelector("#userinterface_first");
-  console.log(token);
-  console.log(userMenuTwo);
-  if (token) {
-    console.log("토큰있음");
-    userMenuTwo.textContent = "마이페이지";
-  }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const token = localStorage.getItem("token");
+//   const userMenuTwo = document.querySelector("#userinterface_first");
+//   console.log(token);
+//   console.log(userMenuTwo);
+//   if (token) {
+//     console.log("토큰있음");
+//     userMenuTwo.textContent = "마이페이지";
+//   }
+// });
 
 window.addEventListener("load", () => {
   const token = localStorage.getItem("token");
   const userMenuTwo = document.querySelector("#userinterface_first");
-  console.log(token);
-  console.log(userMenuTwo);
+
   if (token) {
-    console.log("토큰있음22");
     userMenuTwo.textContent = "마이페이지";
   }
 });
@@ -40,19 +38,15 @@ const userMenuTwo = document
     const cartChangeColor = "./assets/icon-shopping-cart.svg";
 
     if (token) {
-      headerModal.classList.toggle("hide");
     }
 
-    if (token && userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+    if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
       userMenuTwoIcon.setAttribute("src", userChangeColor);
       userMenuOneIcon.setAttribute("src", cartChangeColor);
       userMenuTwoText.classList.add("maincolor");
-      userMenuOneText.classList.add("maincolor");
     } else {
       userMenuTwoIcon.setAttribute("src", userBasicColor);
       userMenuOneIcon.setAttribute("src", cartBasicColor);
-      userMenuTwoText.classList.remove("maincolor");
-      userMenuOneText.classList.remove("maincolor");
     }
   });
 
