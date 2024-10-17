@@ -1,7 +1,7 @@
 /* 회원가입 페이지 스타일 시작 */
 header a {
   display: flex;
-  background-image: url(./assets/Logo-hodu.png);
+  background-image: url(/assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 238px;
@@ -131,7 +131,7 @@ label {
   height: 54px;
 }
 .confirmCircle_pw {
-  background-image: url(./assets/icon-check-off.svg);
+  background-image: url(/assets/icon-check-off.svg);
   width: 28px;
   height: 28px;
   background-size: cover;
@@ -141,7 +141,7 @@ label {
 }
 
 .confirmCircle_pwC {
-  background-image: url(./assets/icon-check-off.svg);
+  background-image: url(/assets/icon-check-off.svg);
   width: 28px;
   height: 28px;
   background-size: cover;
@@ -150,7 +150,7 @@ label {
   top: 40px;
 }
 .confirmCircle_pwC_on {
-  background-image: url(./assets/icon-check-on.svg);
+  background-image: url(/assets/icon-check-on.svg);
   width: 28px;
   height: 28px;
   background-size: cover;
@@ -159,7 +159,7 @@ label {
   top: 40px;
 }
 .confirmCircle_pw_on {
-  background-image: url(./assets/icon-check-on.svg);
+  background-image: url(/assets/icon-check-on.svg);
   width: 28px;
   height: 28px;
   background-size: cover;
@@ -306,7 +306,7 @@ select {
 
 .agreeArea #check_agree + label:before {
   content: "";
-  background-image: url(./assets/check-box.svg);
+  background-image: url(/assets/check-box.svg);
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -316,7 +316,7 @@ select {
 
 .agreeArea #check_agree:checked + label::before {
   content: "";
-  background-image: url(./assets/check-fill-box.svg);
+  background-image: url(/assets/check-fill-box.svg);
   display: inline-block;
   width: 16px;
   height: 16px;
