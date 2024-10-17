@@ -23,13 +23,20 @@
        </div>
  
       <ul class="user_menu">
-        <li>
+        <li id="userMenu1">
           <a href=""
-            ><img src="./assets/icon-shopping-cart.svg" alt="" /><span>장바구니</span></a
+            ><img src="./assets/icon-shopping-cart.svg" alt="" id="userMenu1"/><span id="userinterface_second">장바구니</span></a
           >
         </li>
-        <li>
-          <a href="./login.html" target="_self" ><img src="./assets/icon-user.svg" alt="login"  /><span id="userinerface_first">로그인</span></a>
+        <li id="userMenu2">
+          <a href="./login.html" target="_self" ><img src="./assets/icon-user.svg" alt="" /><span id="userinterface_first">로그인</span></a>
+          <div class="header_modal hide">
+            <div class="triangle"></div>
+            <div class="box">
+              <button>마이페이지</button>
+              <button id="logout">로그아웃</button>
+            </div>
+          </div>
         </li>
       </div>
     </header>
@@ -74,5 +81,6 @@
   </address>
     </div>
   </footer>
+  
   </body>
 </html>
