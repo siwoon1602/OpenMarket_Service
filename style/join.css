@@ -17,7 +17,7 @@ header a {
 .tablist li {
   display: table-cell;
   border: 1px solid #c4c4c4;
-  padding: 20px 77px 38px;  
+  padding: 20px 77px 38px;
   border-radius: 10px 10px 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
@@ -310,8 +310,14 @@ select {
 
 .agreeCheck {
   display: flex;
-  align-content: baseline;
+  align-items: center;
+  line-height: 20.03px;
 }
+
+.agreeCheck label {
+  line-height: 20.03px;
+}
+
 .agreeArea #check_agree {
   display: none;
 }
@@ -348,11 +354,9 @@ select {
 .agreeCheck .strong {
   font-weight: 700;
   text-decoration: underline;
+  line-height: 20.03px;
 }
 
-.agreeArea input {
-  margin-right: 10px;
-}
 .joinBtn {
   margin-top: 34px;
   background-color: #c4c4c4;
@@ -360,8 +364,4 @@ select {
   color: white;
   padding: 19px 207px;
   border-radius: 10px;
-}
-
-.agreeCheck p {
-  width: 454px;
 }
