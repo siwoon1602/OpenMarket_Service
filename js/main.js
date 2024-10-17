@@ -2,21 +2,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
-  const userMenuTwo = document.querySelector("#userinterface_first");
-  console.log(token);
-  console.log(userMenuTwo);
-  if (token) {
-    console.log("토큰있음");
-    userMenuTwo.textContent = "마이페이지";
-  }
-});
-
-window.addEventListener("load", () => {
-  const token = localStorage.getItem("token");
-  const userMenuTwo = document.querySelector("#userinterface_first");
+  const userMenuTwo = document.querySelector("#userMenu2");
 
   if (token) {
-    userMenuTwo.textContent = "마이페이지";
+    userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
+          <span id="userinterface_first">마이페이지</span></a>
+             <div class="header_modal hide">
+      <div class="triangle"></div>
+      <div class="box">
+        <button>마이페이지</button>
+        <button id="logout">로그아웃</button>
+      </div>
+    </div>`;
   }
 });
 
@@ -32,18 +29,20 @@ const userMenuTwo = document
     const userMenuOneText = document.querySelector("#userinterface_first");
     const token = localStorage.getItem("token");
 
-    const userBasicColor = "./assets/icon-user-2.svg";
-    const userChangeColor = "./assets/icon-user.svg";
-    const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
-    const cartChangeColor = "./assets/icon-shopping-cart.svg";
+    const userBasicColor = "./assets/icon-user.svg";
+    const userChangeColor = "./assets/icon-user-2.svg";
+    const cartBasicColor = "./assets/icon-shopping-cart.svg";
+    const cartChangeColor = "./assets/icon-shopping-cart-2.svg";
 
     if (token) {
+      headerModal.classList.toggle("hide");
+      userMenuTwoText.classList.toggle("maincolor");
+      userMenuOneText.classList.toggle("maincolor");
     }
 
-    if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+    if (token && userMenuTwoIcon.getAttribute("src") === userBasicColor) {
       userMenuTwoIcon.setAttribute("src", userChangeColor);
       userMenuOneIcon.setAttribute("src", cartChangeColor);
-      userMenuTwoText.classList.add("maincolor");
     } else {
       userMenuTwoIcon.setAttribute("src", userBasicColor);
       userMenuOneIcon.setAttribute("src", cartBasicColor);

@@ -1,5 +1,5 @@
 // ---------------------------- 모달창 구현---------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
   const modal = document.querySelector(".modal");
 
   const productArea = document.querySelector(".product");
