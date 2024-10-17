@@ -1,9 +1,7 @@
 // ---------------------------- 모달창 구현---------------------------------------------
-// DOMContentLoaded를 사용하여 모든 요소가 로드된 후 실행
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.querySelector(".modal");
 
-  // 제품 정보를 표시할 제품 영역
   const productArea = document.querySelector(".product");
 
   // 모달창 바깥을 클릭하면 모달창이 닫히게 함
@@ -29,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.close();
     window.location.href = "/login.html";
   });
+
+  //----------------------------------------------------
 
   // ---------------------------- 상세페이지 기능 TAP---------------------------------------------
 
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="shipping_area">
                 <span class="shipping_method">${shippingMethod}</span>
                 <span class="shipping_fee">${data.shipping_fee}원</span>
+                <span class="shipping_fee">현재 재고수량 : ${data.stock}</span>
               </li>
               <li class="count_area">
                 <button class="minus"></button>
@@ -166,6 +167,55 @@ document.addEventListener("DOMContentLoaded", function () {
             plusBtn.removeAttribute("disabled");
           }
         });
+        //--------------------------------------------------------토큰보유시 화면변경
+        const token = localStorage.getItem("token");
+        const userMenuTwo = document.querySelector("#userMenu2");
+        if (token) {
+          userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
+          <span id="userinterface_first">마이페이지</span></a>
+             <div class="header_modal hide">
+      <div class="triangle"></div>
+      <div class="box">
+        <button>마이페이지</button>
+        <button id="logout">로그아웃</button>
+      </div>
+    </div>`;
+        }
+
+        // ------------------------------------------------
+
+        //------------------------- 마이페이지 모달-------------------
+        userMenuTwo.addEventListener("click", () => {
+          const headerModal = document.querySelector(".header_modal");
+          const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
+          const userMenuOneIcon = document.querySelector("#userMenu1 a img");
+          const userMenuTwoText = document.querySelector(
+            "#userinterface_second"
+          );
+          const userMenuOneText = document.querySelector(
+            "#userinterface_first"
+          );
+
+          const userBasicColor = "/assets/icon-user-2.svg";
+          const userChangeColor = "/assets/icon-user.svg";
+          const cartBasicColor = "/assets/icon-shopping-cart-2.svg";
+          const cartChangeColor = "/assets/icon-shopping-cart.svg";
+
+          headerModal.classList.toggle("hide");
+          userMenuTwoText.classList.toggle("maincolor");
+          userMenuOneText.classList.toggle("maincolor");
+
+          if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+            userMenuTwoIcon.setAttribute("src", userChangeColor);
+            userMenuOneIcon.setAttribute("src", cartChangeColor);
+          } else {
+            userMenuTwoIcon.setAttribute("src", userBasicColor);
+            userMenuOneIcon.setAttribute("src", cartBasicColor);
+          }
+        });
+        //---------------------------------------------------------
+        document.getElementById("logout").addEventListener("click", () => {});
+        //------------------------로그아웃 버튼------------------
       } else {
         productArea.innerHTML = `상품정보를 모르겠습니다!`;
       }
