@@ -168,22 +168,19 @@ window.addEventListener("load", function () {
           }
         });
         //--------------------------------------------------------토큰보유시 화면변경
-        window.addEventListener("pageshow", (e) => {
-          const token = localStorage.getItem("token");
-          const userMenuTwo = document.querySelector("#userMenu2");
-
-          if (token) {
-            userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
-                  <span id="userinterface_first">마이페이지</span></a>
-                     <div class="header_modal hide">
-              <div class="triangle"></div>
-              <div class="box">
-                <button>마이페이지</button>
-                <button id="logout">로그아웃</button>
-              </div>
-            </div>`;
-          }
-        });
+        const token = localStorage.getItem("token");
+        const userMenuTwo = document.querySelector("#userMenu2");
+        if (token) {
+          userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
+          <span id="userinterface_first">마이페이지</span></a>
+             <div class="header_modal hide">
+      <div class="triangle"></div>
+      <div class="box">
+        <button>마이페이지</button>
+        <button id="logout">로그아웃</button>
+      </div>
+    </div>`;
+        }
 
         // ------------------------------------------------
 
