@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "/login.html";
   });
 
-  // ---------------------------- 상세페이지 TAP---------------------------------------------
+  // ---------------------------- 상세페이지 기능 TAP---------------------------------------------
 
   const tapOne = document.querySelector(".btn_tap");
   const tapTwo = document.querySelector(".review_tap");
@@ -65,8 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     tapThree.classList.replace("btn_on", "btn_off");
   });
 
-  // ---------------------------- 상세페이지 TAP 종료---------------------------------------------
+  // ---------------------------- 상세페이지 TAP 기능 종료---------------------------------------------
 
+  //--------------------------- 상품 상세페이지 호출-------------------------------------
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
 
@@ -121,6 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </ul>
           </div>
         `;
+
+        //--------------------------- 상품 상세페이지 호출 종료-------------------------------------
+
+        //--------------------------- 사용자 인터페이스 조작 기능 시작-------------------------------------
         const nowSellButton = productArea.querySelector(".now_sell");
         nowSellButton.addEventListener("click", () => {
           const token = localStorage.getItem("token");
@@ -133,22 +138,41 @@ document.addEventListener("DOMContentLoaded", function () {
         const eaInput = document.querySelector(".ea");
         const eaSum = document.querySelector(".count");
         const price = document.querySelector(".price");
+        const countArea = document.querySelector(".count_area");
 
         plusBtn.addEventListener("click", () => {
           eaInput.value = parseInt(eaInput.value) + 1;
           eaSum.textContent = eaInput.value;
           price.textContent = parseInt(eaInput.value) * data.price;
+
+          if (parseInt(eaInput.value) >= data.stock) {
+            plusBtn.setAttribute("disabled", true);
+          }
         });
         minusBtn.addEventListener("click", () => {
           if (eaInput.value > 1) eaInput.value = parseInt(eaInput.value) - 1;
           eaSum.textContent = eaInput.value;
           price.textContent = parseInt(eaInput.value) * data.price;
+
+          if (parseInt(eaInput.value) < data.stock) {
+            plusBtn.removeAttribute("disabled");
+          }
+        });
+
+        countArea.addEventListener("mouseover", () => {
+          if (parseInt(eaInput.value) >= data.stock) {
+            plusBtn.setAttribute("disabled", true);
+          } else if (parseInt(eaInput.value) < data.stock) {
+            plusBtn.removeAttribute("disabled");
+          }
         });
       } else {
         productArea.innerHTML = `상품정보를 모르겠습니다!`;
       }
     })
+
     .catch((error) => {
       productArea.innerHTML = "에러!!!";
     });
 });
+//--------------------------- 사용자 인터페이스 조작 기능 시작-------------------------------------
