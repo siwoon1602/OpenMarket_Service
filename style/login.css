@@ -1,6 +1,6 @@
 header a {
   display: flex;
-  background-image: url(/assets/Logo-hodu.png);
+  background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 238px;

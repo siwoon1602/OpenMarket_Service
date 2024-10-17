@@ -63,7 +63,7 @@
 }
 
 .search-icon {
-  background-image: url(/assets/search.png);
+  background-image: url(../assets/search.png);
   width: 28px;
   height: 28px;
   position: absolute;
@@ -73,7 +73,7 @@
 
 .header_content .logo {
   display: flex;
-  background-image: url(/assets/Logo-hodu.png);
+  background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 124px;
@@ -187,19 +187,19 @@ footer .footer_top {
   gap: 14px;
 }
 .footer_top .insta {
-  background: url(/assets/icon-insta.svg);
+  background: url(../assets/icon-insta.svg);
   width: 32px;
   height: 32px;
   display: block;
 }
 .footer_top .facebook {
-  background: url(/assets/icon-fb.svg);
+  background: url(../assets/icon-fb.svg);
   width: 32px;
   height: 32px;
   display: block;
 }
 .footer_top .youtube {
-  background: url(/assets/icon-yt.svg);
+  background: url(../assets/icon-yt.svg);
   width: 32px;
   height: 32px;
   display: block;
