@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let shippingMethod = data.shipping_method;
       if (shippingMethod === "PARCEL") {
         shippingMethod = "택배배송";
+      } else {
+        shippingMethod = "직접배송";
       }
       if (data.id == productId) {
         productArea.innerHTML = ` 
