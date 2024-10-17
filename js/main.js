@@ -29,7 +29,10 @@ const userMenuTwo = document
     const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
     const cartChangeColor = "./assets/icon-shopping-cart.svg";
 
-    headerModal.classList.toggle("hide");
+    if (token) {
+      headerModal.classList.toggle("hide");
+    }
+
     userMenuTwoText.classList.toggle("maincolor");
     userMenuOneText.classList.toggle("maincolor");
 
