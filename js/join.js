@@ -3,19 +3,21 @@
 const buyerJoin = document.querySelector(".buyer_join");
 const sellerJoin = document.querySelector(".seller_join");
 const whiteBox = document.querySelector(".join_white_box");
+const whiteBoxR = document.querySelector(".join_white_box_R");
 
 buyerJoin.addEventListener("click", () => {
   buyerJoin.classList.add("btn_on");
   buyerJoin.classList.remove("btn_off");
   sellerJoin.classList.add("btn_off");
-  whiteBox.style.cssText =
-    "  width: 274px; height: 7px; background-color: white; position: absolute; left: 1px; z-index: 15;";
+  whiteBoxR.classList.add("hide");
+  whiteBox.classList.remove("hide");
 });
 sellerJoin.addEventListener("click", () => {
   sellerJoin.classList.add("btn_on");
   sellerJoin.classList.remove("btn_off");
-
   buyerJoin.classList.add("btn_off");
+  whiteBox.classList.add("hide");
+  whiteBoxR.classList.remove("hide");
 });
 
 // ------------------------ 회원가입 TAP 종료------------------------
