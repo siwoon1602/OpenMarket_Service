@@ -99,12 +99,13 @@
   margin-bottom: 22px;
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
+
 .price_area span {
   font-size: 18px;
   font-weight: 700;
   line-height: 22.54px;
-  margin-right: 269px;
 }
 .price_area em {
   font-size: 18px;
@@ -157,6 +158,9 @@
   background-color: var(--maincolor);
   width: 416px;
   height: 60px;
+}
+.now_sell:active {
+  background-color: green;
 }
 .in_cart {
   background-color: #767676;
