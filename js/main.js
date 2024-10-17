@@ -1,17 +1,12 @@
 // ------------------------ 토큰 보유 시 화면 변경 ----------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
-  const userMenuTwo = document.querySelector("#userMenu2");
+  const userMenuTwo = document.querySelector("#userinterface_first");
+  console.log(token);
+  console.log(userMenuTwo);
   if (token) {
-    userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
-    <span id="userinterface_first">마이페이지</span></a>
-       <div class="header_modal hide">
-<div class="triangle"></div>
-<div class="box">
-  <button>마이페이지</button>
-  <button id="logout">로그아웃</button>
-</div>
-</div>`;
+    console.log("토큰있음");
+    userMenuTwo.textContent = "마이페이지";
   }
 });
 // ----------------------------------------------------------------------------
