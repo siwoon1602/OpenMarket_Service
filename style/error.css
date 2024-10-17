@@ -8,7 +8,7 @@
 }
 
 .errorIcon {
-  background-image: url(/assets/icon-404.png);
+  background-image: url(./assets/icon-404.png);
   width: 276px;
   height: 236px;
   background-repeat: no-repeat;

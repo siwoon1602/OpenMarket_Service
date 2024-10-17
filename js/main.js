@@ -24,10 +24,10 @@ const userMenuTwo = document
     const userMenuTwoText = document.querySelector("#userinterface_second");
     const userMenuOneText = document.querySelector("#userinterface_first");
 
-    const userBasicColor = "/assets/icon-user-2.svg";
-    const userChangeColor = "/assets/icon-user.svg";
-    const cartBasicColor = "/assets/icon-shopping-cart-2.svg";
-    const cartChangeColor = "/assets/icon-shopping-cart.svg";
+    const userBasicColor = "./assets/icon-user-2.svg";
+    const userChangeColor = "./assets/icon-user.svg";
+    const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
+    const cartChangeColor = "./assets/icon-shopping-cart.svg";
 
     headerModal.classList.toggle("hide");
     userMenuTwoText.classList.toggle("maincolor");

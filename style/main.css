@@ -8,7 +8,7 @@
 }
 
 .slide_left {
-  background-image: url(/assets/icon-swiper-1.svg);
+  background-image: url(./assets/icon-swiper-1.svg);
   width: 60px;
   height: 124px;
   background-size: contain;
@@ -19,7 +19,7 @@
   top: 188px;
 }
 .slide_right {
-  background-image: url(/assets/icon-swiper-2.svg);
+  background-image: url(./assets/icon-swiper-2.svg);
   width: 60px;
   height: 124px;
   background-size: contain;

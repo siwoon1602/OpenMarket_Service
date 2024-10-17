@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const yesBtn = document.querySelector(".yes_btn");
   yesBtn.addEventListener("click", () => {
     modal.close();
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
   });
 
   //----------------------------------------------------
@@ -196,10 +196,10 @@ document.addEventListener("DOMContentLoaded", function () {
             "#userinterface_first"
           );
 
-          const userBasicColor = "/assets/icon-user-2.svg";
-          const userChangeColor = "/assets/icon-user.svg";
-          const cartBasicColor = "/assets/icon-shopping-cart-2.svg";
-          const cartChangeColor = "/assets/icon-shopping-cart.svg";
+          const userBasicColor = "./assets/icon-user-2.svg";
+          const userChangeColor = "./assets/icon-user.svg";
+          const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
+          const cartChangeColor = "./assets/icon-shopping-cart.svg";
 
           headerModal.classList.toggle("hide");
           userMenuTwoText.classList.toggle("maincolor");
