@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
         //---------------------------------------------------------
-        document.getElementById("logout").addEventListener("click", () => {});
+
         //------------------------로그아웃 버튼------------------
       } else {
         productArea.innerHTML = `상품정보를 모르겠습니다!`;
