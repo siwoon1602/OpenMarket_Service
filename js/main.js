@@ -1,4 +1,5 @@
 // ------------------------ 토큰 보유 시 화면 변경 ----------------------------
+
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
   const userMenuTwo = document.querySelector("#userinterface_first");
@@ -9,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     userMenuTwo.textContent = "마이페이지";
   }
 });
+
 // ----------------------------------------------------------------------------
+
 const userMenuTwo = document
   .querySelector("#userMenu2")
   .addEventListener("click", () => {
@@ -41,6 +44,7 @@ const userMenuTwo = document
       userMenuOneText.classList.remove("maincolor");
     }
   });
+
 // ------------------------ 상품 리스트 불러오기 ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
