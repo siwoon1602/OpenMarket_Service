@@ -80,11 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(`https://estapi.openmarket.weniv.co.kr/products/${productId}/`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(typeof productId);
-      console.log(typeof data.id);
       const productArea = document.querySelector(".product");
+      let shippingMethod = data.shipping_method;
+      if (shippingMethod === "PARCEL") {
+        shippingMethod = "택배배송";
+      }
       if (data.id == productId) {
-        productArea.innerHTML = `    <section class="product">
+        productArea.innerHTML = ` 
       <h2 class="sr-only">상품 상세정보</h2>
       <div class="img_area">
         <img src="${data.image}" alt="" class="thumbnail">
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </ul>
         <ul>
           <li class="shipping_area">
-            <span class="shipping_method">${data.shipping_method}</span>
+            <span class="shipping_method">${shippingMethod}</span>
             <span class="shipping_fee">${data.shipping_fee}원</span>
           </li>
           <li class="count_area">
@@ -117,20 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
           </li>
           </ul>
       </div>
-    </section>`;
+`;
       } else {
         document.querySelector(
           ".product"
         ).innerHTML = `상품정보를 모르겠습니다!`;
       }
-
-      if (data.shipping_method == "PARCEL") {
-        data.shipping_method = "무료배송";
-      }
     })
     .catch((error) => {
-      console.error("에러발생!!!!!!", error);
-      document.querySelector(".product").innerHTML =
-        "상품 정보를 찾을 수 없습니다.";
+      document.querySelector(".product").innerHTML = "에러!!!";
     });
 });
