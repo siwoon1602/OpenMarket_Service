@@ -1,6 +1,13 @@
 // ------------------------ 토큰 보유 시 화면 변경 ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (sessionStorage.getItem("needsUpdate")) {
+    sessionStorage.removeItem("needsUpdate");
+    location.reload();
+    return;
+  }
+
+  // 기존 코드
   const token = localStorage.getItem("token");
   const userMenuTwo = document.querySelector("#userMenu2");
 
