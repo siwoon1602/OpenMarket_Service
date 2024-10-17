@@ -23,6 +23,7 @@ const userMenuTwo = document
     const userMenuOneIcon = document.querySelector("#userMenu1 a img");
     const userMenuTwoText = document.querySelector("#userinterface_second");
     const userMenuOneText = document.querySelector("#userinterface_first");
+    const token = localStorage.getItem("token");
 
     const userBasicColor = "./assets/icon-user-2.svg";
     const userChangeColor = "./assets/icon-user.svg";
