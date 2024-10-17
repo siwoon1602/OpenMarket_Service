@@ -11,6 +11,7 @@
 .img_area img {
   width: 600px;
   height: 600px;
+  background-color: white;
 }
 
 .product_info li:nth-child(1) {
@@ -74,6 +75,11 @@
   width: 50px;
   height: 50px;
   border: 1px solid #c4c4c4;
+}
+.count_area .minus:active,
+.count_area .plus:active {
+  background-color: #c4c4c4;
+  transition: 0.1s;
 }
 
 .count_area .ea {
@@ -161,6 +167,7 @@
 }
 .now_sell:active {
   background-color: green;
+  transition: 0.1s;
 }
 .in_cart {
   background-color: #767676;
