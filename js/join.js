@@ -1,4 +1,4 @@
-// ------------------------ 회원가입 TAP 시작 ------------------------
+// ------------------------ 회원가입 TAP 변환 시작 ------------------------
 
 const buyerJoin = document.querySelector(".buyer_join");
 const sellerJoin = document.querySelector(".seller_join");
@@ -68,20 +68,23 @@ idCheck.addEventListener("click", async (event) => {
 
 // ------------------------ 아이디 중복검사 종료------------------------
 
-// ------------------------ 유효성 검사------------------------
+// ------------------------ 유효성 검사 시작 ------------------------
 
 const joinForm = document.querySelector("form");
 const joinResult = document.querySelector(".joinBtn");
 const checkBox = document.querySelector("#check_agree");
 
-// 초기화 - 가입하기 버튼 비활성화 및 초기 CSS 스타일 설정
+// 가입하기 버튼 비활성화 및 초기 CSS 스타일 설정
+
 joinResult.disabled = true;
 joinResult.style.backgroundColor = "#ccc";
 joinResult.style.color = "#fff";
 
-//유효성 검사 함수 생성
+// 유효성 검사 함수 생성
+
 function validateForm() {
   // 인풋 요소 선택
+
   const joinId = joinForm.querySelector("#id");
   const joinPw = joinForm.querySelector("#pw");
   const joinPwConfirm = joinForm.querySelector("#pwConfirm");
@@ -103,7 +106,7 @@ function validateForm() {
   const nameError = joinForm.querySelector(".nameMessage");
   const numError = joinForm.querySelector(".numberMessage");
 
-  // 초기화
+  // 메세지 초기화
   joinId.setCustomValidity("");
   joinId.style.cssText = "border:1px solid #C4C4C4;";
   joinPw.setCustomValidity("");
@@ -152,7 +155,7 @@ function validateForm() {
     isValid = false;
     checkBoxOne.classList.replace("confirmCircle_pw_on", "confirmCircle_pw");
   }
-
+  // 비밀번호 재확인 유효성 검사
   if (!joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("필수 정보입니다.");
     pwConfirmError.style.color = "#eb5757";
@@ -177,7 +180,7 @@ function validateForm() {
     isValid = false;
   }
 
-  // 전화번호 유효성 검사
+  // 휴대폰번호 유효성 검사
   const phoneNumberPattern = /^\d{3}-\d{4}-\d{4}$/;
   const fullPhoneNumber = `${firstPhoneNumber.value}-${secondPhoneNumber.value}-${thirdPhoneNumber.value}`;
 
@@ -194,7 +197,7 @@ function validateForm() {
     numError.style.color = "#eb5757";
     isValid = false;
   }
-  // 메세지를 출력합니다.
+  // 에러 메세지 출력
   if (!joinId.checkValidity()) {
     idError.textContent = joinId.validationMessage;
   }
@@ -210,7 +213,7 @@ function validateForm() {
     nameError.textContent = joinName.validationMessage;
   }
 
-  // 체크박스 검증
+  // 체크박스 체크 유무 확인
   if (!checkBox.checked) {
     isValid = false;
   }
@@ -231,61 +234,22 @@ function validateForm() {
 joinForm.addEventListener("focusout", validateForm);
 checkBox.addEventListener("click", validateForm);
 
-// 제출하기 이벤트리스너
-// 제출하기 이벤트리스너
+// ------------------------ 유효성 검사 종료 ------------------------
+
+// ------------------------ 회원가입 정보 제출 시작  ------------------------
 joinResult.addEventListener("click", async (event) => {
   event.preventDefault();
 
+  // 가입버튼 클릭시 유효성 검사를 다시 한번 진행
   validateForm();
 
+  // 휴대폰 번호 중복검사
   if (!joinResult.disabled) {
     const fullPhoneNumber = `${
       document.getElementById("firstPhoneNumber").value
     }${joinForm.querySelector("#secondPhoneNumber").value}${
       joinForm.querySelector("#thirdPhoneNumber").value
     }`;
-
-    // 전화번호 중복 검사
-    try {
-      const phoneResponse = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: joinForm.querySelector("#id").value,
-            password: joinForm.querySelector("#pw").value,
-            name: joinForm.querySelector("#name").value,
-            phone_number: fullPhoneNumber,
-          }),
-        }
-      );
-
-      if (!phoneResponse.ok) {
-        const errorData = await phoneResponse.json();
-        const numError = joinForm.querySelector(".numberMessage");
-        if (errorData.phone_number && errorData.phone_number != null) {
-          numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
-          numError.style.color = "#EB5757";
-          return;
-        } else if (errorData.username && errorData.username != null) {
-          const idError = joinForm.querySelector(".idMessage");
-          idError.textContent = "이미 사용중인 아이디 입니다.";
-          idError.style.color = "#EB5757";
-        }
-      } else {
-        const errorData = await phoneResponse.json();
-        numError.textContent = "오류가발생했습니다.";
-        numError.style.color = "#EB5757";
-        console.log(errorData);
-        return;
-      }
-    } catch (error) {
-      console.error("에러:", error);
-      return;
-    }
 
     const data = {
       username: joinForm.querySelector("#id").value,
@@ -307,18 +271,31 @@ joinResult.addEventListener("click", async (event) => {
         }
       );
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log("회원가입 성공:", result);
+      const responseData = await response.json();
 
+      if (response.ok) {
+        console.log("회원가입 성공:", responseData);
         window.location.href = "./login.html";
+        return;
+      }
+
+      // 에러 처리
+      const numError = joinForm.querySelector(".numberMessage");
+      const idError = joinForm.querySelector(".idMessage");
+
+      if (responseData.phone_number) {
+        numError.textContent = "이미 사용중인 휴대폰 번호입니다.";
+        numError.style.color = "#EB5757";
+      } else if (responseData.username) {
+        idError.textContent = "이미 사용중인 아이디 입니다.";
+        idError.style.color = "#EB5757";
       } else {
-        const errorData = await response.json();
-        console.error("회원가입 중 오류 발생:", errorData);
+        console.error("회원가입 중 오류 발생:", responseData);
+        numError.textContent = "회원가입 중 오류가 발생했습니다.";
+        numError.style.color = "#EB5757";
       }
     } catch (error) {
       console.error("서버와 통신 중 오류 발생:", error);
-
       window.location.href = "./error.html";
     }
   }
