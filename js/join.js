@@ -115,7 +115,7 @@ function validateForm() {
   pwError.textContent = "";
   pwConfirmError.textContent = "";
   nameError.textContent = "";
-  numError.textContent = ""; // 전화번호 초기화
+  numError.textContent = "";
 
   const passwordPattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
@@ -311,7 +311,7 @@ joinResult.addEventListener("click", async (event) => {
         const result = await response.json();
         console.log("회원가입 성공:", result);
 
-        window.location.href = "../login.html";
+        window.location.href = "./login.html";
       } else {
         const errorData = await response.json();
         console.error("회원가입 중 오류 발생:", errorData);
@@ -319,7 +319,7 @@ joinResult.addEventListener("click", async (event) => {
     } catch (error) {
       console.error("서버와 통신 중 오류 발생:", error);
 
-      window.location.href = "../error.html";
+      window.location.href = "./error.html";
     }
   }
 });
