@@ -89,7 +89,7 @@ window.addEventListener("load", function () {
   const yesBtn = document.querySelector(".yes_btn");
   yesBtn.addEventListener("click", () => {
     modal.close();
-    window.location.href = "../login.html";
+    window.location.href = "./login.html";
   });
 
   // ---------------------------- 구매하기 버튼 클릭시 모달창 ON/OFF 종료 --------------------------------------------
