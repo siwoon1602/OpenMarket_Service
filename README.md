@@ -8,53 +8,98 @@
 ### 1.1 프로젝트 목표
 
 - 판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 서비스입니다.
-- JavaScript를 사용하여 상품 등록, 결제, 상품에 대한 CRUD를 직접 구현해보는 프로젝트
-- 개인의 Vanilla JavaScript의 기능 숙련도 증가, MBA 방식으로 우선 개발하여 추후 Vanila JavsScript로 SPA 리팩토링 or React 리팩토링 예정입니다.
+- 서버 API를 제공받으며 API를 사용하여 기능을 구현 합니다.
+- 바닐라 자바스크립트를 이용한 API 통신과 DOM 활용 그 외 자바스크립트 능률을 향상시킵니다.
 
-### 1.2 구현하고자하는 기능
+### 1.2 구현페이지
 
-- 필수 구현 기능
-  - 구매자 페이지 中
-    - 로그인 페이지
-    - 상품 목록 페이지
-    - 장바구니 페이지
-- 선택 구현 기능
-  - 구매자 페이지 中
-    - 회원 가입 페이지
-    - 상품 상세 페이지
-    - 주문/결제 페이지
-  - 판매자 페이지
-    - 로그인 페이지
-    - 회원 가입 페이지
-    - 상품 목록 페이지
-    - 상품 상세 페이지
-    - 판매자 센서 페이지
-    - 상품 등록 페이지
-  ### 1.3 팀 구성
-  |                  [FE] 윤시운                  |
-  | :-------------------------------------------: |
-  | <img src = "" width="120px" height="120px" /> |
-  | [siwoon1602](https://github.com/siwoon1602/)  |
+     ✨필수 구현!✨
+
+- 로그인 페이지
+- 회원 가입 페이지
+- 상품 목록 페이지
+- 상품 상세 페이지
+
+### 1.3 팀 구성
+
+- 윤시운 ( 이번 project는 개인 프로젝트 입니다.)
 
 ## 2. 요구사항과 기능 명세
 
-![image]()
+<img src="./imges/need.jpg">
 
-## 3. 프로젝트 구조와 개발 일정
+## 3. 프로젝트 구조
 
-## 4. 와이어프레임/UI
+📦Openmartket_Service  
+ ┣ 📂asset  
+ ┣ 📂images  
+ ┣ 📂js  
+ ┃ ┣ 📜detail.js  
+ ┃ ┣ 📜join.js  
+ ┃ ┣ 📜login.js  
+ ┃ ┗ 📜main.js  
+ ┣ 📂style  
+ ┃ ┣ 📜common.css  
+ ┃ ┣ 📜detail.css  
+ ┃ ┣ 📜error.css  
+ ┃ ┣ 📜join.css  
+ ┃ ┣ 📜login.css  
+ ┃ ┣ 📜main.css  
+ ┃ ┗ 📜reset.css  
+ ┣ 📜details.html  
+ ┣ 📜error.html  
+ ┣ 📜index.html  
+ ┣ 📜join.html  
+ ┣ 📜login.html  
+ ┗ 📜README.md
 
-### 4.1 와이어프레임
+### 4. 와이어프레임 / UI
 
-### 4.2 UI
+<img src="./imges/ui.png">
 
 #### 필수 구현페이지
 
-|  구매자 로그인페이지   | 구매자 상품 목록 페이지 |
-| :--------------------: | :---------------------: |
-|          img           |           img           |
-| 구매자 장바구니 페이지 |                         |
-|          img           |                         |
+<table>
+    <tbody>
+        <tr>
+            <td>회원가입</td>
+            <td>로그인</td>
+        </tr>
+        <tr>
+            <td>
+		<img src="./imges/join.png" width="100%">
+            </td>
+            <td>
+                <img src="./imges/login.png" width="100%">
+            </td>
+        </tr>
+        <tr>
+            <td>상품 목록</td>
+            <td>상품 상세</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="./imges/main.png" width="100%">
+            </td>
+            <td>
+                <img src="./imges/detail.png" width="100%">
+            </td>
+        </tr>
+        <tr>
+            <td>상품목록 모달 ON</td>
+            <td>상품상세 모달 ON</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="./imges/main_modalOn.png" width="100%">
+            </td>
+            <td>
+                <img src="./imges/detail_modalOn.png" width="100%">
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
 
 ## 5. 에러와 해결방법
 
