@@ -1,4 +1,68 @@
-// ---------------------------- 모달창 구현---------------------------------------------
+// ---------------------------- 토큰 보유시 화면변경 함수 ---------------------------------
+function updateUserMenuBasedOnToken() {
+  const token = localStorage.getItem("token");
+  const userMenuTwo = document.querySelector("#userMenu2");
+
+  if (token && userMenuTwo) {
+    userMenuTwo.innerHTML = `
+      <a href="#" target="_self">
+        <img src="./assets/icon-user.svg" alt="" />
+        <span id="userinterface_first">마이페이지</span>
+      </a>
+      <div class="header_modal hide">
+        <div class="triangle"></div>
+        <div class="box">
+          <button>마이페이지</button>
+          <button id="logout">로그아웃</button>
+        </div>
+      </div>`;
+
+    // ---------------------------- 토큰 보유시 화면변경 함수 종료 ---------------------------------
+
+    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF  ---------------------------------
+    const userMenuTwoElement = document.querySelector("#userMenu2");
+    userMenuTwoElement.addEventListener("click", () => {
+      const headerModal = document.querySelector(".header_modal");
+      const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
+      const userMenuOneIcon = document.querySelector("#userMenu1 a img");
+      const userMenuTwoText = document.querySelector("#userinterface_first");
+      const userMenuOneText = document.querySelector("#userinterface_second");
+
+      const userBasicColor = "./assets/icon-user-2.svg";
+      const userChangeColor = "./assets/icon-user.svg";
+      const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
+      const cartChangeColor = "./assets/icon-shopping-cart.svg";
+
+      headerModal.classList.toggle("hide");
+      userMenuTwoText.classList.toggle("maincolor");
+      userMenuOneText.classList.toggle("maincolor");
+
+      if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+        userMenuTwoIcon.setAttribute("src", userChangeColor);
+        userMenuOneIcon.setAttribute("src", cartChangeColor);
+      } else {
+        userMenuTwoIcon.setAttribute("src", userBasicColor);
+        userMenuOneIcon.setAttribute("src", cartBasicColor);
+      }
+    });
+    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF 종료 ---------------------------------
+
+    // ---------------------------- 마이페이지 클릭시 모달창 로그아웃 기능  ---------------------------------
+    const logoutButton = document.querySelector("#logout");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+      });
+    }
+  }
+}
+// ---------------------------- 마이페이지 클릭시 모달창 로그아웃 종료  ---------------------------------
+
+// 화면이 보여질때마다 토큰이 있는지 확인
+window.addEventListener("pageshow", updateUserMenuBasedOnToken);
+
+// ---------------------------- 구매하기 버튼 클릭시 모달창 ON/OFF --------------------------------------------
 window.addEventListener("load", function () {
   const modal = document.querySelector(".modal");
 
@@ -28,9 +92,9 @@ window.addEventListener("load", function () {
     window.location.href = "../login.html";
   });
 
-  //----------------------------------------------------
+  // ---------------------------- 구매하기 버튼 클릭시 모달창 ON/OFF 종료 --------------------------------------------
 
-  // ---------------------------- 상세페이지 기능 TAP---------------------------------------------
+  // ---------------------------- 상세페이지 하단 TAP 클릭시 색 전환 ---------------------------------------------
 
   const tapOne = document.querySelector(".btn_tap");
   const tapTwo = document.querySelector(".review_tap");
@@ -65,9 +129,10 @@ window.addEventListener("load", function () {
     tapThree.classList.replace("btn_on", "btn_off");
   });
 
-  // ---------------------------- 상세페이지 TAP 기능 종료---------------------------------------------
+  // ---------------------------- 상세페이지 하단 TAP 클릭시 색 전환 종료 ---------------------------------------------
 
-  //--------------------------- 상품 상세페이지 호출-------------------------------------
+  //--------------------------- 상품별 상세페이지 호출-------------------------------------
+
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
 
@@ -124,9 +189,9 @@ window.addEventListener("load", function () {
           </div>
         `;
 
-        //--------------------------- 상품 상세페이지 호출 종료-------------------------------------
+        //--------------------------- 상품별 상세페이지 호출 종료-------------------------------------
 
-        //--------------------------- 사용자 인터페이스 조작 기능 시작-------------------------------------
+        //--------------------------- 상품 상세페이지 조작 기능-------------------------------------
         const nowSellButton = productArea.querySelector(".now_sell");
         nowSellButton.addEventListener("click", () => {
           const token = localStorage.getItem("token");
@@ -159,7 +224,7 @@ window.addEventListener("load", function () {
             plusBtn.removeAttribute("disabled");
           }
         });
-
+        // stock이 1개인 경우를 대비해 마우스오버 이벤트로 재고 체크
         countArea.addEventListener("mouseover", () => {
           if (parseInt(eaInput.value) >= data.stock) {
             plusBtn.setAttribute("disabled", true);
@@ -167,62 +232,11 @@ window.addEventListener("load", function () {
             plusBtn.removeAttribute("disabled");
           }
         });
-        //--------------------------------------------------------토큰보유시 화면변경
-        const token = localStorage.getItem("token");
-        const userMenuTwo = document.querySelector("#userMenu2");
-        if (token) {
-          userMenuTwo.innerHTML = `<a href="#" target="_self" ><img src="./assets/icon-user.svg" alt="" />
-          <span id="userinterface_first">마이페이지</span></a>
-             <div class="header_modal hide">
-      <div class="triangle"></div>
-      <div class="box">
-        <button>마이페이지</button>
-        <button id="logout">로그아웃</button>
-      </div>
-    </div>`;
-        }
-
-        // ------------------------------------------------
-
-        //------------------------- 마이페이지 모달-------------------
-        userMenuTwo.addEventListener("click", () => {
-          const headerModal = document.querySelector(".header_modal");
-          const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
-          const userMenuOneIcon = document.querySelector("#userMenu1 a img");
-          const userMenuTwoText = document.querySelector(
-            "#userinterface_second"
-          );
-          const userMenuOneText = document.querySelector(
-            "#userinterface_first"
-          );
-
-          const userBasicColor = "./assets/icon-user-2.svg";
-          const userChangeColor = "./assets/icon-user.svg";
-          const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
-          const cartChangeColor = "./assets/icon-shopping-cart.svg";
-
-          headerModal.classList.toggle("hide");
-          userMenuTwoText.classList.toggle("maincolor");
-          userMenuOneText.classList.toggle("maincolor");
-
-          if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
-            userMenuTwoIcon.setAttribute("src", userChangeColor);
-            userMenuOneIcon.setAttribute("src", cartChangeColor);
-          } else {
-            userMenuTwoIcon.setAttribute("src", userBasicColor);
-            userMenuOneIcon.setAttribute("src", cartBasicColor);
-          }
-        });
-        //---------------------------------------------------------
-
-        //------------------------로그아웃 버튼------------------
-      } else {
-        productArea.innerHTML = `상품정보를 모르겠습니다!`;
       }
     })
-
     .catch((error) => {
-      productArea.innerHTML = "에러!!!";
+      productArea.innerHTML = "상품을 불러오는 데 실패했습니다.";
+      console.error("Error fetching product data:", error);
     });
 });
-//--------------------------- 사용자 인터페이스 조작 기능 시작-------------------------------------
+//--------------------------- 상품 상세페이지 조작 기능 종료 -------------------------------------
