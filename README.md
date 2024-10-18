@@ -31,14 +31,14 @@
     - 판매자 센서 페이지
     - 상품 등록 페이지
   ### 1.3 팀 구성
-  |                                                         [FE] 윤시운                                                          |
-  | :--------------------------------------------------------------------------------------------------------------------------: |
-  | <img src = "https://github.com/user-attachments/assets/959ca3c8-a246-4c49-baff-1f341b91f006" width="120px" height="120px" /> |
-  |                                         [siwoon1602](https://github.com/siwoon1602/)                                         |
+  |                  [FE] 윤시운                  |
+  | :-------------------------------------------: |
+  | <img src = "" width="120px" height="120px" /> |
+  | [siwoon1602](https://github.com/siwoon1602/)  |
 
 ## 2. 요구사항과 기능 명세
 
-![image](https://github.com/user-attachments/assets/3aab37bd-6551-456a-972c-bf6b2166c2d8)
+![image]()
 
 ## 3. 프로젝트 구조와 개발 일정
 
