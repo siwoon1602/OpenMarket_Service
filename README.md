@@ -1,6 +1,6 @@
 # 오픈마켓 서비스
 
-> 배포주소 : https://chochohee.github.io/open-market-service/ </br>
+> 배포주소 : https://siwoon1602.github.io/OpenMarket_Service/ </br>
 > 🛠 사용 기술스택 : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> </br>
 
 ## 1. 프로젝트의 목표와 기능
@@ -31,10 +31,10 @@
     - 판매자 센서 페이지
     - 상품 등록 페이지
   ### 1.3 팀 구성
-  |                                                         [FE] 황초희                                                          |
+  |                                                         [FE] 윤시운                                                          |
   | :--------------------------------------------------------------------------------------------------------------------------: |
   | <img src = "https://github.com/user-attachments/assets/959ca3c8-a246-4c49-baff-1f341b91f006" width="120px" height="120px" /> |
-  |                                          [chochohee](https://github.com/chochohee)                                           |
+  |                                         [siwoon1602](https://github.com/siwoon1602/)                                         |
 
 ## 2. 요구사항과 기능 명세
 
@@ -45,8 +45,6 @@
 ## 4. 와이어프레임/UI
 
 ### 4.1 와이어프레임
-
-![image](https://github.com/user-attachments/assets/717505b7-0f20-492a-9709-15593ef4674d)
 
 ### 4.2 UI
 
