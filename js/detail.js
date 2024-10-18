@@ -19,7 +19,7 @@ function updateUserMenuBasedOnToken() {
 
     // ---------------------------- 토큰 보유시 화면변경 함수 종료 ---------------------------------
 
-    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF  ---------------------------------
+    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환  ---------------------------------
     const userMenuTwoElement = document.querySelector("#userMenu2");
     userMenuTwoElement.addEventListener("click", () => {
       const headerModal = document.querySelector(".header_modal");
@@ -45,7 +45,7 @@ function updateUserMenuBasedOnToken() {
         userMenuOneIcon.setAttribute("src", cartBasicColor);
       }
     });
-    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF 종료 ---------------------------------
+    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환 종료  ---------------------------------
 
     // ---------------------------- 마이페이지 클릭시 모달창 로그아웃 기능  ---------------------------------
     const logoutButton = document.querySelector("#logout");
