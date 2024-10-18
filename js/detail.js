@@ -161,12 +161,12 @@ window.addEventListener("load", function () {
             <ul class="product_info">
               <li>${data.seller.store_name}</li>
               <li>${data.name}</li>
-              <li>${data.price}</li>
+              <li>${data.price.toLocaleString()}</li>
             </ul>
             <ul>
               <li class="shipping_area">
                 <span class="shipping_method">${shippingMethod}</span>
-                <span class="shipping_fee">${data.shipping_fee}원</span>
+                <span class="shipping_fee">${data.shipping_fee.toLocaleString()}원</span>
                 <span class="shipping_fee">현재 재고수량 : ${data.stock}</span>
               </li>
               <li class="count_area">
@@ -178,7 +178,7 @@ window.addEventListener("load", function () {
                 <span>총 상품 금액</span>
                <div>
                   <em class="count">1</em>
-                  <strong class="price">${data.price}</strong>
+                  <strong class="price">${data.price.toLocaleString()}</strong>
                </div>
               </li>
               <li class="button_area">
@@ -209,7 +209,9 @@ window.addEventListener("load", function () {
         plusBtn.addEventListener("click", () => {
           eaInput.value = parseInt(eaInput.value) + 1;
           eaSum.textContent = eaInput.value;
-          price.textContent = parseInt(eaInput.value) * data.price;
+
+          let totalPrice = parseInt(eaInput.value) * data.price;
+          price.textContent = totalPrice.toLocaleString();
 
           if (parseInt(eaInput.value) >= data.stock) {
             plusBtn.setAttribute("disabled", true);
@@ -218,7 +220,9 @@ window.addEventListener("load", function () {
         minusBtn.addEventListener("click", () => {
           if (eaInput.value > 1) eaInput.value = parseInt(eaInput.value) - 1;
           eaSum.textContent = eaInput.value;
-          price.textContent = parseInt(eaInput.value) * data.price;
+
+          let totalPrice = parseInt(eaInput.value) * data.price;
+          price.textContent = totalPrice.toLocaleString();
 
           if (parseInt(eaInput.value) < data.stock) {
             plusBtn.removeAttribute("disabled");

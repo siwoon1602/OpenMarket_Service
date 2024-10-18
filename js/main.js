@@ -83,11 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
                       <li class="product_list">
                           <a href="details.html?id=${product.id}">
                               <article>
-                                  <img src="${product.image}" alt="product_${index}" class="item_image">
+                                  <img src="${
+                                    product.image
+                                  }" alt="product_${index}" class="item_image">
                                   <ul class="product_info">
-                                      <li class="item_seller">${product.seller.store_name}</li>
+                                      <li class="item_seller">${
+                                        product.seller.store_name
+                                      }</li>
                                       <li class="item_name">${product.name}</li>
-                                      <li class="item_price">${product.price}<span>원</span></li>
+                                      <li class="item_price">${product.price.toLocaleString()}<span>원</span></li>
                                   </ul>
                               </article>
                           </a>
