@@ -193,7 +193,14 @@ window.addEventListener("load", function () {
 
         //--------------------------- 상품 상세페이지 조작 기능-------------------------------------
         const nowSellButton = productArea.querySelector(".now_sell");
+        const inCartButton = productArea.querySelector(".in_cart");
         nowSellButton.addEventListener("click", () => {
+          const token = localStorage.getItem("token");
+          if (!token) {
+            modal.showModal();
+          }
+        });
+        inCartButton.addEventListener("click", () => {
           const token = localStorage.getItem("token");
           if (!token) {
             modal.showModal();
