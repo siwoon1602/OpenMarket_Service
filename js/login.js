@@ -76,7 +76,7 @@ loginForm.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       const data = await response.json();
-      if (data.user_type === userType) {
+      if (data.user.user_type === userType) {
         localStorage.setItem("token", data.access);
         window.history.back();
       } else {
