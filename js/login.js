@@ -41,25 +41,42 @@ loginForm.addEventListener("submit", async (event) => {
     return;
   }
 
-  // 로그인 요청
-  if (userId.checkValidity() && userPw.checkValidity()) {
-    try {
-      const response = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/accounts/login/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: userId.value,
-            password: userPw.value,
-          }),
-        }
-      );
+  // 구매자 로그인 버튼 활성화 여부 확인
+  const buyerLogin = document.querySelector(".buyer_login");
+  const sellerLogin = document.querySelector(".seller_login");
 
-      if (response.ok) {
-        const data = await response.json();
+  let userType = "";
+  if (buyerLogin.classList.contains("btn_on")) {
+    userType = "BUYER";
+  } else if (sellerLogin.classList.contains("btn_on")) {
+    userType = "SELLER";
+  } else {
+    loginError.textContent = "로그인 유형을 선택해주세요.";
+    loginError.style.cssText =
+      "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
+    return;
+  }
+
+  // 로그인 요청
+  try {
+    const response = await fetch(
+      "https://estapi.openmarket.weniv.co.kr/accounts/login/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: userId.value,
+          password: userPw.value,
+          login_type: userType,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.user_type === userType) {
         localStorage.setItem("token", data.access);
         window.history.back();
       } else {
@@ -69,9 +86,9 @@ loginForm.addEventListener("submit", async (event) => {
         userPw.focus();
         userPw.value = "";
       }
-    } catch (error) {
-      window.location.href = "../error.html";
     }
+  } catch (error) {
+    window.location.href = "../error.html";
   }
 });
 
