@@ -46,10 +46,10 @@ loginForm.addEventListener("submit", async (event) => {
   const sellerLogin = document.querySelector(".seller_login");
 
   let userType = "";
-  if (buyerLogin.classList.contains("btn_on")) {
-    userType = "BUYER";
-  } else if (sellerLogin.classList.contains("btn_on")) {
+  if (buyerLogin.classList.contains("btn_off")) {
     userType = "SELLER";
+  } else if (sellerLogin.classList.contains("btn_off")) {
+    userType = "BUYER";
   } else {
     loginError.textContent = "로그인 유형을 선택해주세요.";
     loginError.style.cssText =
@@ -80,15 +80,22 @@ loginForm.addEventListener("submit", async (event) => {
         localStorage.setItem("token", data.access);
         window.history.back();
       } else {
-        loginError.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
+        loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
         loginError.style.cssText =
           "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
         userPw.focus();
-        userPw.value = "";
+        userPw.value = ""; // 비밀번호 필드 초기화
       }
+    } else {
+      loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
+      loginError.style.cssText =
+        "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
     }
   } catch (error) {
-    window.location.href = "../error.html";
+    console.error("Error during fetch:", error);
+    loginError.textContent = "로그인 요청 중 오류가 발생했습니다.";
+    loginError.style.cssText =
+      "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
   }
 });
 
@@ -119,11 +126,11 @@ const sellerLogin = document.querySelector(".seller_login");
 const whiteArea = document.querySelector(".white_box");
 
 buyerLogin.addEventListener("click", () => {
+  sellerLogin.classList.add("btn_off");
   buyerLogin.classList.add("btn_on");
   buyerLogin.classList.remove("btn_off");
   whiteArea.classList.remove("white_box");
   whiteArea.classList.add("white_box");
-  sellerLogin.classList.add("btn_off");
 });
 sellerLogin.addEventListener("click", () => {
   sellerLogin.classList.add("btn_on");
