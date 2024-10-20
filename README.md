@@ -1,8 +1,12 @@
-# 오픈마켓 서비스
+<!-- logo -->
+
+# OPEN MARTKET_SERVICE <br><br>
+
+[<img src="https://img.shields.io/badge/프로젝트 기간-2024.10.14~2024.10.21-fab2ac?style=flat&logo=&logoColor=white" />]()
 
 > 배포주소 : https://siwoon1602.github.io/OpenMarket_Service/ </br>
-> 🛠 사용 기술스택 :
 
+🔧🪛사용 기술스택 :<br>
 <img src="./imges/HTMLCSS.png" width="80px"> <img src="./imges/JavaScript.png" width="80px"> </br>
 
 ## 1. 프로젝트의 목표와 기능
