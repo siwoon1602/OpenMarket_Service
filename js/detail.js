@@ -19,8 +19,10 @@ function updateUserMenuBasedOnToken() {
 
     // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환  ---------------------------------
     const userMenuTwoElement = document.querySelector("#userMenu2");
+    const headerModal = document.querySelector(".header_modal");
+    const modalContent = document.querySelector(".box");
+
     userMenuTwoElement.addEventListener("click", () => {
-      const headerModal = document.querySelector(".header_modal");
       const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
       const userMenuTwoText = document.querySelector("#userinterface_first");
 
@@ -37,20 +39,19 @@ function updateUserMenuBasedOnToken() {
       }
     });
 
-    const userMenuOneElement = document.querySelector("#userMenu1");
-    userMenuOneElement.addEventListener("click", () => {
-      const userMenuOneIcon = document.querySelector("#userMenu1 a img");
-      const userMenuOneText = document.querySelector("#userinterface_second");
+    // 모달창 바깥을 클릭했을 때 모달창 닫기
+    document.addEventListener("click", (e) => {
+      const headerModal = document.querySelector(".header_modal");
+      const userMenuTwo = document.querySelector("#userMenu2");
 
-      const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
-      const cartChangeColor = "./assets/icon-shopping-cart.svg";
+      if (!headerModal.contains(e.target) && !userMenuTwo.contains(e.target)) {
+        headerModal.classList.add("hide");
 
-      userMenuOneText.classList.toggle("maincolor");
+        const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
+        const userMenuTwoText = document.querySelector("#userinterface_first");
 
-      if (userMenuOneElement.getAttribute("src") === userBasicColor) {
-        userMenuOneIcon.setAttribute("src", cartChangeColor);
-      } else {
-        userMenuOneIcon.setAttribute("src", cartBasicColor);
+        userMenuTwoIcon.setAttribute("src", "./assets/icon-user-2.svg");
+        userMenuTwoText.classList.remove("maincolor");
       }
     });
 
@@ -212,11 +213,13 @@ window.addEventListener("load", function () {
         if (data.stock === 0) {
           eaInput.value = 0;
           plusBtn.setAttribute("disabled", true);
-          nowSellButton.style.backgroundColor = "gray";
+          nowSellButton.style.backgroundColor = "#C4C4C4";
           nowSellButton.setAttribute("disabled", true);
           nowSellButton.textContent = "구매불가";
-          inCartButton.style.backgroundColor = "gray";
+          inCartButton.style.backgroundColor = "#C4C4C4";
           inCartButton.setAttribute("disabled", true);
+          minusBtn.style.backgroundColor = "#C4C4C4";
+          plusBtn.style.backgroundColor = "#C4C4C4";
         } else {
           // 수량 조절 기능 플러스 부분
           plusBtn.addEventListener("click", () => {
@@ -239,7 +242,6 @@ window.addEventListener("load", function () {
             price.textContent = totalPrice.toLocaleString();
 
             if (parseInt(eaInput.value) < data.stock) {
-              plusBtn.removeAttribute("disabled");
             }
           });
           // 재고가 1개인 경우를 대비해서 마우스 오버로확인하여 비활성화처리
