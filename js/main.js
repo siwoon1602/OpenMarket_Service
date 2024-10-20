@@ -36,31 +36,38 @@ window.addEventListener("pageshow", (e) => {
 
 // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환  ---------------------------------
 
-document.querySelector("#userMenu2").addEventListener("click", () => {
+const userMenuTwoElement = document.querySelector("#userMenu2");
+userMenuTwoElement.addEventListener("click", () => {
   const headerModal = document.querySelector(".header_modal");
   const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
-  const userMenuOneIcon = document.querySelector("#userMenu1 a img");
-  const userMenuTwoText = document.querySelector("#userinterface_second");
-  const userMenuOneText = document.querySelector("#userinterface_first");
-  const token = localStorage.getItem("token");
-  const userBasicColor = "./assets/icon-user.svg";
-  const userChangeColor = "./assets/icon-user-2.svg";
-  const cartBasicColor = "./assets/icon-shopping-cart.svg";
-  const cartChangeColor = "./assets/icon-shopping-cart-2.svg";
+  const userMenuTwoText = document.querySelector("#userinterface_first");
 
-  if (token) {
-    headerModal.classList.toggle("hide");
-    if (userMenuTwoText && userMenuOneText) {
-      userMenuTwoText.classList.toggle("maincolor");
-      userMenuOneText.classList.toggle("maincolor");
-    }
-  }
+  const userBasicColor = "./assets/icon-user-2.svg";
+  const userChangeColor = "./assets/icon-user.svg";
 
-  if (token && userMenuTwoIcon.getAttribute("src") === userBasicColor) {
+  headerModal.classList.toggle("hide");
+  userMenuTwoText.classList.toggle("maincolor");
+
+  if (userMenuTwoIcon.getAttribute("src") === userBasicColor) {
     userMenuTwoIcon.setAttribute("src", userChangeColor);
-    userMenuOneIcon.setAttribute("src", cartChangeColor);
   } else {
     userMenuTwoIcon.setAttribute("src", userBasicColor);
+  }
+});
+
+const userMenuOneElement = document.querySelector("#userMenu1");
+userMenuOneElement.addEventListener("click", () => {
+  const userMenuOneIcon = document.querySelector("#userMenu1 a img");
+  const userMenuOneText = document.querySelector("#userinterface_second");
+
+  const cartBasicColor = "./assets/icon-shopping-cart-2.svg";
+  const cartChangeColor = "./assets/icon-shopping-cart.svg";
+
+  userMenuOneText.classList.toggle("maincolor");
+
+  if (userMenuOneElement.getAttribute("src") === userBasicColor) {
+    userMenuOneIcon.setAttribute("src", cartChangeColor);
+  } else {
     userMenuOneIcon.setAttribute("src", cartBasicColor);
   }
 });
