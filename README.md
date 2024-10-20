@@ -1,7 +1,9 @@
 # 오픈마켓 서비스
 
 > 배포주소 : https://siwoon1602.github.io/OpenMarket_Service/ </br>
-> 🛠 사용 기술스택 : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> </br>
+> 🛠 사용 기술스택 :
+
+<img src="./imges/HTMLCSS.png" width="80px"> <img src="./imges/JavaScript.png" width="80px"> </br>
 
 ## 1. 프로젝트의 목표와 기능
 
