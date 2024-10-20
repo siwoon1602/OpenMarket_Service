@@ -17,8 +17,6 @@ function updateUserMenuBasedOnToken() {
         </div>
       </div>`;
 
-    // ---------------------------- 토큰 보유시 화면변경 함수 종료 ---------------------------------
-
     // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환  ---------------------------------
     const userMenuTwoElement = document.querySelector("#userMenu2");
     userMenuTwoElement.addEventListener("click", () => {
@@ -55,8 +53,6 @@ function updateUserMenuBasedOnToken() {
         userMenuOneIcon.setAttribute("src", cartBasicColor);
       }
     });
-
-    // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환 종료  ---------------------------------
 
     // ---------------------------- 마이페이지 클릭시 모달창 로그아웃 기능  ---------------------------------
     const logoutButton = document.querySelector("#logout");
@@ -103,8 +99,6 @@ window.addEventListener("load", function () {
     window.location.href = "./login.html";
   });
 
-  // ---------------------------- 구매하기 버튼 클릭시 모달창 ON/OFF 종료 --------------------------------------------
-
   // ---------------------------- 상세페이지 하단 TAP 클릭시 색 전환 ---------------------------------------------
 
   const tapOne = document.querySelector(".btn_tap");
@@ -140,8 +134,6 @@ window.addEventListener("load", function () {
     tapThree.classList.replace("btn_on", "btn_off");
   });
 
-  // ---------------------------- 상세페이지 하단 TAP 클릭시 색 전환 종료 ---------------------------------------------
-
   //--------------------------- 상품별 상세페이지 호출-------------------------------------
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -153,15 +145,19 @@ window.addEventListener("load", function () {
     return;
   }
 
+  // 상품 상세정보를 불러와 페이지에 뿌립니다.
   fetch(`https://estapi.openmarket.weniv.co.kr/products/${productId}/`)
     .then((response) => response.json())
     .then((data) => {
+      // 배송유형에 따라서 다르게 표시
+
       let shippingMethod = data.shipping_method;
       if (shippingMethod === "PARCEL") {
         shippingMethod = "택배배송";
       } else {
         shippingMethod = "직접배송";
       }
+
       if (data.id == productId) {
         productArea.innerHTML = ` 
           <h2 class="sr-only">상품 상세정보</h2>
@@ -199,24 +195,12 @@ window.addEventListener("load", function () {
             </ul>
           </div>
         `;
-
         //--------------------------- 상품별 상세페이지 호출 종료-------------------------------------
 
-        //--------------------------- 상품 상세페이지 조작 기능-------------------------------------
+        //--------------------------- 상품 상세정보 유저 인터페이스 시작 -------------------------------------
+
         const nowSellButton = productArea.querySelector(".now_sell");
         const inCartButton = productArea.querySelector(".in_cart");
-        nowSellButton.addEventListener("click", () => {
-          const token = localStorage.getItem("token");
-          if (!token) {
-            modal.showModal();
-          }
-        });
-        inCartButton.addEventListener("click", () => {
-          const token = localStorage.getItem("token");
-          if (!token) {
-            modal.showModal();
-          }
-        });
         const minusBtn = document.querySelector(".minus");
         const plusBtn = document.querySelector(".plus");
         const eaInput = document.querySelector(".ea");
@@ -224,34 +208,63 @@ window.addEventListener("load", function () {
         const price = document.querySelector(".price");
         const countArea = document.querySelector(".count_area");
 
-        plusBtn.addEventListener("click", () => {
-          eaInput.value = parseInt(eaInput.value) + 1;
-          eaSum.textContent = eaInput.value;
+        // 재고가 0인경우 구매버튼과 장바구니 버튼을 비활성화하는 코드
+        if (data.stock === 0) {
+          eaInput.value = 0;
+          plusBtn.setAttribute("disabled", true);
+          nowSellButton.style.backgroundColor = "gray";
+          nowSellButton.setAttribute("disabled", true);
+          nowSellButton.textContent = "구매불가";
+          inCartButton.style.backgroundColor = "gray";
+          inCartButton.setAttribute("disabled", true);
+        } else {
+          // 수량 조절 기능 플러스 부분
+          plusBtn.addEventListener("click", () => {
+            eaInput.value = parseInt(eaInput.value) + 1;
+            eaSum.textContent = eaInput.value;
 
-          let totalPrice = parseInt(eaInput.value) * data.price;
-          price.textContent = totalPrice.toLocaleString();
+            let totalPrice = parseInt(eaInput.value) * data.price;
+            price.textContent = totalPrice.toLocaleString();
 
-          if (parseInt(eaInput.value) >= data.stock) {
-            plusBtn.setAttribute("disabled", true);
+            if (parseInt(eaInput.value) >= data.stock) {
+              plusBtn.setAttribute("disabled", true);
+            }
+          });
+          // 수량 조절 기능 마이너스 부분
+          minusBtn.addEventListener("click", () => {
+            if (eaInput.value > 1) eaInput.value = parseInt(eaInput.value) - 1;
+            eaSum.textContent = eaInput.value;
+
+            let totalPrice = parseInt(eaInput.value) * data.price;
+            price.textContent = totalPrice.toLocaleString();
+
+            if (parseInt(eaInput.value) < data.stock) {
+              plusBtn.removeAttribute("disabled");
+            }
+          });
+          // 재고가 1개인 경우를 대비해서 마우스 오버로확인하여 비활성화처리
+          countArea.addEventListener("mouseover", () => {
+            if (parseInt(eaInput.value) >= data.stock) {
+              plusBtn.setAttribute("disabled", true);
+            } else if (parseInt(eaInput.value) < data.stock) {
+              plusBtn.removeAttribute("disabled");
+            }
+          });
+        }
+
+        // 구매버튼 클릭시 발생하는 모달 이벤트
+
+        nowSellButton.addEventListener("click", () => {
+          const token = localStorage.getItem("token");
+          if (!token) {
+            modal.showModal();
           }
         });
-        minusBtn.addEventListener("click", () => {
-          if (eaInput.value > 1) eaInput.value = parseInt(eaInput.value) - 1;
-          eaSum.textContent = eaInput.value;
 
-          let totalPrice = parseInt(eaInput.value) * data.price;
-          price.textContent = totalPrice.toLocaleString();
-
-          if (parseInt(eaInput.value) < data.stock) {
-            plusBtn.removeAttribute("disabled");
-          }
-        });
-        // stock이 1개인 경우를 대비해 마우스오버 이벤트로 재고 체크
-        countArea.addEventListener("mouseover", () => {
-          if (parseInt(eaInput.value) >= data.stock) {
-            plusBtn.setAttribute("disabled", true);
-          } else if (parseInt(eaInput.value) < data.stock) {
-            plusBtn.removeAttribute("disabled");
+        inCartButton.addEventListener("click", () => {
+          const token = localStorage.getItem("token");
+          if (!token) {
+            modal.showModal();
           }
         });
       }
@@ -261,4 +274,4 @@ window.addEventListener("load", function () {
       console.error("Error fetching product data:", error);
     });
 });
-//--------------------------- 상품 상세페이지 조작 기능 종료 -------------------------------------
+//--------------------------- 상품 상세정보 유저 인터페이스 종료 -------------------------------------
