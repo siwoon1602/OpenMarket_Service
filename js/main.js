@@ -58,6 +58,29 @@ document.querySelector("#userMenu2").addEventListener("click", () => {
   }
 });
 
+// 모달창 외부 클릭시 닫기 이벤트
+document.addEventListener("click", (e) => {
+  const headerModal = document.querySelector(".header_modal");
+  const userMenuTwo = document.querySelector("#userMenu2");
+  const token = localStorage.getItem("token");
+
+  if (
+    token &&
+    !headerModal.contains(e.target) &&
+    !userMenuTwo.contains(e.target)
+  ) {
+    headerModal.classList.add("hide");
+
+    const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
+    const userMenuOneText = document.querySelector("#userinterface_first");
+
+    userMenuTwoIcon.setAttribute("src", "./assets/icon-user.svg");
+    if (userMenuOneText) {
+      userMenuOneText.classList.remove("maincolor");
+    }
+  }
+});
+
 // ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환 종료 ---------------------------------
 
 //--------------------------- 상품 정보 요청하여 상품 리스트 화면 구성 ------------------------------------
