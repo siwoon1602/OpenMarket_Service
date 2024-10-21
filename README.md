@@ -43,7 +43,7 @@
 
 ## 2. 요구사항과 기능 명세
 
-<img src="./imges/need.jpg">
+<img src="./imges/요구사항.png">
 
 ## 3. 프로젝트 구조
 
