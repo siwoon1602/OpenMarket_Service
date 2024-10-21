@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ko-KR">
   <head>
@@ -8,33 +6,43 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/login.css" />
-  <link rel="stylesheet" href="./style/join.css">
-  <script src="./js/login.js" defer></script>
+    <link rel="stylesheet" href="./style/join.css" />
+    <script src="./js/login.js" defer></script>
     <title>login</title>
   </head>
+  <body>
     <header class="header">
-      <h2 class="sr-only">HODU!</h2>
+      <h1 class="sr-only">HODU!</h1>
       <a href="/OpenMarket_Service/" alt="HODU!"></a>
     </header>
-      <ul class="tablist">
-        <li class="buyer_login btn_on" data-user-type="BUYER">구매회원 로그인</li>
-        <div class="white_box"></div>
-        <li class="seller_login btn_off" data-user-type="SELLER">판매회원 로그인</li>
-      </ul>
-      <form action="https://estapi.openmarket.weniv.co.kr/accounts/login/" class="login_box" method="post">
-        <input type="text" name="id" id="id"placeholder="아이디" />
-        <input type="password" name="password" id="password" placeholder="비밀번호" />
-        <span class="loginerror"></span>
-        <button type="submit" class="btn_login" >로그인</button>
-      </form>
-<ul class="join_warp">
-    <li><a href="#" class="joinPage">회원가입</a></li>
-    <li><a href="#">비밀번호 찾기</a></li>
-</ul>
 
+    <ul class="tablist">
+      <li class="buyer_login btn_on" data-user-type="BUYER">구매회원 로그인</li>
+      <div class="white_box"></div>
+      <li class="seller_login btn_off" data-user-type="SELLER">
+        판매회원 로그인
+      </li>
+    </ul>
 
+    <form
+      action="https://estapi.openmarket.weniv.co.kr/accounts/login/"
+      class="login_box"
+      method="post"
+    >
+      <input type="text" name="id" id="id" placeholder="아이디" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="비밀번호"
+      />
+      <span class="loginerror"></span>
+      <button type="submit" class="btn_login">로그인</button>
+    </form>
 
-
-
+    <ul class="join_warp">
+      <li><a href="#" class="joinPage">회원가입</a></li>
+      <li><a href="#">비밀번호 찾기</a></li>
+    </ul>
   </body>
 </html>
