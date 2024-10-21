@@ -6,37 +6,46 @@
     <title></title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/common.css" />
-      <link rel="stylesheet" href="./style/detail.css">
-
-      <script src="./js/detail.js" defer ></script>
+    <link rel="stylesheet" href="./style/detail.css" />
+    <script src="./js/detail.js" defer></script>
   </head>
   <body>
     <header>
       <div class="header_content">
-       <div  class="header_contet_left">
-          <h2 class="sr-only">HODU!</h2>
-          <a href="/OpenMarket_Service/" alt="HODU!" class="logo" ></a>
+        <div class="header_contet_left">
+          <h1 class="sr-only">HODU!</h1>
+          <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
           <div class="search">
             <input type="text" placeholder="상품을 검색해보세요!" />
             <div class="search-icon"></div>
+          </div>
         </div>
-       </div>
- 
-      <ul class="user_menu">
-        <li id="userMenu1">
-          <a href=""
-            ><img src="./assets/icon-shopping-cart.svg" alt="" id="userMenu1"/><span id="userinterface_second">장바구니</span></a
-          >
-        </li>
-        <li id="userMenu2">
-          <a href="./login.html" target="_self" ><img src="./assets/icon-user.svg" alt="" /><span id="userinterface_first">로그인</span></a>
-        </li>
+
+        <ul class="user_menu">
+          <li id="userMenu1">
+            <a href="">
+              <img
+                src="./assets/icon-shopping-cart.svg"
+                alt=""
+                id="userMenu1"
+              />
+              <span id="userinterface_second">장바구니</span>
+            </a>
+          </li>
+          <li id="userMenu2">
+            <a href="./login.html" target="_self">
+              <img src="./assets/icon-user.svg" alt="" />
+              <span id="userinterface_first">로그인</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
+
     <section class="product">
       <h2 class="sr-only">상품 상세정보</h2>
       <div class="img_area">
-        <img src="./imges/white_box_600s.jpg" alt="" class="thumbnail">
+        <img src="./imges/white_box_600s.jpg" alt="" class="thumbnail" />
       </div>
       <div class="info_area">
         <ul class="product_info">
@@ -51,12 +60,12 @@
           </li>
           <li class="count_area">
             <button class="minus"></button>
-            <input type="text" value="1" class="ea">
+            <input type="text" value="1" class="ea" />
             <button class="plus"></button>
           </li>
           <li class="price_area">
             <ul>
-            <li> <span>총 상품 금액</span></li>
+              <li><span>총 상품 금액</span></li>
               <li>
                 <em class="count">1</em>
                 <strong class="price">17,500</strong>
@@ -66,11 +75,11 @@
           <li class="button_area">
             <button type="button" class="now_sell">바로 구매</button>
             <button type="button" class="in_cart">장바구니</button>
-
           </li>
-          </ul>
+        </ul>
       </div>
     </section>
+
     <section class="product_detail">
       <ul>
         <li class="btn_tap btn_on">버튼</li>
@@ -80,45 +89,48 @@
       </ul>
     </section>
 
-  <footer class="footer">
-    <div class="footer_content">
-      <h2 class="sr-only">호두샵 정보</h2>
-  <div class="footer_top">
-        <ul class="info">
-          <li><a href="">호두샵 소개</a></li>
-          <li><a href="">이용약관</a></li>
-          <li><a href=""><strong>개인정보처리방침</strong></a></li>
-          <li><a href="">전자금융거래약관</a></li>
-          <li><a href="">청소년보호정책</a></li>
-          <li><a href="">제휴문의</a></li>
-        </ul>
-        <u class="sns_icon">
-          <li ><a href="" target="_blank" class="insta"></a></li>
-          <li ><a href="" target="_blank" class="facebook"></a></li>
-          <li ><a href="" target="_blank" class="youtube"></a></li>
-        </u>
-  </div>
-  <div class="line"></div>
-  <address>
-    <ul>
-      <li><span>(주)HODU SHOP</span></li>
-      <li>제주특별자치도 제주시 동광고 137 제주코딩베이스캠프</li>
-      <li>사업자 번호 : 000-0000-0000 | 통신판매업</li>
-      <li>대표 : 김호두</li>
-    </ul>
-  </address>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="footer_content">
+        <h2 class="sr-only">호두샵 정보</h2>
+        <div class="footer_top">
+          <ul class="info">
+            <li><a href="">호두샵 소개</a></li>
+            <li><a href="">이용약관</a></li>
+            <li>
+              <a href=""><strong>개인정보처리방침</strong></a>
+            </li>
+            <li><a href="">전자금융거래약관</a></li>
+            <li><a href="">청소년보호정책</a></li>
+            <li><a href="">제휴문의</a></li>
+          </ul>
+          <ul class="sns_icon">
+            <li><a href="" target="_blank" class="insta"></a></li>
+            <li><a href="" target="_blank" class="facebook"></a></li>
+            <li><a href="" target="_blank" class="youtube"></a></li>
+          </ul>
+        </div>
+        <div class="line"></div>
+        <address>
+          <ul>
+            <li><span>(주)HODU SHOP</span></li>
+            <li>제주특별자치도 제주시 동광고 137 제주코딩베이스캠프</li>
+            <li>사업자 번호 : 000-0000-0000 | 통신판매업</li>
+            <li>대표 : 김호두</li>
+          </ul>
+        </address>
+      </div>
+    </footer>
 
-  <dialog class="modal">
-   
+    <dialog class="modal">
       <button class="close_btn"></button>
-
-    <p>로그인이 필요한 서비스입니다.<br>로그인 하시겠습니까?</p>
-    <div class="modal_btn_area">
-      <button class="no_btn">아니오</button>
-      <button class="yes_btn">예</button>
-</div>
-  </dialog>
+      <p>
+        로그인이 필요한 서비스입니다.<br />
+        로그인 하시겠습니까?
+      </p>
+      <div class="modal_btn_area">
+        <button class="no_btn">아니오</button>
+        <button class="yes_btn">예</button>
+      </div>
+    </dialog>
   </body>
 </html>
