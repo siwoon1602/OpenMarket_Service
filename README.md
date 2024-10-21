@@ -74,47 +74,32 @@
 
 <img src="./imges/ui.png">
 
-#### 필수 구현페이지
+#### 페이지 구성
 
-<table>
-        <tr>
-            <td>회원가입</td>
-            <td>로그인</td>
-        </tr>
-        <tr>
-            <td>
-		<img src="./imges/join.png" width="100%">
-            </td>
-            <td>
-                <img src="./imges/login.png" width="100%">
-            </td>
-        </tr>
-        <tr>
-            <td>상품 목록</td>
-            <td>상품 상세</td>
-        </tr>
-        <tr>
-            <td>
-                <img src="./imges/main.png" width="100%">
-            </td>
-            <td>
-                <img src="./imges/detail.png" width="100%">
-            </td>
-        </tr>
-        <tr>
-            <td>상품목록 모달 ON</td>
-            <td>상품상세 모달 ON</td>
-        </tr>
-        <tr>
-            <td>
-                <img src="./imges/main_modalOn.png" width="100%">
-            </td>
-            <td>
-                <img src="./imges/detail_modalOn.png" width="100%">
-            </td>
-        </tr>
-      
-</table>
+- 로그인 페이지
+
+<img src="./imges/login.png" width=220px>
+<img src="./imges/login_va.png" width=220px><br><br>
+
+- 회원가입 페이지
+
+<img src="./imges/join.png" width=220px>
+<img src="./imges/회원가입 벨리데이션.png" width=220px><br><br>
+
+- 상품 목록 페이지
+
+<img src="./imges/main.png" width=100%>
+<br><br>
+
+- 상품 상세 페이지
+
+<img src="./imges/detail.png" width=100%>
+<img src="./imges/detail_modalOn.png" width=100%>
+<br><br>
+
+- 상품 상세 페이지 & 상품 목록페이지 공통 모달
+
+<img src="./imges/main_modal.png" width=200px>
 
 ## 5. 에러와 해결방법
 
