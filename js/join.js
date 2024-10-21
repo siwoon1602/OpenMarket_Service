@@ -1,10 +1,9 @@
-// ------------------------ 회원가입 TAP 변환 시작 ------------------------
-
 const buyerJoin = document.querySelector(".buyer_join");
 const sellerJoin = document.querySelector(".seller_join");
 const whiteBox = document.querySelector(".join_white_box");
 const whiteBoxR = document.querySelector(".join_white_box_R");
 
+// 구매회원 로그인 click 이벤트 발생시 클래스 변환
 buyerJoin.addEventListener("click", () => {
   buyerJoin.classList.add("btn_on");
   buyerJoin.classList.remove("btn_off");
@@ -12,6 +11,8 @@ buyerJoin.addEventListener("click", () => {
   whiteBoxR.classList.add("hide");
   whiteBox.classList.remove("hide");
 });
+
+// 판매회원 로그인 click 이벤트 발생시 클래스 변환
 sellerJoin.addEventListener("click", () => {
   sellerJoin.classList.add("btn_on");
   sellerJoin.classList.remove("btn_off");
@@ -20,12 +21,9 @@ sellerJoin.addEventListener("click", () => {
   whiteBoxR.classList.remove("hide");
 });
 
-// ------------------------ 회원가입 TAP 종료------------------------
-
-// ------------------------ 아이디 중복검사------------------------
-
 const idCheck = document.querySelector(".checkId");
 
+// 중복확인 버튼 click 이벤트 발생시 아이디 중복 검사진행
 idCheck.addEventListener("click", async (event) => {
   event.preventDefault();
   const joinId = joinForm.querySelector("#id");
@@ -66,25 +64,17 @@ idCheck.addEventListener("click", async (event) => {
   }
 });
 
-// ------------------------ 아이디 중복검사 종료------------------------
-
-// ------------------------ 유효성 검사 시작 ------------------------
-
 const joinForm = document.querySelector("form");
 const joinResult = document.querySelector(".joinBtn");
 const checkBox = document.querySelector("#check_agree");
 
 // 가입하기 버튼 비활성화 및 초기 CSS 스타일 설정
-
 joinResult.disabled = true;
 joinResult.style.backgroundColor = "#ccc";
 joinResult.style.color = "#fff";
 
-// 유효성 검사 함수 생성
-
+// 아이디 패스워드 유효성 검사 함수
 function validateForm() {
-  // 인풋 요소 선택
-
   const joinId = joinForm.querySelector("#id");
   const joinPw = joinForm.querySelector("#pw");
   const joinPwConfirm = joinForm.querySelector("#pwConfirm");
@@ -124,7 +114,8 @@ function validateForm() {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
   const idPattern = /^[a-zA-Z0-9]{1,20}$/;
 
-  let isValid = true; // 유효성 여부 체크 변수
+  // 유효성 여부 체크 변수
+  let isValid = true;
 
   // 아이디 유효성 검사
   if (!joinId.value) {
@@ -155,6 +146,7 @@ function validateForm() {
     isValid = false;
     checkBoxOne.classList.replace("confirmCircle_pw_on", "confirmCircle_pw");
   }
+
   // 비밀번호 재확인 유효성 검사
   if (!joinPwConfirm.value) {
     joinPwConfirm.setCustomValidity("필수 정보입니다.");
@@ -197,6 +189,7 @@ function validateForm() {
     numError.style.color = "#eb5757";
     isValid = false;
   }
+
   // 에러 메세지 출력
   if (!joinId.checkValidity()) {
     idError.textContent = joinId.validationMessage;
@@ -234,9 +227,7 @@ function validateForm() {
 joinForm.addEventListener("focusout", validateForm);
 checkBox.addEventListener("click", validateForm);
 
-// ------------------------ 유효성 검사 종료 ------------------------
-
-// ------------------------ 회원가입 정보 제출 시작  ------------------------
+// 가입하기 버튼 click 이벤트 발생시 정보 제출
 joinResult.addEventListener("click", async (event) => {
   event.preventDefault();
 
