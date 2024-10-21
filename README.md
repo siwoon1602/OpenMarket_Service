@@ -78,12 +78,12 @@
 
 - 로그인 페이지
 
-<img src="./imges/login.png" width=220px>
+<img src="./imges/login2.png" width=220px>
 <img src="./imges/login_va.png" width=220px><br><br>
 
 - 회원가입 페이지
 
-<img src="./imges/join.png" width=220px>
+<img src="./imges/join2.png" width=220px>
 <img src="./imges/회원가입 벨리데이션.png" width=220px><br><br>
 
 - 상품 목록 페이지
