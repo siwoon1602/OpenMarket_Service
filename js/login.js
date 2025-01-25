@@ -119,8 +119,6 @@ userPw.addEventListener("input", () => {
 });
 // ------------------------ 로그인 validation 종료 ------------------------
 
-// ------------------------ 회원 로그인 TAP 시작 ------------------------
-
 const buyerLogin = document.querySelector(".buyer_login");
 const sellerLogin = document.querySelector(".seller_login");
 const whiteArea = document.querySelector(".white_box");
