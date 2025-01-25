@@ -1,0 +1,32 @@
+h2 {
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--maincolor);
+}
+
+p {
+  font-weight: 200;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  gap: 10px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+button {
+  color: white;
+  background-color: var(--maincolor);
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
