@@ -266,7 +266,7 @@ joinResult.addEventListener("click", async (event) => {
 
       if (response.ok) {
         console.log("회원가입 성공:", responseData);
-        window.location.href = "./login.html";
+        window.location.href = "./joinSucced.html";
         return;
       }
 
