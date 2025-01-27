@@ -130,6 +130,9 @@ label {
   width: 480px;
   height: 54px;
 }
+.join_business {
+  width: 350px;
+}
 .confirmCircle_pw {
   background-image: url(../assets/icon-check-off.svg);
   width: 28px;
@@ -182,7 +185,18 @@ label {
   align-items: center;
   position: relative;
 }
+.businessForm {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  position: relative;
+}
 .pwForm {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.storeForm {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -200,26 +214,36 @@ label {
   display: flex;
   flex-direction: column;
 }
+.businessFormAlign {
+  display: flex;
+  flex-direction: column;
+}
 
 .idMessage,
 .pwMessage,
 .pwcMessage,
 .nameMessage,
-.numberMessage {
+.numberMessage,
+.businessMessage,
+.storeMessage {
   margin-bottom: 12px;
   font-size: 16px;
   line-height: 20.03px;
   font-weight: 400;
   display: block;
 }
-
+.storeMessage {
+  margin: 10px 0 20px;
+}
+.businessMessage {
+  margin: 10px 0 20px;
+}
 .numberMessage {
   margin: 10px 0 20px;
 }
 .pwcMessage {
   margin: 10px 0 20px;
 }
-
 .nameMessage {
   margin: 10px 0 20px;
 }
@@ -235,6 +259,16 @@ select {
   gap: 12px;
 }
 .checkId {
+  background-color: var(--maincolor);
+  color: white;
+  font-size: 16px;
+  line-height: 20.03px;
+  width: 122px;
+  height: 54px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.checkBusinessNumber {
   background-color: var(--maincolor);
   color: white;
   font-size: 16px;
