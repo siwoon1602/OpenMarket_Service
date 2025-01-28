@@ -3,7 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/cart.css" />
+    <script src="./js/cart.js" defer></script>
     <title>장바구니</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="header_content">
+        <div class="header_contet_left">
+          <h1 class="sr-only">HODU!</h1>
+          <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
+          <div class="search">
+            <input type="text" placeholder="상품을 검색해보세요!" />
+            <div class="search-icon"></div>
+          </div>
+        </div>
+
+        <ul class="user_menu">
+          <li id="userMenu1">
+            <a href="./cart.html">
+              <img
+                src="./assets/icon-shopping-cart.svg"
+                alt=""
+                id="userMenu1"
+              />
+              <span id="userinterface_second">장바구니</span>
+            </a>
+          </li>
+          <li id="userMenu2">
+            <a href="./login.html" target="_self">
+              <img src="./assets/icon-user.svg" alt="" />
+              <span id="userinterface_first">로그인</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1>장바구니</h1>
+      <ul class="info_box">
+        <li><input type="checkbox" /></li>
+        <li class="prodcut_info">상품정보</li>
+        <li class="product_ea">수량</li>
+        <li class="product_price">상품금액</li>
+      </ul>
+      <section>
+        <div class="cart_list">
+          <input type="checkbox" />
+          <div class="image"></div>
+          <ul class="prodcut_info_text">
+            <li>백엔드 글로벌</li>
+            <li>딥러닝 개발자 무릎 담요</li>
+            <li>17,500원</li>
+            <li>택배배송 / 무료배송</li>
+          </ul>
+          <div class="ea_setting">
+            <button class="minus"></button>
+            <input type="text" value="1" class="ea" />
+            <button class="plus"></button>
+          </div>
+          <div class="order_area">
+            <ul>
+              <li>17,500원</li>
+              <li><button class="order_btn">주문하기</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="cart_list">
+          <input type="checkbox" />
+          <div class="image"></div>
+          <ul class="prodcut_info_text">
+            <li>백엔드 글로벌</li>
+            <li>딥러닝 개발자 무릎 담요</li>
+            <li>17,500원</li>
+            <li>택배배송 / 무료배송</li>
+          </ul>
+          <div class="ea_setting">
+            <button class="minus"></button>
+            <input type="text" value="1" class="ea" />
+            <button class="plus"></button>
+          </div>
+          <div class="order_area">
+            <ul>
+              <li>17,500원</li>
+              <li><button>주문하기</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
