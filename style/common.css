@@ -99,7 +99,24 @@
   color: #767676;
   line-height: 14px;
 }
+.sellerCenter-btn {
+  color: white;
+  background-color: var(--maincolor);
+  font-weight: 500;
+  font-weight: 18px;
+  line-height: 22.54px;
+  padding: 11px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
 
+#sellerCenter-icon {
+  width: 24px;
+  height: 26px;
+}
 /* header 모달 */
 .header_modal {
   width: 120px;
