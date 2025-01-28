@@ -117,4 +117,73 @@ window.addEventListener("pageshow", (e) => {
       }
     }
   });
+
+  const productContainer = document.querySelector(".order_list_container");
+
+  async function fetchCartItems() {
+    try {
+      const response = await fetch(
+        "https://estapi.openmarket.weniv.co.kr/cart/",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("서버 응답에 문제가 있습니다.");
+      }
+
+      const data = await response.json();
+
+      if (data.count === 0) {
+        productContainer.innerHTML = `<p>장바구니가 비어있습니다.</p>`;
+        return;
+      }
+
+      const productHTML = data.results
+        .map((item) => {
+          const product = item.product;
+          return `
+          <div class="cart_list">
+            <input type="checkbox" />
+            <img src="${product.image}" class="image" alt="${product.name}" />
+            <ul class="prodcut_info_text">
+              <li>${product.info}</li>
+              <li>${product.name}</li>
+              <li>${product.price.toLocaleString()}원</li>
+              <li>택배배송 / 무료배송</li>
+            </ul>
+            <div class="ea_setting">
+              <button class="minus"></button>
+              <input type="text" value="${item.quantity}" class="ea" />
+              <button class="plus"></button>
+            </div>
+            <div class="order_area">
+              <ul>
+                <li>${(product.price * item.quantity).toLocaleString()}원</li>
+                <li><button class="order_btn">주문하기</button></li>
+              </ul>
+            </div>
+          </div>
+        `;
+        })
+        .join("");
+
+      productContainer.innerHTML = productHTML;
+    } catch (error) {
+      console.error("서버 통신 오류:", error);
+      const idError = document.querySelector(".error-message");
+      if (idError) {
+        idError.textContent = "서버 통신 중 오류가 발생했습니다.";
+        idError.style.color = "#EB5757";
+      }
+    }
+  }
+
+  // 장바구니 데이터 로드
+  fetchCartItems();
 });
