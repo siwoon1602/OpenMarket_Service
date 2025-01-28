@@ -1,0 +1,138 @@
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin-top: 54px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.product_price {
+  margin-right: 130px;
+}
+.info_box {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 20px 20px;
+  margin: 52px 0 35px;
+}
+
+.cart_list {
+  width: 1280px;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cart_list input {
+  margin-right: 70px;
+}
+
+.image {
+  width: 160px;
+  height: 160px;
+  background-color: black;
+  border-radius: 20px;
+  margin-right: 70px;
+}
+.prodcut_info_text {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 130px;
+}
+
+.prodcut_info_text li:nth-child(1) {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 400;
+  line-height: 17.53px;
+}
+.prodcut_info_text li:nth-child(2) {
+  color: black;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.prodcut_info_text li:nth-child(3) {
+  font-size: 16px;
+  color: black;
+  line-height: 20.03px;
+  font-weight: 700;
+}
+.prodcut_info_text li:nth-child(4) {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 400;
+  line-height: 20.03px;
+  font-weight: 700;
+  margin-top: 38px;
+}
+
+.ea_setting {
+  display: flex;
+  align-items: center;
+  margin-right: 250px;
+}
+
+.ea_setting .minus,
+.ea_setting .plus,
+.ea_setting .ea {
+  all: unset;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c4c4c4;
+  text-align: center;
+}
+.ea_setting .minus:active,
+.ea_setting .plus:active {
+  background-color: #c4c4c4;
+  transition: 0.1s;
+}
+
+.ea_setting .ea {
+  width: 60px;
+  text-align: center;
+  padding: 0;
+}
+.ea_setting .minus {
+  background-image: url(../assets/icon-minus-line.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 5px 0px 0px 5px;
+}
+.ea_setting .plus {
+  background-image: url(../assets/icon-plus-line.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+}
+.order_area ul {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+}
+.order_area li:nth-child(1) {
+  color: red;
+  font-weight: 700;
+  font-size: 18px;
+}
+.order_area ul li button {
+  color: white;
+  background-color: var(--maincolor);
+  padding: 10px 35px;
+  border-radius: 5px;
+}
