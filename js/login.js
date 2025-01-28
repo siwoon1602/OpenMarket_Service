@@ -78,6 +78,8 @@ loginForm.addEventListener("submit", async (event) => {
       const data = await response.json();
       if (data.user.user_type === userType) {
         localStorage.setItem("token", data.access);
+        localStorage.setItem("userType", data.user.user_type);
+        localStorage.setItem("userName", data.user.username);
         window.history.back();
       } else {
         loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
