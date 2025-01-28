@@ -198,6 +198,7 @@
   line-height: 22px;
   font-weight: 700;
   border-radius: 5px;
+  cursor: pointer;
 }
 .now_sell {
   background-color: var(--maincolor);
