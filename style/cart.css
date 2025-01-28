@@ -31,6 +31,7 @@ main {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  position: relative;
 }
 .cart_list input {
   margin-right: 70px;
@@ -239,4 +240,38 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.no_item ul li:nth-child(1) {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22.54px;
+}
+
+.delete_item {
+  background-color: inherit;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.no_item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.no_item li:nth-child(1) {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22.54px;
+}
+.no_item li:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+  color: #767676;
+  line-height: 17.53px;
 }
