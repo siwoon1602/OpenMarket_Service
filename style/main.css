@@ -7,6 +7,14 @@
   padding: 11px 20px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+#sellerCenter-icon {
+  width: 24px;
+  height: 26px;
 }
 .slide_banner {
   width: 100%;

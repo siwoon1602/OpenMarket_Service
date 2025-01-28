@@ -112,10 +112,19 @@
   padding: 5px;
   background-color: white;
   border-radius: 5px;
-  left: 45px;
-  top: 50px;
   z-index: 30;
 }
+
+.buyer_modal {
+  left: 45px;
+  top: 50px;
+}
+
+.seller_modal {
+  left: -30px;
+  top: 60px;
+}
+
 .triangle {
   box-shadow: 1px 0px 6px #0000002a;
   background-color: white;
