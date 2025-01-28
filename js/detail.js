@@ -338,10 +338,13 @@ window.addEventListener("load", function () {
             });
 
             // 장바구니 click 이벤트 발생시 토큰 미보유시 모달창 ON
-            inCartButton.addEventListener("click", () => {
+            inCartButton.addEventListener("click", (event) => {
               const token = localStorage.getItem("token");
+
               if (!token) {
                 modal.showModal();
+              } else {
+                handleInCart(event);
               }
             });
           }
@@ -355,3 +358,63 @@ window.addEventListener("load", function () {
       console.error("Error fetching product data:", error);
     });
 });
+
+async function handleInCart(event) {
+  event.preventDefault();
+  const token = localStorage.getItem("token");
+  const quantityEa = document.querySelector(".ea");
+
+  // 모달 생성
+  const inCartModal = document.createElement("article");
+  inCartModal.className = "inCart_modal hide";
+  inCartModal.innerHTML = `
+    <p>장바구니에 상품이 담겼습니다!</p>
+    <div class="cartModal_btn_align">
+      <a href="./cart.html">
+        <button class="move_inCart">장바구니로 이동</button>
+      </a>
+      <button class="close_Cartmodal">닫기</button>
+    </div>
+  `;
+
+  document.body.appendChild(inCartModal);
+
+  // 모든 요소가 제대로 추가되었는지 확인
+  console.log("생성된 모달:", inCartModal);
+  console.log("모달의 현재 클래스:", inCartModal.className);
+
+  // 닫기 버튼 이벤트 리스너 추가
+  const closeButton = inCartModal.querySelector(".close_Cartmodal");
+  closeButton.addEventListener("click", () => {
+    document.body.removeChild(inCartModal);
+  });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+
+  try {
+    const response = await fetch(
+      "https://estapi.openmarket.weniv.co.kr/cart/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          product_id: productId,
+          quantity: quantityEa.value,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.message) {
+        inCartModal.classList.remove("hide");
+      }
+    }
+  } catch (error) {
+    console.error("서버 통신 오류:", error);
+  }
+}
