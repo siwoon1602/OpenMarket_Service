@@ -145,14 +145,20 @@ window.addEventListener("pageshow", (e) => {
 
       let totalPrice = 0;
       let totalDiscount = 0;
-      let shippingFee = 0;
+      let totalShippingFee = 0;
 
       const productHTML = data.results
         .map((item) => {
           const product = item.product;
           const cartId = item;
+          const itemShippingFee = item.product.shipping_fee;
+          totalShippingFee += itemShippingFee;
+
           const itemTotal = product.price * item.quantity;
           totalPrice += itemTotal;
+
+          const shippingMethod =
+            item.shipping_method === "PARCEL" ? "택배배송" : "직접배송";
 
           return `
             <div class="cart_list" data-product-id="${
@@ -164,7 +170,7 @@ window.addEventListener("pageshow", (e) => {
                 <li>${product.info}</li>
                 <li>${product.name}</li>
                 <li>${product.price.toLocaleString()}원</li>
-                <li>택배배송 / 무료배송</li>
+                <li>${shippingMethod} / 배송비 : ${itemShippingFee}</li>
               </ul>
               <div class="ea_setting">
                 <button class="minus"></button>
@@ -185,7 +191,7 @@ window.addEventListener("pageshow", (e) => {
 
         .join("");
 
-      const finalPrice = totalPrice - totalDiscount + shippingFee;
+      const finalPrice = totalPrice - totalDiscount + totalShippingFee;
 
       productContainer.innerHTML = `
         
@@ -208,7 +214,7 @@ window.addEventListener("pageshow", (e) => {
             </div>
             <ul>
               <li>배송비</li>
-              <li>${shippingFee.toLocaleString()}<span>원</span></li>
+              <li>${totalShippingFee.toLocaleString()}<span>원</span></li>
             </ul>
             <ul>
               <li>결제 예정 금액</li>
@@ -379,49 +385,61 @@ window.addEventListener("pageshow", (e) => {
 
   function updateTotalPrice() {
     let totalPrice = 0;
+    let totalShippingFee = 0;
     const cartItems = document.querySelectorAll(".cart_list");
 
     cartItems.forEach((item) => {
       const checked = item.querySelector('input[type="checkbox"]').checked;
       if (checked) {
+        // 상품 가격 계산
         const quantity = parseInt(item.querySelector(".ea").value);
         const priceText = item.querySelector(
           ".prodcut_info_text li:nth-child(3)"
         ).textContent;
         const price = parseInt(priceText.replace(/[^0-9]/g, ""));
         totalPrice += price * quantity;
+
+        // 배송비 추가
+        const shippingFeeText = item.querySelector(
+          ".prodcut_info_text li:nth-child(4)"
+        ).textContent;
+        const shippingFee = parseInt(
+          shippingFeeText.match(/배송비 : (\d+)/)[1]
+        );
+        totalShippingFee += shippingFee;
       }
     });
+
+    const finalPrice = totalPrice + totalShippingFee;
 
     const totalArea = document.querySelector(".total_area");
     if (totalArea) {
       totalArea.innerHTML = `
-        <ul>
-          <li>총 상품금액</li>
-          <li>${totalPrice.toLocaleString()}<span>원</span></li>
-        </ul>
-        <div class="minus_circle">
-          <img src="./assets/icon-minus-line.svg" alt="마이너스" />
-        </div>
-        <ul>
-          <li>상품 할인</li>
-          <li>0<span>원</span></li>
-        </ul>
-        <div class="plus_circle">
-          <img src="./assets/icon-plus-line.svg" alt="플러스" />
-        </div>
-        <ul>
-          <li>배송비</li>
-          <li>0<span>원</span></li>
-        </ul>
-        <ul>
-          <li>결제 예정 금액</li>
-          <li><em>${totalPrice.toLocaleString()}</em><span>원</span></li>
-        </ul>
-      `;
+            <ul>
+                <li>총 상품금액</li>
+                <li>${totalPrice.toLocaleString()}<span>원</span></li>
+            </ul>
+            <div class="minus_circle">
+                <img src="./assets/icon-minus-line.svg" alt="마이너스" />
+            </div>
+            <ul>
+                <li>상품 할인</li>
+                <li>0<span>원</span></li>
+            </ul>
+            <div class="plus_circle">
+                <img src="./assets/icon-plus-line.svg" alt="플러스" />
+            </div>
+            <ul>
+                <li>배송비</li>
+                <li>${totalShippingFee.toLocaleString()}<span>원</span></li>
+            </ul>
+            <ul>
+                <li>결제 예정 금액</li>
+                <li><em>${finalPrice.toLocaleString()}</em><span>원</span></li>
+            </ul>
+        `;
     }
   }
-
   if (token) {
     fetchCartItems();
   }
