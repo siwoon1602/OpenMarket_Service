@@ -42,10 +42,10 @@
 
 ## 🙋‍♂️ Developer
 
-|              FrontEnd              |
-| :--------------------------------: |
-|    <img src="/assets/윤슌.jpg">    |
-| [윤시운](https://github.com/JGeun) |
+|                        FrontEnd                         |
+| :-----------------------------------------------------: |
+| <img src="/assets/윤슌.jpg" width="50px" height="50px"> |
+|           [윤시운](https://github.com/JGeun)            |
 
 ## 2. 요구사항과 기능 명세<br>
 
