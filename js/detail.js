@@ -10,7 +10,7 @@ function updateUserMenuBasedOnToken() {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "/OpenMarket_Service/";
+    window.location.href = "https://siwoon1602.github.io/OpenMarket_Service/";
   };
 
   const handleModalToggle = (e) => {
@@ -327,17 +327,40 @@ window.addEventListener("load", function () {
             });
           }
 
-          // 구매버튼 클릭시 발생하는 모달 이벤트
           if (modal) {
             nowSellButton.addEventListener("click", () => {
               const token = localStorage.getItem("token");
-              // 구매하기 click 이벤트 발생시 토큰 미보유시 모달창 ON
               if (!token) {
                 modal.showModal();
+              } else {
+                const quantity = parseInt(eaInput.value);
+                const totalProductPrice = data.price * quantity;
+                const shippingFee = data.shipping_fee;
+                const finalPrice = totalProductPrice + shippingFee;
+
+                const orderData = {
+                  items: [
+                    {
+                      product_id: data.id,
+                      image: data.image,
+                      product_name: data.name,
+                      price: data.price,
+                      quantity: quantity,
+                      shipping_fee: shippingFee,
+                      shipping_method: data.shipping_method,
+                      product_info: data.seller.store_name,
+                    },
+                  ],
+                  total_price: totalProductPrice,
+                  total_shipping_fee: shippingFee,
+                  final_price: finalPrice,
+                };
+
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+                window.location.href = "./payment.html";
               }
             });
 
-            // 장바구니 click 이벤트 발생시 토큰 미보유시 모달창 ON
             inCartButton.addEventListener("click", (event) => {
               const token = localStorage.getItem("token");
 
