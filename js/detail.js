@@ -241,7 +241,7 @@ window.addEventListener("load", function () {
               </li>
               <li class="count_area">
                 <button class="minus"></button>
-                <input type="text" value="1" class="ea">
+                <input type="text" value="1" class="ea" disabled>
                 <button class="plus"></button>
               </li>
               <li class="price_area">
