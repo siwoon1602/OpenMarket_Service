@@ -15,15 +15,16 @@ function addDirectOrderBtnEventListeners() {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
-            "order_kind" : "direct_order",
-            "product": Int,
-            "quantity" : Int,
-            "total_price": Int
-            "reciever": String,
-            "reciever_phone_number": String,
-            "address": String,
-            "address_message": String | null,
-            "payment_method": "card"|"deposit"|"phone"|"naverpay"|"kakaopay",
+            order_kind: "direct_order",
+            product: Int,
+            quantity: Int,
+            total_price: Int,
+            reciever: String,
+            reciever_phone_number: String,
+            address: String,
+            address_message: String | null,
+            payment_method:
+              "card" | "deposit" | "phone" | "naverpay" | "kakaopay",
           }),
         }
       );
