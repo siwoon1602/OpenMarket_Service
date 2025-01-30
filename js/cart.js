@@ -223,6 +223,7 @@ window.addEventListener("pageshow", (e) => {
       addCheckboxEventListeners();
       addSelectAllEventListener();
       addDeleteButtonEventListeners();
+      addDeleteAllButtonEventListeners();
     } catch (error) {
       console.error("서버 통신 오류:", error);
       const idError = document.querySelector(".error-message");
@@ -233,6 +234,40 @@ window.addEventListener("pageshow", (e) => {
     }
   }
 
+  function addDeleteAllButtonEventListeners() {
+    const token = localStorage.getItem("token");
+    const deleteAllButton = document.querySelector(".product_delete");
+
+    if (!deleteAllButton) return;
+
+    deleteAllButton.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      try {
+        const response = await fetch(
+          "https://estapi.openmarket.weniv.co.kr/cart/",
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (response.ok) {
+          alert("장바구니가 정상적으로 비워졌습니다!");
+          window.location.reload();
+        } else {
+          alert("장바구니 비우기에 실패했습니다.");
+          console.error("서버 응답 오류:", response.status);
+        }
+      } catch (error) {
+        alert("서버 통신 중 오류가 발생했습니다.");
+        console.error("서버 통신 오류:", error);
+      }
+    });
+  }
   function addDeleteButtonEventListeners() {
     const deleteButtons = document.querySelectorAll(".delete_item");
     deleteButtons.forEach((button) => {
