@@ -364,7 +364,6 @@ async function handleInCart(event) {
   const token = localStorage.getItem("token");
   const quantityEa = document.querySelector(".ea");
 
-  // 모달 생성
   const inCartModal = document.createElement("article");
   inCartModal.className = "inCart_modal hide";
   inCartModal.innerHTML = `
@@ -379,11 +378,6 @@ async function handleInCart(event) {
 
   document.body.appendChild(inCartModal);
 
-  // 모든 요소가 제대로 추가되었는지 확인
-  console.log("생성된 모달:", inCartModal);
-  console.log("모달의 현재 클래스:", inCartModal.className);
-
-  // 닫기 버튼 이벤트 리스너 추가
   const closeButton = inCartModal.querySelector(".close_Cartmodal");
   closeButton.addEventListener("click", () => {
     document.body.removeChild(inCartModal);
