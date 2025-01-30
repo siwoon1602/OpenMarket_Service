@@ -275,3 +275,18 @@ main {
   color: #767676;
   line-height: 17.53px;
 }
+[type="checkbox"] {
+  appearance: none;
+  box-sizing: border-box;
+  background-clip: content-box;
+  padding: 0.25em;
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid var(--maincolor);
+  border-radius: 20px;
+  cursor: pointer;
+}
+[type="checkbox"]:checked {
+  border-color: var(--maincolor);
+  background-color: var(--maincolor);
+}
