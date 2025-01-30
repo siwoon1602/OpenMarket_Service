@@ -8,7 +8,7 @@ window.addEventListener("pageshow", (e) => {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "/https://siwoon1602.github.io/OpenMarket_Service/";
+    window.location.href = "https://siwoon1602.github.io/OpenMarket_Service/";
   };
 
   const handleModalToggle = (e) => {
