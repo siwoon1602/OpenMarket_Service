@@ -163,3 +163,40 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "./error.html";
     });
 });
+
+window.addEventListener("load", function () {
+  const token = localStorage.getItem("token");
+  const modal = document.querySelector(".modal");
+  const cartBtn = document.querySelector("#userMenu1 a");
+
+  if (!token && cartBtn) {
+    cartBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (modal) {
+        modal.showModal();
+      } else if (token) {
+        window.location.href = "./cart.html";
+      }
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === e.currentTarget) modal.close();
+    });
+  }
+
+  const closeBtn = document.querySelector(".close_btn");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.close();
+    });
+  }
+
+  const noBtn = document.querySelector(".no_btn");
+  if (noBtn) {
+    noBtn.addEventListener("click", () => {
+      modal.close();
+    });
+  }
+});
