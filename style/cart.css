@@ -15,7 +15,7 @@ main {
 .info_box {
   width: 1280px;
   display: flex;
-
+  border-radius: 10px;
   background-color: #f2f2f2;
   align-items: center;
   padding: 20px 20px;
@@ -43,6 +43,7 @@ main {
   align-items: center;
   margin-bottom: 10px;
   position: relative;
+  border-radius: 10px;
 }
 .cart_list input {
   margin-right: 70px;
@@ -172,6 +173,7 @@ main {
 .total_area {
   width: 1280px;
   display: flex;
+  border-radius: 10px;
   background-color: #f2f2f2;
   padding: 46px 115px;
   gap: 100px;
