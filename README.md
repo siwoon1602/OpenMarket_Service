@@ -7,6 +7,8 @@
 
 > 배포주소 : https://siwoon1602.github.io/OpenMarket_Service/ </br>
 
+> 테스트 계정 <br>구매자 (buyer) : ID: buyer1 / PW: weniv1234 <br> 판매자 (seller) : ID: seller1 / PW: weniv1234
+
 🔧🪛사용 기술스택 :<br>
 <img src="./imges/HTMLCSS.png" width="80px"> <img src="./imges/JavaScript.png" width="80px"> </br>
 
@@ -45,7 +47,7 @@
 |                        FrontEnd                         |
 | :-----------------------------------------------------: |
 | <img src="/assets/윤슌.jpg" width="50px" height="50px"> |
-|           [윤시운](https://github.com/JGeun)            |
+|         [윤시운](https://github.com/siwoon1602)         |
 
 ## 2. 요구사항과 기능 명세<br>
 
@@ -83,9 +85,13 @@
 | :-: | :-------------: | :------------------------------------------------------------ | :-: |
 |  1  |  Page Open 시   | productId에 해당하는 상품을 불러오고, 해당 상품 정보를 보여줌 | ✅  |
 |  2  | 상품 수량 변경  | + 와 - 버튼 외 수량 변경 불가                                 | ✅  |
-|  3  |  재고수량 체크  | 현재 상품의 재고 수량 초과시 +버튼 비활성화                   |     |
+|  3  |  재고수량 체크  | 현재 상품의 재고 수량 초과시 +버튼 비활성화                   | ✅  |
 |  4  |  재고 품절 시   | 현재 상품의 재고 수량이 0일시 구매,장바구니 버튼 비활성화     | ✅  |
 |  5  |  총 가격 계산   | 선택된 옵션에 맞춰서 가격을 계산하고, 총 가격 노출            | ✅  |
+
+<br><br>
+
+### 2.1 추가 구현 페이지
 
 ## 3. 프로젝트 구조
 
@@ -96,12 +102,15 @@
  ┃ ┣ 📜detail.js  
  ┃ ┣ 📜join.js  
  ┃ ┣ 📜login.js  
+ ┃ ┣ 📜cart.js  
  ┃ ┗ 📜main.js  
  ┣ 📂style  
  ┃ ┣ 📜common.css  
  ┃ ┣ 📜detail.css  
+ ┃ ┣ 📜cart.css  
  ┃ ┣ 📜error.css  
  ┃ ┣ 📜join.css  
+ ┃ ┣ 📜joinSucced.css  
  ┃ ┣ 📜login.css  
  ┃ ┣ 📜main.css  
  ┃ ┗ 📜reset.css  
@@ -109,6 +118,7 @@
  ┣ 📜error.html  
  ┣ 📜index.html  
  ┣ 📜join.html  
+ ┣ 📜joinSucced.html  
  ┣ 📜login.html  
  ┗ 📜README.md
 
