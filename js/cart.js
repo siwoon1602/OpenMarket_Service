@@ -8,7 +8,7 @@ window.addEventListener("pageshow", (e) => {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "/";
+    window.location.href = "/OpenMarket_Service/";
   };
 
   const handleModalToggle = (e) => {
