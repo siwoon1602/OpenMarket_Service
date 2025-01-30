@@ -12,16 +12,27 @@ main {
   justify-self: center;
 }
 
-.product_price {
-  margin-right: 130px;
-}
 .info_box {
   width: 1280px;
   display: flex;
-  justify-content: space-between;
+
   background-color: #f2f2f2;
+  align-items: center;
   padding: 20px 20px;
   margin: 52px 0 35px;
+}
+.prodcut_info {
+  margin-left: 390px;
+}
+.product_ea {
+  margin-left: 220px;
+}
+.product_price {
+  margin-left: 350px;
+}
+.product_delete {
+  margin-left: 60px;
+  cursor: pointer;
 }
 
 .cart_list {
@@ -44,6 +55,7 @@ main {
   border-radius: 20px;
   margin-right: 70px;
 }
+
 .prodcut_info_text {
   height: 160px;
   display: flex;
@@ -289,4 +301,8 @@ main {
 [type="checkbox"]:checked {
   border-color: var(--maincolor);
   background-color: var(--maincolor);
+}
+
+.delete_all {
+  cursor: pointer;
 }
