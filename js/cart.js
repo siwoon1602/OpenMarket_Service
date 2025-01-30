@@ -8,7 +8,7 @@ window.addEventListener("pageshow", (e) => {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
-    window.location.href = "/OpenMarket_Service/";
+    window.location.href = "/https://siwoon1602.github.io/OpenMarket_Service/";
   };
 
   const handleModalToggle = (e) => {
@@ -163,7 +163,7 @@ window.addEventListener("pageshow", (e) => {
           return `
             <div class="cart_list" data-product-id="${
               cartId.id
-            }" data-product-stock="${product.stock}">
+            }" data-product-stock="${product.stock}" data-list-id=${product.id}>
               <input type="checkbox" checked />
               <img src="${product.image}" class="image" alt="${product.name}" />
               <ul class="prodcut_info_text">
@@ -461,6 +461,7 @@ window.addEventListener("pageshow", (e) => {
     const cartItems = document.querySelectorAll(".cart_list");
     cartItems.forEach((item) => {
       const productStock = item.dataset.productStock;
+      const listId = item.dataset.listId;
       const minusBtn = item.querySelector(".minus");
       const plusBtn = item.querySelector(".plus");
       const quantityInput = item.querySelector(".ea");
