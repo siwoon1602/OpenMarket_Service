@@ -307,3 +307,7 @@ main {
 .delete_all {
   cursor: pointer;
 }
+
+button {
+  cursor: pointer;
+}
