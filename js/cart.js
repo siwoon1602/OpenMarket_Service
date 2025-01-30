@@ -240,6 +240,68 @@ window.addEventListener("pageshow", (e) => {
     }
   }
 
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("order_all")) {
+      const selectedItems = Array.from(
+        document.querySelectorAll(".cart_list")
+      ).filter((item) => item.querySelector('input[type="checkbox"]').checked);
+
+      if (selectedItems.length === 0) {
+        alert("주문할 상품을 선택해주세요.");
+        return;
+      }
+
+      const orderData = getOrderData(selectedItems);
+      localStorage.setItem("orderData", JSON.stringify(orderData));
+      window.location.href = "./payment.html";
+    } else if (e.target.classList.contains("order_btn")) {
+      const cartItem = e.target.closest(".cart_list");
+      const orderData = getOrderData([cartItem]);
+      localStorage.setItem("orderData", JSON.stringify(orderData));
+      window.location.href = "./payment.html";
+    }
+  });
+
+  function getOrderData(items) {
+    let totalPrice = 0;
+    let totalShippingFee = 0;
+
+    const orderItems = items.map((item) => {
+      const quantity = parseInt(item.querySelector(".ea").value);
+      const price = parseInt(
+        item
+          .querySelector(".prodcut_info_text li:nth-child(3)")
+          .textContent.replace(/[^0-9]/g, "")
+      );
+      const shippingFee = parseInt(
+        item
+          .querySelector(".prodcut_info_text li:nth-child(4)")
+          .textContent.match(/배송비 : (\d+)/)[1]
+      );
+
+      totalPrice += price * quantity;
+      totalShippingFee += shippingFee;
+
+      return {
+        product_id: item.dataset.productId,
+        product_info: item.querySelector(".prodcut_info_text li:nth-child(1)")
+          .textContent,
+        product_name: item.querySelector(".prodcut_info_text li:nth-child(2)")
+          .textContent,
+        price: price,
+        quantity: quantity,
+        shipping_fee: shippingFee,
+        image: item.querySelector(".image").src,
+      };
+    });
+
+    return {
+      items: orderItems,
+      total_price: totalPrice,
+      total_shipping_fee: totalShippingFee,
+      final_price: totalPrice + totalShippingFee,
+    };
+  }
   function addDeleteAllButtonEventListeners() {
     const token = localStorage.getItem("token");
     const deleteAllButton = document.querySelector(".product_delete");
