@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", function () {
   const token = localStorage.getItem("token");
   const modal = document.querySelector(".modal");
-  const cartBtn = document.querySelector("#userMenu1 a");
+  const cartBtn = document.querySelector("#userMenu1");
 
   if (!token && cartBtn) {
     cartBtn.addEventListener("click", (e) => {
@@ -193,6 +193,12 @@ window.addEventListener("load", function () {
     });
   }
 
+  const yesBtn = document.querySelector(".yes_btn");
+  if (yesBtn) {
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "./login.html";
+    });
+  }
   const noBtn = document.querySelector(".no_btn");
   if (noBtn) {
     noBtn.addEventListener("click", () => {
