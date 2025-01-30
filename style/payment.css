@@ -36,20 +36,23 @@ main {
 
 .order_text {
   display: flex;
-  gap: 200px;
+  gap: 100px;
+  margin-left: 78px;
 }
 .order_text li:nth-child(2) {
   color: #767676;
   font-size: 18px;
+  margin-left: 100px;
 }
 .order_text li:nth-child(3) {
   color: black;
   font-weight: 700;
+  margin-left: 110px;
 }
 .cart_list {
   width: 1280px;
   border-bottom: 2px solid #c4c4c4;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
