@@ -305,6 +305,60 @@ window.addEventListener("pageshow", (e) => {
       });
     });
   }
+
+  async function cartItemUpdatePlus(cartItem, newQuantity) {
+    try {
+      const productId = cartItem.dataset.productId;
+      const response = await fetch(
+        `https://estapi.openmarket.weniv.co.kr/cart/${productId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            quantity: newQuantity + 1,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log("수량이 성공적으로 수정되었습니다.");
+      } else {
+        console.error("수량 수정 실패:", response.status);
+      }
+    } catch (error) {
+      console.error("서버 통신 오류:", error);
+    }
+  }
+  async function cartItemUpdateMinus(cartItem, newQuantity) {
+    try {
+      const productId = cartItem.dataset.productId;
+      const response = await fetch(
+        `https://estapi.openmarket.weniv.co.kr/cart/${productId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            quantity: newQuantity + -1,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log("수량이 성공적으로 수정되었습니다.");
+      } else {
+        console.error("수량 수정 실패:", response.status);
+      }
+    } catch (error) {
+      console.error("서버 통신 오류:", error);
+    }
+  }
+
   function addSelectAllEventListener() {
     const selectAllCheckbox = document.getElementById("selectAll");
     const individualCheckboxes = document.querySelectorAll(
@@ -360,18 +414,20 @@ window.addEventListener("pageshow", (e) => {
           quantityInput.value = quantity - 1;
           updateItemTotal(item, price, quantity - 1);
           updateTotalPrice();
+          cartItemUpdateMinus(item, quantity);
         }
       });
 
       plusBtn.addEventListener("click", () => {
         let quantity = parseInt(quantityInput.value);
-        console.log(productStock);
+
         if (quantity >= productStock) {
           window.alert("재고가 부족합니다 ㅠㅠ");
         } else {
           quantityInput.value = quantity + 1;
           updateItemTotal(item, price, quantity + 1);
           updateTotalPrice();
+          cartItemUpdatePlus(item, quantity);
         }
       });
     });
