@@ -412,3 +412,46 @@ async function handleInCart(event) {
     console.error("서버 통신 오류:", error);
   }
 }
+
+window.addEventListener("load", function () {
+  const token = localStorage.getItem("token");
+  const modal = document.querySelector(".modal");
+  const cartBtn = document.querySelector("#userMenu1");
+
+  if (!token && cartBtn) {
+    cartBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (modal) {
+        modal.showModal();
+      } else if (token) {
+        window.location.href = "./cart.html";
+      }
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === e.currentTarget) modal.close();
+    });
+  }
+
+  const closeBtn = document.querySelector(".close_btn");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.close();
+    });
+  }
+
+  const yesBtn = document.querySelector(".yes_btn");
+  if (yesBtn) {
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "./login.html";
+    });
+  }
+  const noBtn = document.querySelector(".no_btn");
+  if (noBtn) {
+    noBtn.addEventListener("click", () => {
+      modal.close();
+    });
+  }
+});
