@@ -436,7 +436,7 @@ async function handleInCart(event) {
   }
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("pageshow", function () {
   const token = localStorage.getItem("token");
   const modal = document.querySelector(".modal");
   const cartBtn = document.querySelector("#userMenu1");
