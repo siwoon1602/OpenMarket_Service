@@ -275,5 +275,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // localStorage.removeItem("orderData");
+  localStorage.removeItem("orderData");
 });
