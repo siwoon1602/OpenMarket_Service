@@ -81,7 +81,8 @@
               type="text"
               class="numInput"
               id="orderer_firstPhoneNumber"
-              maxlength=""
+              maxlength="3"
+              pattern="[0-9]{3}"
             />
             &nbsp; -&nbsp;
             <input
@@ -115,7 +116,7 @@
               type="text"
               class="numInput"
               id="recipient_firstPhoneNumber"
-              maxlength=""
+              maxlength="3"
             />
             &nbsp; -&nbsp;
             <input
@@ -136,14 +137,14 @@
             <p class="info_titles">배송주소</p>
             <div class="delivery_address_align">
               <div class="join_address_align">
-                <input type="text" class="recipient_address_input" /><button
+                <input type="text" class="recipient_address_input_one" /><button
                   class="join_address"
                 >
                   우편번호 조회
                 </button>
               </div>
-              <input type="text" />
-              <input type="text" />
+              <input type="text" class="recipient_address_input_two" />
+              <input type="text" class="recipient_address_input_three" />
             </div>
           </li>
           <li class="recipient_delivery_message">
@@ -186,8 +187,8 @@
               </li>
               <ul class="final_order_area">
                 <li>
-                  <input type="checkbox" />주문 내용을 확인하였으며, 정보 제공
-                  등에 동의합니다.
+                  <input type="checkbox" class="agree_check" />주문 내용을
+                  확인하였으며, 정보 제공 등에 동의합니다.
                 </li>
                 <li>
                   <button class="pay_btn" disabled>결제하기</button>
