@@ -121,19 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ".recipient_delivery_message_input"
   );
   const paymentMethod = document.querySelectorAll("input[name='pay_method']");
-  const recipientFullPhoneNum =
-    recipientPhoneNumFirst.value +
-    recipientPhoneNumsSecond.value +
-    recipientPhoneNumThird.value;
-  const recipientFullAddress =
-    recipientAddressFirst.value +
-    recipientAddressSecond.value +
-    recipientAddressThird.value;
+
   const orderKind = localStorage.getItem("order_kind");
 
   function quantitySet() {
     if (orderKind === "cart_order") {
-      const productIds = orderData.items.map((item) => item.product_id);
+      const productIds = orderData.items.map((item) => item.cartId_id);
       return productIds;
     } else {
       const productId = orderData.items[0].product_id;
@@ -149,20 +142,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return "CARD";
     }
 
-    switch (selectedRadio.value) {
-      case "신용/체크카드":
+    switch (selectedRadio.id) {
+      case "card":
         return "card";
-      case "무통장 입금":
+      case "deposit":
         return "deposit";
-      case "휴대폰 결제":
-        ``;
+      case "phone":
         return "phone";
-      case "네이버페이":
+      case "naverpay":
         return "naverpay";
-      case "카카오페이":
+      case "kakaopay":
         return "kakaopay";
       default:
-        return "CARD";
+        return "card";
     }
   }
   async function sendOrder() {
@@ -171,9 +163,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const paymentMethod = getSelectedPaymentMethod();
       const productId = quantitySet();
 
+      const recipientFullPhoneNum =
+        recipientPhoneNumFirst.value +
+        recipientPhoneNumsSecond.value +
+        recipientPhoneNumThird.value;
+
+      const recipientFullAddress =
+        recipientAddressFirst.value +
+        +recipientAddressSecond.value +
+        +recipientAddressThird.value;
+
       let requestData = {
-        reciever: recipientName.value,
-        reciever_phone_number: recipientFullPhoneNum,
+        receiver: recipientName.value,
+        receiver_phone_number: recipientFullPhoneNum,
         address: recipientFullAddress,
         address_message: recipientDeliveryMessage.value,
         total_price: orderData.final_price,
@@ -196,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const response = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/order",
+        "https://estapi.openmarket.weniv.co.kr/order/",
         {
           method: "POST",
           headers: {
@@ -209,6 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!response.ok) {
         throw new Error(`주문 실패: ${response.status}`);
+      } else {
+        alert("정상적으로 주문되었습니다!");
       }
 
       const data = await response.json();
@@ -267,8 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       if (validateInputs()) {
         sendOrder();
-        alert("주문이 정상적으로 완료되었습니다!");
-        hwindow.history.back();
+        // window.history.back();
       } else {
         alert("주문에 실패했습니다");
       }
