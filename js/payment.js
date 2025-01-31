@@ -131,6 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
     recipientAddressThird.value;
   const orderKind = localStorage.getItem("order_kind");
 
+  function quantitySet() {
+    if (orderKind === "cart_order") {
+      const productIds = orderData.items.map((item) => item.product_id);
+      return productIds;
+    } else {
+      const productId = orderData.items[0].product_id;
+      return productId;
+    }
+  }
   function getSelectedPaymentMethod() {
     const selectedRadio = Array.from(paymentMethod).find(
       (radio) => radio.checked
