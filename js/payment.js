@@ -160,6 +160,31 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const token = localStorage.getItem("token");
       const paymentMethod = getSelectedPaymentMethod();
+      const productId = quantitySet();
+
+      let requestData = {
+        reciever: recipientName.value,
+        reciever_phone_number: recipientFullPhoneNum,
+        address: recipientFullAddress,
+        address_message: recipientDeliveryMessage.value,
+        total_price: orderData.final_price,
+        payment_method: paymentMethod,
+      };
+
+      if (orderKind === "cart_order") {
+        requestData = {
+          ...requestData,
+          order_type: "cart_order",
+          cart_items: productId,
+        };
+      } else {
+        requestData = {
+          ...requestData,
+          order_kind: "direct_order",
+          product: productId,
+          quantity: orderData.items[0].quantity,
+        };
+      }
 
       const response = await fetch(
         "https://estapi.openmarket.weniv.co.kr/order",
@@ -169,17 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({
-            order_kind: orderKind,
-            product: orderData.items[0].product_id,
-            quantity: orderData.items[0].quantity,
-            total_price: orderData.final_price,
-            reciever: recipientName.value,
-            reciever_phone_number: recipientFullPhoneNum,
-            address: recipientFullAddress,
-            address_message: recipientDeliveryMessage.value,
-            payment_method: paymentMethod,
-          }),
+          body: JSON.stringify(requestData),
         }
       );
 
@@ -190,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
       return data;
     } catch (error) {
-      alert("주문 전송 중 오류 발생:", error);
+      alert("주문 전송 중 오류 발생:" + error.message);
       throw error;
     }
   }
@@ -251,5 +266,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  localStorage.removeItem("orderData");
+  // localStorage.removeItem("orderData");
 });

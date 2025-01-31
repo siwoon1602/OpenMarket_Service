@@ -148,6 +148,7 @@ window.addEventListener("pageshow", (e) => {
       let totalShippingFee = 0;
 
       const productHTML = data.results
+
         .map((item) => {
           const product = item.product;
           const cartId = item;
@@ -286,6 +287,7 @@ window.addEventListener("pageshow", (e) => {
 
       return {
         product_id: item.dataset.productId,
+        cartId_id: item.dataset.listId,
         product_info: item.querySelector(".prodcut_info_text li:nth-child(1)")
           .textContent,
         product_name: item.querySelector(".prodcut_info_text li:nth-child(2)")
@@ -305,7 +307,6 @@ window.addEventListener("pageshow", (e) => {
     };
   }
   function addDeleteAllButtonEventListeners() {
-    const token = localStorage.getItem("token");
     const deleteAllButton = document.querySelector(".product_delete");
 
     if (!deleteAllButton) return;
