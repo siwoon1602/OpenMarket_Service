@@ -1,4 +1,4 @@
-/* 화면에 안보이게 하되 스크린리더에는 읽히게하는 속성 */
+/* 기본 폰트 설정 */
 @font-face {
   font-family: "SpoqaHanSansNeo-Regular";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
@@ -9,10 +9,11 @@
 
 * {
   font-family: "SpoqaHanSansNeo-Regular";
-  font-size: 18px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
+/* 유틸리티 클래스 */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -33,31 +34,35 @@
   display: none;
 }
 
+/* 모바일 기본 스타일 */
 /* header */
 .header_content {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 4px 5px #0000001a;
   align-items: center;
-  padding: 26px 320px;
+  padding: 20px;
 }
 
 .header_contet_left {
   display: flex;
-  gap: 30px;
+  gap: 15px;
+  align-items: center;
 }
 
 .header_content .search {
   position: relative;
+  display: none; /* 모바일에서는 검색창 숨김 */
 }
+
 .header_content .search input {
-  width: 400px;
+  width: 100%;
+  min-width: 200px;
   height: 46px;
   border-radius: 50px;
   background-color: white;
   border: 2px solid var(--maincolor);
   color: #767676;
-  font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 400;
   font-size: 16px;
   padding: 22px;
@@ -77,20 +82,17 @@
   background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 124px;
-  height: 38px;
+  width: 100px;
+  height: 32px;
 }
 
 .header_content .user_menu {
   display: flex;
-  gap: 26px;
+  gap: 15px;
   align-items: center;
   position: relative;
 }
-.header_content .user_menu li a img:nth-child(1) {
-  width: 26.67px;
-  height: 17.78px;
-}
+
 .header_content .user_menu li a {
   display: flex;
   flex-direction: column;
@@ -100,25 +102,8 @@
   color: #767676;
   line-height: 14px;
 }
-.sellerCenter-btn {
-  color: white;
-  background-color: var(--maincolor);
-  font-weight: 500;
-  font-weight: 18px;
-  line-height: 22.54px;
-  padding: 11px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  align-items: center;
-  display: flex;
-  gap: 8px;
-}
 
-#sellerCenter-icon {
-  width: 24px;
-  height: 26px;
-}
-/* header 모달 */
+/* 헤더 모달 스타일 */
 .header_modal {
   width: 120px;
   flex-direction: column;
@@ -154,6 +139,7 @@
   left: 50px;
   transform: rotate(135deg);
 }
+
 .box {
   background-color: white;
   border-radius: 5px;
@@ -171,24 +157,24 @@
   border: none;
   cursor: pointer;
 }
+
 .box button:hover {
   border: 1px solid black;
 }
+
 .maincolor {
   color: var(--maincolor);
 }
-/* header 모달 종료 */
-/* header 종료 */
 
-/* footer 시작 */
-
+/* Footer 스타일 */
 .footer {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 200px;
+  padding: 40px 20px;
 }
+
 footer .footer_top {
   display: flex;
   align-items: center;
@@ -203,6 +189,7 @@ footer .footer_top {
   color: black;
   font-family: "SpoqaHanSansNeo-Regular";
 }
+
 .footer_top .info li strong {
   font-weight: 700;
 }
@@ -211,23 +198,27 @@ footer .footer_top {
   content: " | ";
   margin: 14px;
 }
+
 .footer_top .sns_icon {
   display: flex;
   list-style: none;
   gap: 14px;
 }
+
 .footer_top .insta {
   background: url(../assets/icon-insta.svg);
   width: 32px;
   height: 32px;
   display: block;
 }
+
 .footer_top .facebook {
   background: url(../assets/icon-fb.svg);
   width: 32px;
   height: 32px;
   display: block;
 }
+
 .footer_top .youtube {
   background: url(../assets/icon-yt.svg);
   width: 32px;
@@ -252,8 +243,79 @@ footer address ul {
   font-weight: 400;
   line-height: 24px;
 }
+
 footer address ul li span {
   font-weight: 700;
   color: #4f4f4f;
 }
-/* footer 종료 */
+
+/* 태블릿 (768px 이상) */
+@media screen and (min-width: 768px) {
+  .header_content {
+    padding: 20px 40px;
+  }
+
+  .header_content .search {
+    display: block;
+  }
+
+  .header_content .search input {
+    width: 300px;
+  }
+
+  .header_contet_left {
+    gap: 20px;
+  }
+
+  .header_content .logo {
+    width: 110px;
+    height: 35px;
+  }
+
+  .footer {
+    padding: 50px 40px;
+  }
+}
+
+/* 데스크탑 (1024px 이상) */
+@media screen and (min-width: 1024px) {
+  * {
+    font-size: 18px;
+  }
+
+  .header_content {
+    padding: 26px 320px;
+  }
+
+  .header_contet_left {
+    gap: 30px;
+  }
+
+  .header_content .search input {
+    width: 400px;
+  }
+
+  .header_content .logo {
+    width: 124px;
+    height: 38px;
+  }
+
+  .header_content .user_menu {
+    gap: 26px;
+  }
+
+  .footer {
+    padding: 60px 200px;
+  }
+}
+
+/* 큰 데스크탑 (1440px 이상) */
+@media screen and (min-width: 1440px) {
+  .header_content {
+    padding: 26px calc((100% - 1280px) / 2);
+  }
+
+  .footer {
+    padding: 60px calc((100% - 1280px) / 2);
+  }
+}
