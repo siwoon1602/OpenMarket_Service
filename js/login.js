@@ -81,6 +81,16 @@ loginForm.addEventListener("submit", async (event) => {
         localStorage.setItem("userType", data.user.user_type);
         localStorage.setItem("userName", data.user.username);
         window.history.back();
+        setTimeout(() => {
+          alert("로그인 세션이 만료되었습니다. 다시 로그인해주세요.");
+          localStorage.removeItem("token");
+          localStorage.removeItem("userType");
+          localStorage.removeItem("userName");
+
+          window.location.href = "./login.html";
+        }, 5 * 60 * 1000);
+
+        window.history.back();
       } else {
         loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
         loginError.style.cssText =
