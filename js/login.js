@@ -78,25 +78,47 @@ loginForm.addEventListener("submit", async (event) => {
       const data = await response.json();
       if (data.user.user_type === userType) {
         localStorage.setItem("token", data.access);
+        localStorage.setItem("refreshToken", data.refresh);
         localStorage.setItem("userType", data.user.user_type);
         localStorage.setItem("userName", data.user.username);
-        window.history.back();
-        setTimeout(() => {
-          alert("로그인 세션이 만료되었습니다. 다시 로그인해주세요.");
-          localStorage.removeItem("token");
-          localStorage.removeItem("userType");
-          localStorage.removeItem("userName");
 
-          window.location.href = "./login.html";
+        setTimeout(async () => {
+          try {
+            const refreshResponse = await fetch(
+              "https://estapi.openmarket.weniv.co.kr/token/refresh/",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  refresh: localStorage.getItem("refreshToken"),
+                }),
+              }
+            );
+            if (refreshResponse.ok) {
+              const newTokens = await refreshResponse.json();
+              localStorage.setItem("accessToken", newTokens.access);
+            } else {
+              throw new Error("토큰 갱신 실패");
+            }
+          } catch (error) {
+            console.error("토큰 갱신 중 에러:", error);
+          }
         }, 5 * 60 * 1000);
 
+        setTimeout(() => {
+          alert("로그인 세션이 만료되었습니다. 다시 로그인해주세요.");
+          localStorage.clear();
+          window.location.href = "./login.html";
+        }, 24 * 60 * 60 * 1000);
         window.history.back();
       } else {
         loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
         loginError.style.cssText =
           "color: #EB5757; font-size: 16px; margin-bottom:26px; align-self: flex-start";
         userPw.focus();
-        userPw.value = ""; // 비밀번호 필드 초기화
+        userPw.value = "";
       }
     } else {
       loginError.textContent = "아이디 비밀번호가 일치하지 않습니다";
