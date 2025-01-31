@@ -252,11 +252,13 @@ window.addEventListener("pageshow", (e) => {
       }
 
       const orderData = getOrderData(selectedItems);
+      localStorage.setItem("order_kind", "cart_order");
       localStorage.setItem("orderData", JSON.stringify(orderData));
       window.location.href = "./payment.html";
     } else if (e.target.classList.contains("order_btn")) {
       const cartItem = e.target.closest(".cart_list");
       const orderData = getOrderData([cartItem]);
+      localStorage.setItem("order_kind", "direct_order");
       localStorage.setItem("orderData", JSON.stringify(orderData));
       window.location.href = "./payment.html";
     }
