@@ -328,12 +328,15 @@ input {
 }
 .final_order_area li button {
   padding: 19px 65px;
-  background-color: #c4c4c4;
+  background-color: var(--maincolor);
   color: white;
   font-size: 24px;
   line-height: 30.05px;
   font-weight: 700;
   border-radius: 5px;
+}
+.pay_btn:disabled {
+  background-color: #767676;
 }
 
 [type="checkbox"] {
