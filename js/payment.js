@@ -121,7 +121,79 @@ document.addEventListener("DOMContentLoaded", () => {
     ".recipient_delivery_message_input"
   );
   const paymentMethod = document.querySelectorAll("input[name='pay_method']");
+  const recipientFullPhoneNum =
+    recipientPhoneNumFirst.value +
+    recipientPhoneNumsSecond.value +
+    recipientPhoneNumThird.value;
+  const recipientFullAddress =
+    recipientAddressFirst.value +
+    recipientAddressSecond.value +
+    recipientAddressThird.value;
+  const orderKind = localStorage.getItem("order_kind");
 
+  function getSelectedPaymentMethod() {
+    const selectedRadio = Array.from(paymentMethod).find(
+      (radio) => radio.checked
+    );
+
+    if (!selectedRadio) {
+      return "CARD";
+    }
+
+    switch (selectedRadio.value) {
+      case "신용/체크카드":
+        return "card";
+      case "무통장 입금":
+        return "deposit";
+      case "휴대폰 결제":
+        ``;
+        return "phone";
+      case "네이버페이":
+        return "naverpay";
+      case "카카오페이":
+        return "kakaopay";
+      default:
+        return "CARD";
+    }
+  }
+  async function sendOrder() {
+    try {
+      const token = localStorage.getItem("token");
+      const paymentMethod = getSelectedPaymentMethod();
+
+      const response = await fetch(
+        "https://estapi.openmarket.weniv.co.kr/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            order_kind: orderKind,
+            product: orderData.items[0].product_id,
+            quantity: orderData.items[0].quantity,
+            total_price: orderData.final_price,
+            reciever: recipientName.value,
+            reciever_phone_number: recipientFullPhoneNum,
+            address: recipientFullAddress,
+            address_message: recipientDeliveryMessage.value,
+            payment_method: paymentMethod,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`주문 실패: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert("주문 전송 중 오류 발생:", error);
+      throw error;
+    }
+  }
   function validateInputs() {
     const InputList = [
       ordererName,
@@ -170,7 +242,11 @@ document.addEventListener("DOMContentLoaded", () => {
     payButton.addEventListener("click", (e) => {
       e.preventDefault();
       if (validateInputs()) {
-        console.log("결제 진행 가능!");
+        sendOrder();
+        alert("주문이 정상적으로 완료되었습니다!");
+        hwindow.history.back();
+      } else {
+        alert("주문에 실패했습니다");
       }
     });
   }
