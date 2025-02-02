@@ -126,15 +126,19 @@ window.addEventListener("pageshow", (e) => {
   });
 });
 function getOrderState(orderState) {
-  switch (orderState) {
+  switch (orderStatus) {
     case "payment_pending":
-      return "결제대기중";
+      return "결제 대기중";
     case "payment_complete":
-      return "결제완료";
+      return "결제 완료";
     case "preparing":
-      return "배송준비중";
+      return "배송 준비중";
     case "shipping":
       return "배송중";
+    case "delivered":
+      return "배송 완료";
+    case "cancled":
+      return "주문 취소";
     default:
       return "결제 대기중";
   }
