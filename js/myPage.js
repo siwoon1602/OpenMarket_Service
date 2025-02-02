@@ -137,7 +137,7 @@ function getOrderState(orderState) {
       return "배송중";
     case "delivered":
       return "배송 완료";
-    case "cancled":
+    case "cancelled":
       return "주문 취소";
     default:
       return "결제 대기중";
