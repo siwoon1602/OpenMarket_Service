@@ -81,6 +81,7 @@ article img {
 }
 
 .modal {
+  width: 90%;
   max-width: 360px;
   border: 1px solid #c4c4c4;
   flex-direction: column;
@@ -92,10 +93,9 @@ article img {
   height: 22px;
   background-image: url(../assets/icon-delete.svg);
   background-color: white;
-  margin-left: calc(100% - 20px);
+  margin-left: 300px;
   margin-bottom: 10px;
 }
-
 .modal p {
   font-weight: 400;
   font-size: 16px;
@@ -127,7 +127,7 @@ article img {
 .modal_btn_area {
   display: flex;
   gap: 10px;
-  padding: 0 20px;
+  padding: 0 75px;
 }
 
 button {
