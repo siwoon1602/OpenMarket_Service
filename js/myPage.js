@@ -126,7 +126,7 @@ window.addEventListener("pageshow", (e) => {
   });
 });
 function getOrderState(orderState) {
-  switch (orderStatus) {
+  switch (orderState) {
     case "payment_pending":
       return "결제 대기중";
     case "payment_complete":
