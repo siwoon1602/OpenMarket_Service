@@ -1,0 +1,138 @@
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin-top: 54px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.info_box {
+  width: 1280px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  align-items: center;
+  padding: 20px 20px;
+  margin: 52px 0 35px;
+}
+.prodcut_info {
+  margin-left: 200px;
+}
+.product_ea {
+  margin-left: 300px;
+}
+.product_price {
+  margin-left: 350px;
+}
+.product_delete {
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+.cart_list {
+  width: 1280px;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 10px;
+}
+.cart_list input {
+  margin-right: 70px;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  border-radius: 20px;
+  margin-right: 70px;
+}
+
+.prodcut_info_text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.prodcut_info_text {
+  width: 100%;
+  max-width: 300px;
+}
+
+.prodcut_info_text li:nth-child(1) {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 400;
+  line-height: 17.53px;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.prodcut_info_text li:nth-child(2) {
+  color: black;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.prodcut_info_text li:nth-child(3) {
+  font-size: 16px;
+  color: black;
+  line-height: 20.03px;
+  font-weight: 700;
+}
+.prodcut_info_text li:nth-child(4) {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 400;
+  line-height: 20.03px;
+  font-weight: 700;
+  margin-top: 38px;
+}
+.order_state {
+  font-size: 16px;
+  color: #767676;
+  margin-left: 65px;
+}
+.order_area ul {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 320px;
+}
+.order_area li:nth-child(1) {
+  color: red;
+  font-weight: 700;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.order_area ul li button {
+  color: white;
+  background-color: var(--maincolor);
+  padding: 10px 35px;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
