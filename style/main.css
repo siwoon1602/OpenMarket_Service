@@ -81,7 +81,6 @@ article img {
 }
 
 .modal {
-  width: 90%;
   max-width: 360px;
   border: 1px solid #c4c4c4;
   flex-direction: column;
@@ -93,7 +92,7 @@ article img {
   height: 22px;
   background-image: url(../assets/icon-delete.svg);
   background-color: white;
-  margin-left: calc(100% - 60px);
+  margin-left: calc(100% - 20px);
   margin-bottom: 10px;
 }
 
