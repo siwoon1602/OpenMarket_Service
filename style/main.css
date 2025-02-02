@@ -1,14 +1,53 @@
-/* 기본 스타일 (모바일 퍼스트) */
-.slide_banner {
+.allItem {
+  text-align: center;
+  margin: 50px 0 30px;
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+.swiper {
   width: 100%;
-  height: 300px;
-  background-color: #f2f2f2;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: -5;
+  height: 500px; /* 원하는 높이 */
+  background-color: #767676;
 }
 
-.slide_left {
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #eee;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
   background-image: url(../assets/icon-swiper-1.svg);
   width: 40px;
   height: 82px;
@@ -19,8 +58,7 @@
   left: 10px;
   top: 109px;
 }
-
-.slide_right {
+.swiper-button-next {
   background-image: url(../assets/icon-swiper-2.svg);
   width: 40px;
   height: 82px;
@@ -30,6 +68,27 @@
   position: absolute;
   right: 10px;
   top: 109px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 기본 스타일 (모바일 퍼스트) */
+.slide_banner {
+  width: 100%;
+  height: 300px;
+  background-color: #f2f2f2;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: -5;
 }
 
 .product-list-container {
