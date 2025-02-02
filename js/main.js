@@ -1,3 +1,22 @@
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 window.addEventListener("pageshow", (e) => {
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
@@ -139,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let productHTML = "";
 
       data.results.forEach((product, index) => {
-        if (index < 6) {
+        if (index) {
           productHTML += `
                       <li class="product_list">
                           <a href="details.html?id=${product.id}">
