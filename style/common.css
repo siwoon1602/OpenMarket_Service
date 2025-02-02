@@ -37,11 +37,17 @@
 /* 모바일 기본 스타일 */
 /* header */
 .header_content {
+  background-color: white;
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   justify-content: space-between;
-  box-shadow: 0px 4px 5px #0000001a;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   align-items: center;
   padding: 20px;
+  z-index: 100;
+  width: 100%;
 }
 
 .header_contet_left {

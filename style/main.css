@@ -7,7 +7,7 @@
 }
 .swiper {
   width: 100%;
-  height: 500px; /* 원하는 높이 */
+  height: 500px;
   background-color: #767676;
 }
 
@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev {
   color: #000;
   background: white;
@@ -27,7 +27,7 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-}
+} */
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
@@ -49,9 +49,9 @@
 
 .swiper-button-prev {
   background-image: url(../assets/icon-swiper-1.svg);
-  width: 40px;
+  width: 120px;
   height: 82px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: block;
   position: absolute;
@@ -195,6 +195,10 @@ button {
 
 /* 태블릿 (768px 이상) */
 @media screen and (min-width: 768px) {
+  .swiper {
+    margin-top: 75px; /* 20px + 35px + 20px */
+  }
+
   .slide_banner {
     height: 400px;
     margin-bottom: 60px;
@@ -224,6 +228,9 @@ button {
 
 /* 데스크탑 (1024px 이상) */
 @media screen and (min-width: 1024px) {
+  .swiper {
+    margin-top: 90px; /* 26px + 38px + 26px */
+  }
   .slide_banner {
     height: 500px;
     margin-bottom: 80px;
