@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="icon" href="./assets/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js" defer></script>
   </head>
   <body>
@@ -63,12 +68,26 @@
 
     <main class="main">
       <h2 class="sr-only">호두샵</h2>
-      <section class="slide_banner">
-        <button class="slide_left"></button>
-        <button class="slide_right"></button>
-      </section>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./imges/banner_01.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./imges/banner_02.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./imges/banner_01.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-pagination"></div>
+      </div>
       <section id="product">
-        <h2 class="sr-only">호두샵 상품리스트</h2>
+        <h2 class="allItem">전체 상품</h2>
         <ul class="product-list-container"></ul>
       </section>
     </main>
