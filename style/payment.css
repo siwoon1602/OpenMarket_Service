@@ -163,6 +163,9 @@ input {
   border: 1px solid #c4c4c4;
   width: 334px;
   height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #383838;
 }
 
 .info_titles {
