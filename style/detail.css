@@ -346,8 +346,10 @@ button {
   }
 
   .img_area img {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
   }
 
   .product_info li:nth-child(2) {
