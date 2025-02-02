@@ -4,8 +4,6 @@ window.addEventListener("pageshow", (e) => {
   const userMenuTwo = document.querySelector("#userMenu2");
   const userMenu = document.querySelector(".user_menu");
 
-  console.log("현재 상태:", { token, userType });
-
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
