@@ -7,6 +7,10 @@
   font-style: normal;
 }
 
+body {
+  padding-top: 72px;
+}
+
 * {
   font-family: "SpoqaHanSansNeo-Regular";
   font-size: 16px;
@@ -257,6 +261,9 @@ footer address ul li span {
 
 /* 태블릿 (768px 이상) */
 @media screen and (min-width: 768px) {
+  body {
+    padding-top: 75px; /* 20px + 35px + 20px */
+  }
   .header_content {
     padding: 20px 40px;
   }
@@ -285,6 +292,9 @@ footer address ul li span {
 
 /* 데스크탑 (1024px 이상) */
 @media screen and (min-width: 1024px) {
+  body {
+    padding-top: 90px; /* 26px + 38px + 26px */
+  }
   * {
     font-size: 18px;
   }
