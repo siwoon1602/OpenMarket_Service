@@ -3,10 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/myPage.css" />
+    <script src="./js/myPage.js"></script>
     <link rel="icon" href="./assets/favicon.svg" />
     <title>마이페이지</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="header_content">
+        <div class="header_contet_left">
+          <h1 class="sr-only">HODU!</h1>
+          <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
+          <div class="search">
+            <input type="text" placeholder="상품을 검색해보세요!" />
+            <div class="search-icon"></div>
+          </div>
+        </div>
+
+        <ul class="user_menu">
+          <li id="userMenu1">
+            <a href="./cart.html">
+              <img
+                src="./assets/icon-shopping-cart.svg"
+                alt=""
+                id="userMenu1"
+              />
+              <span id="userinterface_second">장바구니</span>
+            </a>
+          </li>
+          <li id="userMenu2">
+            <a href="./login.html" target="_self">
+              <img src="./assets/icon-user.svg" alt="" />
+              <span id="userinterface_first">로그인</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1>주문 목록</h1>
+      <ul class="info_box">
+        <li class="prodcut_info">상품정보</li>
+        <li class="product_ea">주문상태</li>
+        <li class="product_price">상품금액</li>
+        <li class="product_delete"></li>
+      </ul>
+    </main>
+  </body>
 </html>
