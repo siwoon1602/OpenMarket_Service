@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       if (validateInputs()) {
         sendOrder();
-        // window.history.back();
+        window.history.back();
       } else {
         alert("주문에 실패했습니다");
       }
