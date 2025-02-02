@@ -175,7 +175,9 @@ window.addEventListener("pageshow", (e) => {
               </ul>
               <div class="ea_setting">
                 <button class="minus"></button>
-                <input type="text" value="${item.quantity}" class="ea" />
+                <input type="text" value="${
+                  item.quantity
+                }" class="ea" readonly/>
                 <button class="plus"></button>
               </div>
               <div class="order_area">
