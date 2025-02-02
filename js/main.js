@@ -39,18 +39,27 @@ window.addEventListener("pageshow", (e) => {
 
   if (token && userType === "BUYER") {
     userMenuTwo.innerHTML = `
-          <a href="#" target="_self">
+           <a href="#" target="_self">
               <img src="./assets/icon-user.svg" alt="" />
               <span id="userinterface_first">마이페이지</span>
           </a>
           <div class="header_modal buyer_modal hide">
               <div class="triangle"></div>
               <div class="box">
-                  <button>마이페이지</button>
+                  <a href="./myPage.html" class="mypage-link">
+                    <button type="button">마이페이지</button>
+                  </a>
                   <button class="logout-btn">로그아웃</button>
               </div>
           </div>
       `;
+
+    const myPageBtn = userMenuTwo.querySelector(".mypage-link");
+    if (myPageBtn) {
+      myPageBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    }
 
     const buyerLogoutBtn = userMenuTwo.querySelector(".logout-btn");
     if (buyerLogoutBtn) {
