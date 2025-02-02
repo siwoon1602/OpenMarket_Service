@@ -213,6 +213,7 @@ window.addEventListener("load", function () {
   fetch(`https://estapi.openmarket.weniv.co.kr/products/${productId}/`)
     .then((response) => response.json())
     .then((data) => {
+      document.title = `${data.name}`;
       // 배송유형에 따라서 다르게 표시
       let shippingMethod = data.shipping_method;
       if (shippingMethod === "PARCEL") {
