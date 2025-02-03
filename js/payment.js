@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         requestData = {
           ...requestData,
-          order_kind: "direct_order",
+          order_type: orderKind,
           product: productId,
           quantity: orderData.items[0].quantity,
         };
@@ -389,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(`주문 실패: ${response.status}`);
       } else {
         alert("정상적으로 주문되었습니다!");
+        localStorage.removeItem("orderData");
       }
 
       const data = await response.json();
@@ -447,14 +448,12 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       if (validateInputs()) {
         sendOrder();
-        window.history.back();
+        // window.history.back();
       } else {
         alert("주문에 실패했습니다");
       }
     });
   }
-
-  localStorage.removeItem("orderData");
 });
 
 function sample4_execDaumPostcode() {
