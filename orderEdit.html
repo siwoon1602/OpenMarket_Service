@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/orderEdit.css" />
+    <link rel="icon" href="./assets/favicon.svg" />
+
+    <title>주문하기</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_content">
+        <div class="header_contet_left">
+          <h1 class="sr-only">HODU!</h1>
+          <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
+          <div class="search">
+            <input type="text" placeholder="상품을 검색해보세요!" />
+            <div class="search-icon"></div>
+          </div>
+        </div>
+
+        <ul class="user_menu">
+          <li id="userMenu1">
+            <a href="./cart.html">
+              <img
+                src="./assets/icon-shopping-cart.svg"
+                alt=""
+                id="userMenu1"
+              />
+              <span id="userinterface_second">장바구니</span>
+            </a>
+          </li>
+          <li id="userMenu2">
+            <a href="./login.html" target="_self">
+              <img src="./assets/icon-user.svg" alt="" />
+              <span id="userinterface_first">로그인</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1>주문/결제하기</h1>
+      <ul class="info_box">
+        <li class="prodcut_info">상품정보</li>
+        <li class="product_sale">할인</li>
+        <li class="product_shipping_fee">배송비</li>
+        <li class="product_price">상품금액</li>
+      </ul>
+      <section class="order_list_container">
+        <div class="cart_list">
+          <div class="image"></div>
+          <ul class="prodcut_info_text">
+            <li>백엔드 글로벌</li>
+            <li>딥러닝 개발자 무릎 담요</li>
+            <li>수량: 1개</li>
+          </ul>
+          <ul class="order_text">
+            <li>-</li>
+            <li>무료배송</li>
+            <li>17,500원</li>
+          </ul>
+        </div>
+      </section>
+      <p class="totla_price">총 주문금액 <span>46,500원</span></p>
+
+      <section class="delivery_info_area">
+        <h3>배송지 정보</h3>
+        <ul class="delivery_info">
+          <li class="recipient">
+            <p class="info_titles">수령인</p>
+            <input type="text" class="recipient_name_input" />
+          </li>
+          <li class="recipient_phone_number">
+            <p class="info_titles">휴대폰</p>
+            <input
+              type="text"
+              class="numInput"
+              id="recipient_firstPhoneNumber"
+              maxlength="3"
+            />
+            &nbsp; -&nbsp;
+            <input
+              type="text"
+              class="numInput"
+              id="recipient_secondPhoneNumber"
+              maxlength="4"
+            />
+            &nbsp;- &nbsp;
+            <input
+              type="text"
+              class="numInput"
+              id="recipient_thirdPhoneNumber"
+              maxlength="4"
+            />
+          </li>
+          <li class="recipient_address">
+            <p class="info_titles">배송주소</p>
+            <div class="delivery_address_align">
+              <div class="join_address_align">
+                <input type="text" class="recipient_address_input_one" />
+              </div>
+            </div>
+          </li>
+          <li class="recipient_delivery_message">
+            <p class="info_titles">배송 메세지</p>
+            <input type="text" class="recipient_delivery_message_input" />
+          </li>
+        </ul>
+      </section>
+      <section class="payment_area">
+        <div class="payment_method_select">
+          <h3>결제수단</h3>
+          <form class="pay_method_list">
+            <input type="radio" name="pay_method" id="card" /> 신용/체크카드
+            <input type="radio" name="pay_method" id="deposit" /> 무통장 입금
+            <input type="radio" name="pay_method" id="phone" /> 휴대폰 결제
+            <input type="radio" name="pay_method" id="naverpay" /> 네이버 페이
+            <input type="radio" name="pay_method" id="kakaopay" /> 카카오 페이
+          </form>
+        </div>
+        <div class="final_pay_info">
+          <h3>최종결제 정보</h3>
+          <div class="final_pay_info_box">
+            <ul class="final_price">
+              <li>
+                <p>- 상품금액</p>
+                <p>46,500<span>원</span></p>
+              </li>
+              <li>
+                <p>- 할인금액</p>
+                <p>0<span>원</span></p>
+              </li>
+              <li>
+                <p>- 배송금액</p>
+                <p>0<span>원</span></p>
+              </li>
+              <li class="final_pay_info_line"></li>
+              <li>
+                <p>- 결제금액</p>
+                <p>46,500원</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
