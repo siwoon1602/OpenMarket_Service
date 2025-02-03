@@ -72,7 +72,7 @@
         <ul class="delivery_info">
           <li class="recipient">
             <p class="info_titles">수령인</p>
-            <input type="text" class="recipient_name_input" />
+            <input type="text" class="recipient_name_input" readonly />
           </li>
           <li class="recipient_phone_number">
             <p class="info_titles">휴대폰</p>
@@ -81,6 +81,7 @@
               class="numInput"
               id="recipient_firstPhoneNumber"
               maxlength="3"
+              readonly
             />
             &nbsp; -&nbsp;
             <input
@@ -88,6 +89,7 @@
               class="numInput"
               id="recipient_secondPhoneNumber"
               maxlength="4"
+              readonly
             />
             &nbsp;- &nbsp;
             <input
@@ -95,19 +97,28 @@
               class="numInput"
               id="recipient_thirdPhoneNumber"
               maxlength="4"
+              readonly
             />
           </li>
           <li class="recipient_address">
             <p class="info_titles">배송주소</p>
             <div class="delivery_address_align">
               <div class="join_address_align">
-                <input type="text" class="recipient_address_input_one" />
+                <input
+                  type="text"
+                  class="recipient_address_input_one"
+                  readonly
+                />
               </div>
             </div>
           </li>
           <li class="recipient_delivery_message">
             <p class="info_titles">배송 메세지</p>
-            <input type="text" class="recipient_delivery_message_input" />
+            <input
+              type="text"
+              class="recipient_delivery_message_input"
+              readonly
+            />
           </li>
         </ul>
       </section>
