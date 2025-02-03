@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./config.js";
+
 // 토큰을 보유하고 있으면 header의 HTML 요소가 변경되게끔 설정
 function updateUserMenuBasedOnToken() {
   const token = localStorage.getItem("token");

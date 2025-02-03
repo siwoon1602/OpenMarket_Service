@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./config.js";
+
 window.addEventListener("pageshow", (e) => {
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
