@@ -225,7 +225,7 @@ input {
   display: flex;
   gap: 40px;
   align-self: flex-start;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .payment_method_select h3 {
@@ -312,4 +312,14 @@ input {
 [type="checkbox"]:checked {
   border-color: var(--maincolor);
   background-color: var(--maincolor);
+}
+
+.cancled_btn {
+  background-color: var(--maincolor);
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 40px;
+  border-radius: 10px;
+  margin-bottom: 100px;
 }
