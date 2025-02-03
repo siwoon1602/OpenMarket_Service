@@ -203,9 +203,11 @@ window.addEventListener("pageshow", (e) => {
             <div class="order_area">
               <ul>
                 <li>${totalPrice.toLocaleString()}원</li>
-                <li><button class="order_btn" data-order-id="${
-                  item.id
-                }">상세보기</button></li>
+                <a href="./orderEdit.html">
+                  <li><button class="order_btn" data-order-id="${
+                    item.id
+                  }">상세보기</button>
+                </a></li>
               </ul>
             </div>
           </div>
