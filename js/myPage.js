@@ -219,6 +219,14 @@ window.addEventListener("pageshow", (e) => {
       const container = document.querySelector("main");
       if (container) {
         container.innerHTML += productHTML;
+
+        const detailButtons = container.querySelectorAll(".order_btn");
+        detailButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const orderId = this.getAttribute("data-order-id");
+            localStorage.setItem("orderId", orderId);
+          });
+        });
       }
     } catch (error) {
       console.error("통신오류:", error);
