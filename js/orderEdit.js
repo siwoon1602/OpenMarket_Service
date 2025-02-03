@@ -126,15 +126,9 @@ window.addEventListener("pageshow", (e) => {
   });
 });
 
-window.addEventListener("pageshow", async (e) => {
+window.addEventListener("pageshow", async () => {
   const token = localStorage.getItem("token");
-  const userType = localStorage.getItem("userType");
-  const userMenuTwo = document.querySelector("#userMenu2");
-  const userMenu = document.querySelector(".user_menu");
 
-  // 기존의 헤더/모달 관련 코드...
-
-  // 주문 조회 기능
   async function fetchOrderDetail() {
     const orderId = localStorage.getItem("orderId");
     if (!orderId || !token) return;
@@ -157,7 +151,6 @@ window.addEventListener("pageshow", async (e) => {
 
       const data = await response.json();
 
-      // 주문 상세 정보 표시
       const container = document.querySelector(".order_list_container");
       if (container) {
         const productHTML =
@@ -241,6 +234,34 @@ window.addEventListener("pageshow", async (e) => {
     } catch (error) {
       console.error("통신오류:", error);
     }
+  }
+  const canceldBtn = document.querySelector(".cancled_btn");
+  if (canceldBtn) {
+    canceldBtn.addEventListener("click", async () => {
+      const orderId = localStorage.getItem("orderId");
+      try {
+        const response = await fetch(
+          `https://estapi.openmarket.weniv.co.kr/order/${orderId}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("서버 응답에 문제가 있습니다.");
+        }
+        alert("주문이 정상적으로 취소되었습니다!");
+        localStorage.removeItem("orderId");
+        window.location.href = "./myPage.html";
+      } catch (error) {
+        console.error("통신오류:", error);
+
+        alert("주문취소에 실패하였습니다");
+      }
+    });
   }
 
   if (token) {
