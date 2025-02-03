@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/orderEdit.css" />
+    <script src="./js/orderEdit.js"></script>
     <link rel="icon" href="./assets/favicon.svg" />
 
-    <title>주문하기</title>
+    <title>주문수정</title>
   </head>
   <body>
     <header>
@@ -65,7 +66,6 @@
           </ul>
         </div>
       </section>
-      <p class="totla_price">총 주문금액 <span>46,500원</span></p>
 
       <section class="delivery_info_area">
         <h3>배송지 정보</h3>
@@ -126,11 +126,16 @@
         <div class="payment_method_select">
           <h3>결제수단</h3>
           <form class="pay_method_list">
-            <input type="radio" name="pay_method" id="card" /> 신용/체크카드
-            <input type="radio" name="pay_method" id="deposit" /> 무통장 입금
-            <input type="radio" name="pay_method" id="phone" /> 휴대폰 결제
-            <input type="radio" name="pay_method" id="naverpay" /> 네이버 페이
-            <input type="radio" name="pay_method" id="kakaopay" /> 카카오 페이
+            <input type="radio" name="pay_method" id="card" disabled />
+            신용/체크카드
+            <input type="radio" name="pay_method" id="deposit" disabled />
+            무통장 입금
+            <input type="radio" name="pay_method" id="phone" disabled /> 휴대폰
+            결제
+            <input type="radio" name="pay_method" id="naverpay" disabled />
+            네이버 페이
+            <input type="radio" name="pay_method" id="kakaopay" disabled />
+            카카오 페이
           </form>
         </div>
         <div class="final_pay_info">
@@ -139,7 +144,7 @@
             <ul class="final_price">
               <li>
                 <p>- 상품금액</p>
-                <p>46,500<span>원</span></p>
+                <p class="price">46,500<span>원</span></p>
               </li>
               <li>
                 <p>- 할인금액</p>
@@ -147,12 +152,12 @@
               </li>
               <li>
                 <p>- 배송금액</p>
-                <p>0<span>원</span></p>
+                <p class="shipping_fee">0<span>원</span></p>
               </li>
               <li class="final_pay_info_line"></li>
               <li>
                 <p>- 결제금액</p>
-                <p>46,500원</p>
+                <p class="totla_price">46,500원</p>
               </li>
             </ul>
           </div>
