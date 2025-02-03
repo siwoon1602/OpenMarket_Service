@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "./config.js";
 window.addEventListener("pageshow", (e) => {
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
@@ -149,16 +150,13 @@ window.addEventListener("pageshow", (e) => {
 
   async function fetchList() {
     try {
-      const response = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/order/",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}order/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (!response.ok) {
         throw new Error("서버 응답에 문제가 있습니다.");

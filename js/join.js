@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./config.js";
+
 let userCategory = "BUYER"; // 기본값
 
 const buyerJoin = document.querySelector(".buyer_join");
@@ -333,18 +335,15 @@ async function handleIdCheck(event) {
   const idError = document.querySelector(".idMessage");
 
   try {
-    const response = await fetch(
-      "https://estapi.openmarket.weniv.co.kr/accounts/validate-username/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: joinId.value,
-        }),
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}accounts/validate-username/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: joinId.value,
+      }),
+    });
 
     if (response.ok) {
       const data = await response.json();
@@ -379,7 +378,7 @@ async function handleBusinessCheck(event) {
 
   try {
     const response = await fetch(
-      "https://estapi.openmarket.weniv.co.kr/accounts/seller/validate-registration-number/",
+      `${API_BASE_URL}accounts/seller/validate-registration-number/`,
       {
         method: "POST",
         headers: {
@@ -449,8 +448,8 @@ async function handleJoinSubmit(event) {
     try {
       const endpoint =
         userCategory === "BUYER"
-          ? "https://estapi.openmarket.weniv.co.kr/accounts/buyer/signup/"
-          : "https://estapi.openmarket.weniv.co.kr/accounts/seller/signup/";
+          ? `${API_BASE_URL}accounts/buyer/signup/`
+          : `${API_BASE_URL}accounts/seller/signup/`;
 
       const response = await fetch(endpoint, {
         method: "POST",

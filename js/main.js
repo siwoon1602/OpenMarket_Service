@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./config.js";
+
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
@@ -149,7 +151,7 @@ window.addEventListener("pageshow", (e) => {
 //--------------------------- 상품 정보 요청하여 상품 리스트 화면 구성 ------------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://estapi.openmarket.weniv.co.kr/products/")
+  fetch(`${API_BASE_URL}products/`)
     .then((response) => response.json())
     .then((data) => {
       const productContainer = document.querySelector(

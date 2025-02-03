@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "./config.js";
 const loginForm = document.querySelector(".login_box");
 
 loginForm.addEventListener("submit", async (event) => {
@@ -59,20 +60,17 @@ loginForm.addEventListener("submit", async (event) => {
 
   // 로그인 요청
   try {
-    const response = await fetch(
-      "https://estapi.openmarket.weniv.co.kr/accounts/login/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: userId.value,
-          password: userPw.value,
-          login_type: userType,
-        }),
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}accounts/login/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: userId.value,
+        password: userPw.value,
+        login_type: userType,
+      }),
+    });
 
     if (response.ok) {
       const data = await response.json();
@@ -85,7 +83,7 @@ loginForm.addEventListener("submit", async (event) => {
         setTimeout(async () => {
           try {
             const refreshResponse = await fetch(
-              "https://estapi.openmarket.weniv.co.kr/token/refresh/",
+              `${API_BASE_URL}token/refresh`,
               {
                 method: "POST",
                 headers: {

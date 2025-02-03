@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "./config.js";
 window.addEventListener("pageshow", (e) => {
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
@@ -373,17 +374,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
       }
 
-      const response = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/order/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(requestData),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}order/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(requestData),
+      });
 
       if (!response.ok) {
         throw new Error(`주문 실패: ${response.status}`);

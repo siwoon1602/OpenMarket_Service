@@ -217,7 +217,7 @@ window.addEventListener("load", function () {
   }
 
   // 상품 상세정보를 불러와 페이지에 뿌립니다.
-  fetch(`https://estapi.openmarket.weniv.co.kr/products/${productId}/`)
+  fetch(`${API_BASE_URL}products/${productId}/`)
     .then((response) => response.json())
     .then((data) => {
       document.title = `${data.name}`;
@@ -418,20 +418,17 @@ async function handleInCart(event) {
   const productId = urlParams.get("id");
 
   try {
-    const response = await fetch(
-      "https://estapi.openmarket.weniv.co.kr/cart/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          product_id: productId,
-          quantity: quantityEa.value,
-        }),
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}cart/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        product_id: productId,
+        quantity: quantityEa.value,
+      }),
+    });
 
     if (response.ok) {
       const data = await response.json();

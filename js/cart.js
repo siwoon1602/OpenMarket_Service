@@ -120,16 +120,13 @@ window.addEventListener("pageshow", (e) => {
 
   async function fetchCartItems() {
     try {
-      const response = await fetch(
-        "https://estapi.openmarket.weniv.co.kr/cart/",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}cart/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (!response.ok) {
         throw new Error("서버 응답에 문제가 있습니다.");
@@ -324,16 +321,13 @@ window.addEventListener("pageshow", (e) => {
       e.preventDefault();
 
       try {
-        const response = await fetch(
-          "https://estapi.openmarket.weniv.co.kr/cart/",
-          {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await fetch(`${API_BASE_URL}cart/`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         if (response.ok) {
           alert("장바구니가 정상적으로 비워졌습니다!");
@@ -356,16 +350,13 @@ window.addEventListener("pageshow", (e) => {
         const cartItem = e.target.closest(".cart_list");
         const productId = cartItem.dataset.productId;
         try {
-          const response = await fetch(
-            `https://estapi.openmarket.weniv.co.kr/cart/${productId}`,
-            {
-              method: "DELETE",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
+          const response = await fetch(`${API_BASE_URL}cart/${productId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          });
 
           if (response.ok) {
             cartItem.remove();
@@ -383,19 +374,16 @@ window.addEventListener("pageshow", (e) => {
   async function cartItemUpdatePlus(cartItem, newQuantity) {
     try {
       const productId = cartItem.dataset.productId;
-      const response = await fetch(
-        `https://estapi.openmarket.weniv.co.kr/cart/${productId}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            quantity: newQuantity + 1,
-          }),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}cart/${productId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          quantity: newQuantity + 1,
+        }),
+      });
 
       if (response.ok) {
         console.log("수량이 성공적으로 수정되었습니다.");
@@ -409,19 +397,16 @@ window.addEventListener("pageshow", (e) => {
   async function cartItemUpdateMinus(cartItem, newQuantity) {
     try {
       const productId = cartItem.dataset.productId;
-      const response = await fetch(
-        `https://estapi.openmarket.weniv.co.kr/cart/${productId}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            quantity: newQuantity + -1,
-          }),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}cart/${productId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          quantity: newQuantity + -1,
+        }),
+      });
 
       if (response.ok) {
         console.log("수량이 성공적으로 수정되었습니다.");
