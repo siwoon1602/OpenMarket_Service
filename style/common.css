@@ -35,7 +35,21 @@
 }
 
 /* 모바일 기본 스타일 */
+.sellerCenter-btn {
+  background-color: var(--maincolor);
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+#sellerCenter-icon {
+  max-width: 25px;
+  width: 100%;
+}
 /* header */
+
 .header_content {
   background-color: white;
   display: flex;
