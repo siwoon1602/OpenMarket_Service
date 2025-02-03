@@ -122,7 +122,7 @@ main {
 .order_area ul {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
   margin-left: 320px;
