@@ -142,35 +142,38 @@
  ┣ 📂 asset
  ┣ 📂 images
  ┣ 📂 js
+ ┃ ┣ 📜 cart.js
+ ┃ ┣ 📜 config.js
  ┃ ┣ 📜 detail.js
- ┃ ┣ 📜 direct_order.js
  ┃ ┣ 📜 join.js
  ┃ ┣ 📜 login.js
+ ┃ ┣ 📜 main.js
  ┃ ┣ 📜 myPage.js
- ┃ ┣ 📜 cart.js
- ┃ ┣ 📜 payment.js
- ┃ ┗ 📜 main.js
+ ┃ ┣ 📜 orderEdit.js
+ ┃ ┗ 📜 payment.js
  ┣ 📂 style
+ ┃ ┣ 📜 cart.css
  ┃ ┣ 📜 common.css
  ┃ ┣ 📜 detail.css
- ┃ ┣ 📜 myPage.css
- ┃ ┣ 📜 payment.css
- ┃ ┣ 📜 cart.css
  ┃ ┣ 📜 error.css
  ┃ ┣ 📜 join.css
  ┃ ┣ 📜 joinSucced.css
  ┃ ┣ 📜 login.css
  ┃ ┣ 📜 main.css
+ ┃ ┣ 📜 myPage.css
+ ┃ ┣ 📜 orderEdit.css
+ ┃ ┣ 📜 payment.css
  ┃ ┗ 📜 reset.css
- ┣ 📜 details.html
- ┣ 📜 error.html
  ┣ 📜 cart.html
- ┣ 📜 payment.html
- ┣ 📜 myPage.html
+ ┣ 📜 detail.html
+ ┣ 📜 errer.html
  ┣ 📜 index.html
  ┣ 📜 join.html
- ┣ 📜 joinSucced.html
+ ┣ 📜 joinSucceed.html
  ┣ 📜 login.html
+ ┣ 📜 myPage.html
+ ┣ 📜 orderEdit.html
+ ┣ 📜 payment.html
  ┗ 📜 README.md
 ```
 
