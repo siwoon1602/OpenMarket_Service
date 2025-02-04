@@ -22,6 +22,13 @@
   padding: 5px 20px;
   max-height: 54px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload_btn img {
+  width: 30px;
 }
 nav ul li button {
   width: 250px;
@@ -75,47 +82,45 @@ main {
   margin-left: 220px;
 }
 .info_text li:nth-child(4) {
-  margin-left: 76px;
+  margin-left: 66px;
 }
 .info_title_area {
   border-bottom: 1px solid #c4c4c4;
   background-color: white;
 }
 
-.imgae {
+.image {
   width: 70px;
   height: 70px;
   background-color: #c4c4c4;
   border-radius: 50%;
 }
 
-.prodcut_info_text {
+.product_info_text {
   display: flex;
   align-items: center;
-  gap: 42px;
+  gap: 30px;
 }
-.prodcut_info_text li:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.prodcut_info_text li:nth-child(2) p:nth-child(1) {
+.product_info_text li p:nth-child(1) {
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   width: 500px;
 }
-.prodcut_info_text li:nth-child(2) p:nth-child(2) {
+.product_info_text li p:nth-child(2) {
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 22px;
   color: #767676;
 }
+
 .item {
   display: flex;
   padding: 16px 30px;
   align-items: center;
   background-color: white;
+  border-bottom: 1px solid #c4c4c4;
+  max-height: 1000px;
 }
 
 .edit_area {
@@ -123,13 +128,15 @@ main {
   align-items: center;
 }
 .edit_area li:nth-child(1) {
-  margin-left: 267px;
+  width: 100px;
+  margin-left: 270px;
+  text-align: center;
 }
 .edit_area li:nth-child(2) {
-  margin-left: 213px;
+  margin-left: 203px;
 }
 .edit_area li:nth-child(3) {
-  margin-left: 45px;
+  margin-left: 25px;
 }
 .edit_area button {
   padding: 10px 25px;
