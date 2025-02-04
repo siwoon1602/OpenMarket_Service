@@ -54,7 +54,7 @@ window.addEventListener("pageshow", async () => {
       return;
     }
 
-    section.innerHTML = products
+    section.innerHTML += products
       .map(
         (item) => `
       <div class="item" data-product-id="${item.product_id}">
@@ -73,9 +73,9 @@ window.addEventListener("pageshow", async () => {
           <li><button class="edit_item" data-product-id="${
             item.product_id
           }">수정</button></li>
-          <li><<button class="delete_item" data-product-id="${
+          <li><button class="delete_item" data-product-id="${
             item.id
-          }"> 삭제</button></li>
+          }">삭제</button></li>
         </ul>
       </div>
     `
