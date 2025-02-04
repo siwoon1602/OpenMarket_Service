@@ -5,6 +5,8 @@ window.addEventListener("pageshow", async () => {
   const storeName = localStorage.getItem("storeName");
   const storeNameText = document.querySelector(".dashbord_text span");
   storeNameText.textContent = storeName;
+
+  async function deleteItem() {}
   try {
     const response = await fetch(`${API_BASE_URL}${storeName}/products/`, {
       method: "GET",
@@ -21,7 +23,10 @@ window.addEventListener("pageshow", async () => {
     const data = await response.json();
     const products = data.results;
     const section = document.querySelector(".item_list_area");
-
+    if (products.length === 0) {
+      section.innerHTML = `<p class="no_item">판매중인 상품이 없습니다</p>`;
+      return;
+    }
     const itemsHTML = products
       .map(
         (item) => `
