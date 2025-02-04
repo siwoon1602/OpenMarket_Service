@@ -3,6 +3,8 @@ import { API_BASE_URL } from "./config.js";
 window.addEventListener("pageshow", async () => {
   const token = localStorage.getItem("token");
   const storeName = localStorage.getItem("storeName");
+  const storeNameText = document.querySelector(".dashbord_text span");
+  storeNameText.textContent = storeName;
   try {
     const response = await fetch(`${API_BASE_URL}${storeName}/products/`, {
       method: "GET",
