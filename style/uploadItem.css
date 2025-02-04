@@ -108,8 +108,10 @@ section {
 .align button {
   padding: 17px 58.12px;
   border-radius: 5px;
-  color: #767676;
+  background-color: white;
+  border: 1px solid #c4c4c4;
   cursor: pointer;
+  color: #767676;
 }
 
 .content_align {
@@ -130,4 +132,25 @@ section {
   border: 1px solid #c4c4c4;
   padding: 20px;
   border-radius: 5px;
+}
+
+.button_align {
+  display: flex;
+  gap: 10px;
+  justify-self: flex-end;
+  margin-top: 20px;
+}
+.button_align button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.save_btn {
+  background-color: var(--maincolor);
+  color: white;
+}
+.cancled_btn {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  color: #767676;
 }
