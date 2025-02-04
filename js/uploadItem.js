@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
       alert("상품이 성공적으로 등록되었습니다!");
-      window.location.href = "/sellerCenter.html";
+      window.location.href = "./sellerCenter.html";
     } catch (error) {
       console.error("Error:", error);
       alert("상품등록에 실패하였습니다" + error.message);
