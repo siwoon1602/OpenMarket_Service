@@ -35,6 +35,11 @@
 }
 
 /* 모바일 기본 스타일 */
+
+.seller_text {
+  font-weight: 500;
+  font-size: 30px;
+}
 .sellerCenter-btn {
   background-color: var(--maincolor);
   padding: 10px;
