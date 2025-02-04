@@ -1,0 +1,133 @@
+main {
+  padding: 120px 100px;
+}
+em {
+  color: #eb5757;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  margin-bottom: 42px;
+}
+
+.seller_text {
+  font-weight: 700;
+}
+.content_container {
+  display: flex;
+  gap: 40px;
+}
+aside {
+  flex-basis: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex-grow: 1;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.text_area {
+  font-size: 14px;
+  width: 320px;
+  padding: 20px;
+  background-color: #ffefe8;
+  line-height: 17.53px;
+  font-weight: 400;
+}
+.img_align {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.img_align li:nth-child(1) {
+  font-size: 16px;
+  font-weight: 400;
+  color: #767676;
+}
+.img_area {
+  width: 454px;
+  height: 454px;
+  background-color: #c4c4c4;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.align {
+  display: flex;
+}
+.info_area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.info_area input {
+  height: 54px;
+  border: 1px solid #c4c4c4;
+  padding-left: 20px;
+}
+.info_area li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #767676;
+}
+
+.won {
+  width: 54px;
+  height: 54px;
+  color: white;
+  background-color: #c4c4c4;
+  align-content: center;
+  text-align: center;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.item_name_input {
+  border-radius: 5px;
+  width: 826px;
+}
+.item_prcie_input,
+.item_shipping_fee_input,
+.item_stock_input {
+  border-radius: 5px 0 0 5px;
+}
+.delivery {
+  display: flex;
+  gap: 10px;
+}
+.align button {
+  padding: 17px 58.12px;
+  border-radius: 5px;
+  color: #767676;
+  cursor: pointer;
+}
+
+.content_align {
+  display: flex;
+  gap: 20px;
+}
+
+.edit_datail li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #767676;
+}
+
+.item_datail_input {
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  border-radius: 5px;
+}
