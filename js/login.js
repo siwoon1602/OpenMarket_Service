@@ -79,6 +79,7 @@ loginForm.addEventListener("submit", async (event) => {
         localStorage.setItem("refreshToken", data.refresh);
         localStorage.setItem("userType", data.user.user_type);
         localStorage.setItem("userName", data.user.username);
+        localStorage.setItem("storeName", data.user.name);
 
         setTimeout(async () => {
           try {
