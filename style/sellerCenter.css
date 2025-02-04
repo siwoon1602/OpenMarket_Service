@@ -120,6 +120,7 @@ main {
 
 .edit_area {
   display: flex;
+  align-items: center;
 }
 .edit_area li:nth-child(1) {
   margin-left: 267px;
