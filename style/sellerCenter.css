@@ -19,7 +19,7 @@
 .upload_btn {
   background-color: var(--maincolor);
   color: white;
-  padding: 5px 20px;
+  padding: 15px 20px;
   max-height: 54px;
   border-radius: 5px;
   display: flex;
