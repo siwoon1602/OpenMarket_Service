@@ -222,14 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 모달 관련 이벤트 리스너
 window.addEventListener("load", function () {
-  const token = localStorage.getItem("token");
   const modal = document.querySelector(".modal");
   const cartBtn = document.querySelector("#userMenu1");
 
-  if (!token && cartBtn) {
+  if (cartBtn) {
     cartBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      if (modal) {
+      const token = localStorage.getItem("token");
+      if (!token && modal) {
         modal.showModal();
       } else if (token) {
         window.location.href = "./cart.html";
