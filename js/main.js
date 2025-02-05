@@ -1,24 +1,28 @@
 import { API_BASE_URL } from "./config.js";
 
+// Swiper 초기화
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
-
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
   },
-
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
+
+let currentItem = 1;
+const itemsPerItem = 6;
+let allProducts = [];
+let isLoading = false;
+
 window.addEventListener("pageshow", (e) => {
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
@@ -32,7 +36,7 @@ window.addEventListener("pageshow", (e) => {
   };
 
   const handleModalToggle = (e) => {
-    e.preventDefault(); // 링크 기본 동작 방지
+    e.preventDefault();
     const headerModal = document.querySelector(".header_modal");
     const userMenuTwoIcon = document.querySelector("#userMenu2 a img");
     const userMenuOneText = document.querySelector("#userinterface_first");
@@ -58,20 +62,20 @@ window.addEventListener("pageshow", (e) => {
 
   if (token && userType === "BUYER") {
     userMenuTwo.innerHTML = `
-           <a href="#" target="_self">
-              <img src="./assets/icon-user.svg" alt="" />
-              <span id="userinterface_first">마이페이지</span>
+      <a href="#" target="_self">
+        <img src="./assets/icon-user.svg" alt="" />
+        <span id="userinterface_first">마이페이지</span>
+      </a>
+      <div class="header_modal buyer_modal hide">
+        <div class="triangle"></div>
+        <div class="box">
+          <a href="./myPage.html" class="mypage-link">
+            <button type="button">마이페이지</button>
           </a>
-          <div class="header_modal buyer_modal hide">
-              <div class="triangle"></div>
-              <div class="box">
-                  <a href="./myPage.html" class="mypage-link">
-                    <button type="button">마이페이지</button>
-                  </a>
-                  <button class="logout-btn">로그아웃</button>
-              </div>
-          </div>
-      `;
+          <button class="logout-btn">로그아웃</button>
+        </div>
+      </div>
+    `;
 
     const myPageBtn = userMenuTwo.querySelector(".mypage-link");
     if (myPageBtn) {
@@ -84,47 +88,44 @@ window.addEventListener("pageshow", (e) => {
     if (buyerLogoutBtn) {
       buyerLogoutBtn.addEventListener("click", handleLogout);
     }
-    // 구매자용 모달 토글 이벤트 추가
     userMenuTwo.addEventListener("click", handleModalToggle);
   } else if (token && userType === "SELLER") {
     userMenu.innerHTML = `
-        <li id="userMenu2">
-            <a href="#" target="_self">
-                <img src="./assets/icon-user.svg" alt="" />
-                <span id="userinterface_first">마이페이지</span>
-            </a>
-            <div class="header_modal seller_modal hide">
-                <div class="triangle"></div>
-                <div class="box">
-                    <button class="logout-btn">로그아웃</button>
-                </div>
-            </div>
-        </li>
-        <li id="userMenu1">
-            <a href="./sellerCenter.html">
-                <button class="sellerCenter-btn"> 
-                    <img src="./assets/icon-shopping-bag.png" alt="" id="sellerCenter-icon">판매자 센터
-                </button>
-            </a>
-        </li>
+      <li id="userMenu2">
+        <a href="#" target="_self">
+          <img src="./assets/icon-user.svg" alt="" />
+          <span id="userinterface_first">마이페이지</span>
+        </a>
+        <div class="header_modal seller_modal hide">
+          <div class="triangle"></div>
+          <div class="box">
+            <button class="logout-btn">로그아웃</button>
+          </div>
+        </div>
+      </li>
+      <li id="userMenu1">
+        <a href="./sellerCenter.html">
+          <button class="sellerCenter-btn"> 
+            <img src="./assets/icon-shopping-bag.png" alt="" id="sellerCenter-icon">판매자 센터
+          </button>
+        </a>
+      </li>
     `;
 
     const sellerLogoutBtn = userMenu.querySelector(".logout-btn");
     if (sellerLogoutBtn) {
       sellerLogoutBtn.addEventListener("click", handleLogout);
     }
-    // 판매자용 모달 토글 이벤트 추가
     const newUserMenuTwo = userMenu.querySelector("#userMenu2");
     if (newUserMenuTwo) {
       newUserMenuTwo.addEventListener("click", handleModalToggle);
     }
   }
 
-  // 모달창 외부 클릭시 닫기 이벤트
+  // 모달창 외부 클릭시 닫기
   document.addEventListener("click", (e) => {
     const headerModal = document.querySelector(".header_modal");
     const userMenuTwo = document.querySelector("#userMenu2");
-    const token = localStorage.getItem("token");
 
     if (
       token &&
@@ -146,50 +147,80 @@ window.addEventListener("pageshow", (e) => {
     }
   });
 });
-// ---------------------------- 마이페이지 클릭시 모달창 ON/OFF + 아이콘,색상변환 종료 ---------------------------------
 
-//--------------------------- 상품 정보 요청하여 상품 리스트 화면 구성 ------------------------------------
+function createProductHTML(product, index) {
+  return `
+    <li class="product_list">
+      <a href="details.html?id=${product.id}">
+        <article>
+          <img 
+            src="${product.image}" 
+            alt="product_${index}" 
+            class="item_image"
+            onerror="this.src='./assets/placeholder.png'"
+          >
+          <ul class="product_info">
+            <li class="item_seller">${product.seller.store_name}</li>
+            <li class="item_name">${product.name}</li>
+            <li class="item_price">
+              ${product.price.toLocaleString()}<span>원</span>
+            </li>
+          </ul>
+        </article>
+      </a>
+    </li>
+  `;
+}
+
+async function loadAndDisplayProducts() {
+  if (isLoading) return;
+  isLoading = true;
+
+  const productContainer = document.querySelector(".product-list-container");
+  const loadMoreBtn = document.querySelector(".load_more_btn");
+
+  try {
+    const response = await fetch(`${API_BASE_URL}products/`);
+    const data = await response.json();
+    allProducts = data.results;
+
+    const startIndex = 0;
+    const endIndex = currentItem * itemsPerItem;
+    const productsToShow = allProducts.slice(startIndex, endIndex);
+
+    let productHTML = "";
+    productsToShow.forEach((product, index) => {
+      productHTML += createProductHTML(product, index);
+    });
+
+    productContainer.innerHTML = productHTML;
+
+    if (endIndex >= allProducts.length) {
+      loadMoreBtn.classList.add("hide");
+    } else {
+      loadMoreBtn.classList.remove("hide");
+    }
+  } catch (error) {
+    console.error("상품 로드 중 오류 발생:", error);
+    window.location.href = "./error.html";
+  } finally {
+    isLoading = false;
+  }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch(`${API_BASE_URL}products/`)
-    .then((response) => response.json())
-    .then((data) => {
-      const productContainer = document.querySelector(
-        ".product-list-container"
-      );
-      let productHTML = "";
+  loadAndDisplayProducts();
 
-      data.results.forEach((product, index) => {
-        productHTML += `
-                      <li class="product_list">
-                          <a href="details.html?id=${product.id}">
-                              <article>
-                                  <img src="${
-                                    product.image
-                                  }" alt="product_${index}" class="item_image">
-                                  <ul class="product_info">
-                                      <li class="item_seller">${
-                                        product.seller.store_name
-                                      }</li>
-                                      <li class="item_name">${product.name}</li>
-                                      <li class="item_price">${product.price.toLocaleString()}<span>원</span></li>
-                                  </ul>
-                              </article>
-                          </a>
-                      </li>
-                  `;
-      });
-
-      productContainer.innerHTML = productHTML;
-    })
-
-    //--------------------------- 상품 정보 요청하여 상품 리스트 화면 구성 종료 ------------------------------------
-    .catch((error) => {
-      console.error(error);
-      window.location.href = "./error.html";
+  const loadMoreBtn = document.querySelector(".load_more_btn");
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      currentItem++;
+      loadAndDisplayProducts();
     });
+  }
 });
 
+// 모달 관련 이벤트 리스너
 window.addEventListener("load", function () {
   const token = localStorage.getItem("token");
   const modal = document.querySelector(".modal");
@@ -210,25 +241,26 @@ window.addEventListener("load", function () {
     modal.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) modal.close();
     });
-  }
 
-  const closeBtn = document.querySelector(".close_btn");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.close();
-    });
-  }
+    const closeBtn = modal.querySelector(".close_btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        modal.close();
+      });
+    }
 
-  const yesBtn = document.querySelector(".yes_btn");
-  if (yesBtn) {
-    yesBtn.addEventListener("click", () => {
-      window.location.href = "./login.html";
-    });
-  }
-  const noBtn = document.querySelector(".no_btn");
-  if (noBtn) {
-    noBtn.addEventListener("click", () => {
-      modal.close();
-    });
+    const yesBtn = modal.querySelector(".yes_btn");
+    if (yesBtn) {
+      yesBtn.addEventListener("click", () => {
+        window.location.href = "./login.html";
+      });
+    }
+
+    const noBtn = modal.querySelector(".no_btn");
+    if (noBtn) {
+      noBtn.addEventListener("click", () => {
+        modal.close();
+      });
+    }
   }
 });
