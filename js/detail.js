@@ -340,6 +340,7 @@ window.addEventListener("load", function () {
           if (modal) {
             nowSellButton.addEventListener("click", () => {
               const token = localStorage.getItem("token");
+              localStorage.setItem("order_kind", "direct_order");
               if (!token) {
                 modal.showModal();
               } else {
@@ -367,6 +368,7 @@ window.addEventListener("load", function () {
                 };
 
                 localStorage.setItem("orderData", JSON.stringify(orderData));
+
                 window.location.href = "./payment.html";
               }
             });
