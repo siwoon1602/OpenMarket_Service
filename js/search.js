@@ -1,7 +1,11 @@
 import { API_BASE_URL } from "./config.js";
 
 const searchBtn = document.querySelector(".search-icon");
-
+document.querySelector(".search_input").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    searchBtn.click();
+  }
+});
 searchBtn.addEventListener("click", async () => {
   const searchInput = document.querySelector(".search_input");
   let searchValue = searchInput.value.trim();
