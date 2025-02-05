@@ -5,7 +5,6 @@ window.addEventListener("pageshow", async () => {
   const storeName = localStorage.getItem("storeName");
 
   const storeNameText = document.querySelector(".dashbord_text span");
-
   storeNameText.textContent = storeName;
 
   async function deleteItem(productId) {
@@ -74,7 +73,7 @@ window.addEventListener("pageshow", async () => {
             item.product_id
           }">수정</button></li>
           <li><button class="delete_item" data-product-id="${
-            item.id
+            item.product_id
           }">삭제</button></li>
         </ul>
       </div>
@@ -88,6 +87,26 @@ window.addEventListener("pageshow", async () => {
         if (confirm("정말 이 상품을 삭제하시겠습니까?")) {
           const productId = e.target.dataset.productId;
           await deleteItem(productId);
+        }
+      });
+    });
+
+    const editButtons = document.querySelectorAll(".edit_item");
+    editButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const productId = String(e.target.dataset.productId);
+
+        const productToEdit = products.find((product) => {
+          return String(product.product_id) === productId;
+        });
+
+        if (productToEdit) {
+          localStorage.setItem(
+            "editProductData",
+            JSON.stringify(productToEdit)
+          );
+          window.location.href = "./editItem.html";
+        } else {
         }
       });
     });
