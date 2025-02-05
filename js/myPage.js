@@ -187,6 +187,34 @@ window.addEventListener("pageshow", (e) => {
           const totalPrice = item.total_price;
           const firstProduct = item.order_items[0];
 
+          if (!item.order_items || item.order_items.length === 0) {
+            return `
+             <section class="order_list_container">
+          <div class="cart_list">
+            <div class ="delete_img">삭제된 상품입니다.</div>
+            <ul class="prodcut_info_text">
+              <li>주문번호: ${orderNum}</li>
+              <li>삭제된 상품 입니다.</li>
+              <li>결제금액: ${item.total_price.toLocaleString()}원</li>
+            </ul>
+           <ul>
+              <li class="order_state">${orderStatus}</li>
+            </ul>
+            <div class="order_area">
+              <ul>
+                <li>${totalPrice.toLocaleString()}원</li>
+                <a href="./orderEdit.html">
+                  <li><button class="order_btn" data-order-id="${
+                    item.id
+                  }">상세보기</button>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+            `;
+          }
+
           return `
          <section class="order_list_container">
           <div class="cart_list">
