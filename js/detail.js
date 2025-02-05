@@ -7,8 +7,6 @@ function updateUserMenuBasedOnToken() {
   const userMenuTwo = document.querySelector("#userMenu2");
   const userMenu = document.querySelector(".user_menu");
 
-  console.log("현재 상태:", { token, userType });
-
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -222,6 +220,8 @@ window.addEventListener("load", function () {
   fetch(`${API_BASE_URL}products/${productId}/`)
     .then((response) => response.json())
     .then((data) => {
+      const userType = localStorage.getItem("userType");
+
       document.title = `${data.name}`;
       // 배송유형에 따라서 다르게 표시
       let shippingMethod = data.shipping_method;
@@ -232,6 +232,7 @@ window.addEventListener("load", function () {
       }
 
       if (data.id == productId && productArea) {
+        console.log(userType);
         productArea.innerHTML = ` 
           <h2 class="sr-only">상품 상세정보</h2>
           <div class="img_area">
@@ -288,6 +289,13 @@ window.addEventListener("load", function () {
           price &&
           countArea
         ) {
+          if (userType === "SELLER") {
+            inCartButton.setAttribute("disabled", true);
+            nowSellButton.setAttribute("disabled", true);
+            nowSellButton.textContent = "구매불가";
+            inCartButton.style.backgroundColor = "#C4C4C4";
+            nowSellButton.style.backgroundColor = "#C4C4C4";
+          }
           // 재고가 0인경우 구매버튼과 장바구니 버튼을 비활성화
           if (data.stock === 0) {
             eaInput.value = 0;
