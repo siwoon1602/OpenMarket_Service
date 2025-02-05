@@ -4,8 +4,6 @@ function updateUserMenuBasedOnToken() {
   const userMenuTwo = document.querySelector("#userMenu2");
   const userMenu = document.querySelector(".user_menu");
 
-  console.log("현재 상태:", { token, userType });
-
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -128,3 +126,50 @@ function updateUserMenuBasedOnToken() {
 
 // 화면이 보여질때마다 토큰이 있는지 확인
 window.addEventListener("pageshow", updateUserMenuBasedOnToken);
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    const rawData = localStorage.getItem("searchData");
+    const data = JSON.parse(rawData);
+    const productContainer = document.querySelector(".product-list-container");
+    const title = document.querySelector(".allItem");
+
+    let productHTML = "";
+
+    data.results.forEach((product, index) => {
+      productHTML += `
+        <li class="product_list">
+          <a href="details.html?id=${product.id}">
+            <article>
+              <img 
+                src="${product.image}" 
+                alt="product_${index}" 
+                class="item_image"
+                onerror="this.src='./assets/placeholder.png'"
+              >
+              <ul class="product_info">
+                <li class="item_seller">${product.seller.store_name}</li>
+                <li class="item_name">${product.name}</li>
+                <li class="item_price">
+                  ${product.price.toLocaleString()}<span>원</span>
+                </li>
+              </ul>
+            </article>
+          </a>
+        </li>
+      `;
+    });
+
+    productContainer.innerHTML = productHTML;
+  } catch (error) {
+    console.error("검색 결과 표시 중 오류 발생:", error);
+    const productContainer = document.querySelector(".product-list-container");
+    if (productContainer) {
+      productContainer.innerHTML = `
+        <p class="error-message">
+          검색 결과를 불러오는 중 오류가 발생했습니다.<br>
+          다시 시도해 주세요.
+        </p>
+      `;
+    }
+  }
+});
