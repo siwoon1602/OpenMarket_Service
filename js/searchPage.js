@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     productContainer.innerHTML = productHTML;
+    localStorage.removeItem("searchData");
   } catch (error) {
     console.error("검색 결과 표시 중 오류 발생:", error);
     const productContainer = document.querySelector(".product-list-container");
