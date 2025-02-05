@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Hodu Market</title>
     <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/common.css" />
-    <link rel="stylesheet" href="./style/detail.css" />
-    <script type="module" src="./js/detail.js" defer></script>
-    <script type="module" src="./js/config.js"></script>
-
     <link rel="icon" href="./assets/favicon.svg" />
+    <script type="module" src="./js/config.js"></script>
   </head>
   <body>
     <header>
       <div class="header_content">
         <div class="header_contet_left">
-          <h1 class="sr-only">HODU!</h1>
+          <h2 class="sr-only">HODU!</h2>
           <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
           <div class="search">
             <input
@@ -44,6 +42,13 @@
               <img src="./assets/icon-user.svg" alt="" />
               <span id="userinterface_first">로그인</span>
             </a>
+            <div class="header_modal hide">
+              <div class="triangle"></div>
+              <div class="box">
+                <button>마이페이지</button>
+                <button id="logout">로그아웃</button>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -59,52 +64,13 @@
         <button class="yes_btn">예</button>
       </div>
     </dialog>
-    <section class="product">
-      <h2 class="sr-only">상품 상세정보</h2>
-      <div class="img_area">
-        <img src="./imges/white_box_600s.jpg" alt="" class="thumbnail" />
-      </div>
-      <div class="info_area">
-        <ul class="product_info">
-          <li>판매자</li>
-          <li>상품명</li>
-          <li>0</li>
-        </ul>
-        <ul>
-          <li class="shipping_area">
-            <span class="shipping_method">배송방식</span>
-            <span class="shipping_fee">배송비</span>
-          </li>
-          <li class="count_area">
-            <button class="minus"></button>
-            <input type="text" value="1" class="ea" />
-            <button class="plus"></button>
-          </li>
-          <li class="price_area">
-            <ul>
-              <li><span>총 상품 금액</span></li>
-              <li>
-                <em class="count">1</em>
-                <strong class="price">17,500</strong>
-              </li>
-            </ul>
-          </li>
-          <li class="button_area">
-            <button type="button" class="now_sell">바로 구매</button>
-            <button type="button" class="in_cart">장바구니</button>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <section class="product_detail">
-      <ul>
-        <li class="btn_tap btn_on">버튼</li>
-        <li class="review_tap btn_off">리뷰</li>
-        <li class="qna_tap btn_off">Q&A</li>
-        <li class="info_tap btn_off">반품/교환정보</li>
-      </ul>
-    </section>
+    <main class="main">
+      <h2 class="sr-only">호두샵</h2>
+        <h2 class="allItem">전체 상품</h2>
+        <ul class="product-list-container"></ul>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="footer_content">
@@ -137,17 +103,5 @@
         </address>
       </div>
     </footer>
-
-    <dialog class="modal">
-      <button class="close_btn"></button>
-      <p>
-        로그인이 필요한 서비스입니다.<br />
-        로그인 하시겠습니까?
-      </p>
-      <div class="modal_btn_area">
-        <button class="no_btn">아니오</button>
-        <button class="yes_btn">예</button>
-      </div>
-    </dialog>
   </body>
 </html>
