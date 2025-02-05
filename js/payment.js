@@ -255,11 +255,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function quantitySet() {
     if (orderKind === "cart_order") {
-      const productIds = orderData.items.map((item) => item.product_id);
-      return productIds;
+      return orderData.items.map((item) => parseInt(item.cartId_id));
     } else {
-      const productId = orderData.items[0].product_id;
-      return productId;
+      return parseInt(orderData.items[0].product_id);
     }
   }
   function getSelectedPaymentMethod() {
