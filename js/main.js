@@ -160,8 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let productHTML = "";
 
       data.results.forEach((product, index) => {
-        if (index) {
-          productHTML += `
+        productHTML += `
                       <li class="product_list">
                           <a href="details.html?id=${product.id}">
                               <article>
@@ -179,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
                           </a>
                       </li>
                   `;
-        }
       });
 
       productContainer.innerHTML = productHTML;
