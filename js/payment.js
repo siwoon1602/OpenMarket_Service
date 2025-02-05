@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (orderKind === "cart_order") {
       return orderData.items.map((item) => parseInt(item.cartId_id));
     } else {
-      return parseInt(orderData.items[0].product_id);
+      return parseInt(orderData.items[0].cartId_id);
     }
   }
   function getSelectedPaymentMethod() {
