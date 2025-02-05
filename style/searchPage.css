@@ -6,6 +6,19 @@
   font-weight: 700;
 }
 
+.error_message_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.error_message {
+  text-align: center;
+  font-size: 16px;
+  color: #767676;
+  line-height: 1.5;
+}
 .product-list-container {
   padding: 20px;
   display: grid;

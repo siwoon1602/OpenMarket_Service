@@ -131,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const rawData = localStorage.getItem("searchData");
     const data = JSON.parse(rawData);
     const productContainer = document.querySelector(".product-list-container");
-    const title = document.querySelector(".allItem");
 
     let productHTML = "";
 
@@ -163,13 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("searchData");
   } catch (error) {
     console.error("검색 결과 표시 중 오류 발생:", error);
-    const productContainer = document.querySelector(".product-list-container");
+    const productContainer = document.querySelector(".main");
     if (productContainer) {
       productContainer.innerHTML = `
-        <p class="error-message">
-          검색 결과를 불러오는 중 오류가 발생했습니다.<br>
-          다시 시도해 주세요.
-        </p>
+        <h2 class="sr-only">호두샵</h2>
+      <h2 class="allItem">검색결과</h2>
+    <div class="error_message_wrapper">
+    <p class="error_message">
+      검색 결과를 불러오는 중 오류가 발생했습니다.<br>
+      다시 시도해 주세요.
+    </p>
+  </div>
       `;
     }
   }
