@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style//uploadItem.css">
+    <script type="module" src="./js/config.js"></script>
+    <link rel="icon" href="./assets/favicon.svg" />
+
+    <title>상품등록</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_content">
+            <div class="header_contet_left">
+              <h1 class="sr-only">HODU!</h1>
+              <a href="/OpenMarket_Service/" alt="HODU!" class="logo"></a>
+              <p class="seller_text">판매자 센터</p>
+            </div>
+    </header>
+    
+    <main>
+      <h2>상품 등록</h2>
+      <div class="content_container">
+      <aside>
+        <em>* 상품 등록 주의사항</em>
+        <div class="text_area">- 너무 귀여운 사진은 심장이 아파올 수 있습니다.<br><br>
+
+          - 유소년에게서 천자만홍이 피고 이상이 온갖 들어 약동하다. 이상의 가지에 사랑의 있는가? 주며, 끓는 힘차게 얼음이 얼음 가치를 황금시대의 있음으로써 사라지지 것이다. 이 뜨거운지라, 이상의 속에서 이것은 피가 보배를 황금시대의 싹이 사막이다.<br><br>
+          
+          - 자신과 우는 옷을 지혜는 아니다. 더운지라 설레는 기쁘며, 위하여서, 평화스러운 광야에서 그리하였는가? 소담스러운 위하여 인도하겠다는 어디 무엇을 이상을 같지 따뜻한 청춘 칼이다.<br><br>
+          
+          - 가치를 그들을 예수는 찬미를 가슴이 과실이 이것이다. 희망의 것이다.보라, 풍부하게 이것은 황금시대를 얼마나 인간에 돋고, 이것이다.</div>
+      </aside>
+      <section>
+     <div class="content_align">
+      <ul class="img_align">
+        <li>상품 이미지</li>
+        <li class="img_area">
+          <input type="file" 
+                 id="imageInput" 
+                 accept="image/*" 
+                 style="display: none;"
+          >
+          <img src="./assets/icon-img.png" 
+               alt="상품 이미지 업로드" 
+               id="imagePreview"
+               class="preview_image"
+          >
+        </li>
+      </ul>
+          <ul class="info_area">
+            <li>상품명 <input type="text" class="item_name_input" placeholder="상품명을 입력하세요"></li>
+            <li>판매가 <div class="align"><input type="text" class="item_prcie_input" placeholder="0"><div class="won">원</div></div></li>
+            <li>배송방법  <div class="align delivery"><button class="delivery_btn">택배, 소포, 등기</button> <button class="parcel_btn" >직접배송 (화물배달)</button></div></li>
+            <li>기본배송비 <div class="align"><input type="text" class="item_shipping_fee_input" placeholder="0"><div class="won">원</div></div></li>
+            <li>재고<div class="align"><input type="text" class="item_stock_input" placeholder="0"><div class="won">원</div></div></li>
+          </ul>
+     </div>
+     <ul class="edit_datail">
+      <li>상품 상세 정보 <input type="text" class="item_datail_input" placeholder="상품 상세 정보를 입력하세요"></li>
+    </ul>
+      </section>
+    </div>
+    <div class="button_align">
+      <button class="cancled_btn">취소</button>
+      <button class="save_btn">저장하기</button>
+    </div>
+    </main>
+   
+  </body>
+</html>
