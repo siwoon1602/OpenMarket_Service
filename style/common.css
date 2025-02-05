@@ -102,6 +102,7 @@ body {
   position: absolute;
   top: 9px;
   right: 22px;
+  cursor: pointer;
 }
 
 .header_content .logo {
