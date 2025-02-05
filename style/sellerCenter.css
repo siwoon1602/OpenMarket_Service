@@ -13,14 +13,13 @@
 }
 .dashbord_align {
   display: flex;
-  justify-content: space-between;
+  gap: 1055px;
 }
 
 .upload_btn {
   background-color: var(--maincolor);
   color: white;
   padding: 15px 20px;
-  max-height: 54px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -76,16 +75,24 @@ main {
   font-weight: 400;
 }
 .info_text li:nth-child(1) {
-  margin-left: 334px;
+  width: 100px;
+  text-align: center;
+  margin-left: 300px;
 }
 .info_text li:nth-child(2) {
-  margin-left: 453px;
+  width: 100px;
+  text-align: center;
+  margin-left: 443px;
 }
 .info_text li:nth-child(3) {
-  margin-left: 220px;
+  width: 50px;
+  text-align: center;
+  margin-left: 200px;
 }
 .info_text li:nth-child(4) {
-  margin-left: 66px;
+  text-align: center;
+  width: 50px;
+  margin-left: 34px;
 }
 .info_title_area {
   border-bottom: 1px solid #c4c4c4;
