@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const productIds = orderData.items.map((item) => item.cartId_id);
       return productIds;
     } else {
-      const productId = orderData.items[0].product_id;
+      const productId = orderData.items[0].cartId_id;
       return productId;
     }
   }
@@ -388,6 +388,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert("정상적으로 주문되었습니다!");
         localStorage.removeItem("orderData");
+        localStorage.removeItem("order_kind");
+        window.location.href = "./myPage.html";
       }
 
       const data = await response.json();
@@ -446,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       if (validateInputs()) {
         sendOrder();
-        // window.history.back();
+        window.location.href = "./myPage.html";
       } else {
         alert("주문에 실패했습니다");
       }
