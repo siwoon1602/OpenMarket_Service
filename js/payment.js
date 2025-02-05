@@ -255,10 +255,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function quantitySet() {
     if (orderKind === "cart_order") {
-      const productIds = orderData.items.map((item) => item.cartId_id);
+      const productIds = orderData.items.map((item) => item.product_id);
       return productIds;
     } else {
-      const productId = orderData.items[0].cartId_id;
+      const productId = orderData.items[0].product_id;
       return productId;
     }
   }
@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", joinPostCode);
 
   async function sendOrder() {
+    const orderKind = localStorage.getItem("order_kind");
     try {
       const token = localStorage.getItem("token");
       const paymentMethod = getSelectedPaymentMethod();
@@ -347,8 +348,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const recipientFullAddress =
         recipientAddressFirst.value +
-        +recipientAddressSecond.value +
-        +recipientAddressThird.value;
+        " " +
+        recipientAddressSecond.value +
+        " " +
+        recipientAddressThird.value;
 
       let requestData = {
         receiver: recipientName.value,
@@ -365,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
           order_type: "cart_order",
           cart_items: productId,
         };
-      } else {
+      } else if (orderKind === "direct_order") {
         requestData = {
           ...requestData,
           order_type: orderKind,
@@ -448,7 +451,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       if (validateInputs()) {
         sendOrder();
-        window.location.href = "./myPage.html";
       } else {
         alert("주문에 실패했습니다");
       }
