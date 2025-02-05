@@ -104,6 +104,7 @@ window.addEventListener("pageshow", () => {
 
       await response.json();
       alert("상품이 성공적으로 수정되었습니다!");
+      localStorage.removeItem("editProductData");
       window.location.href = "./sellerCenter.html";
     } catch (error) {
       console.error("Error:", error);
