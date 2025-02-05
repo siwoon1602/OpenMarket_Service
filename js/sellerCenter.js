@@ -2,7 +2,13 @@ import { API_BASE_URL } from "./config.js";
 
 window.addEventListener("pageshow", async () => {
   const token = localStorage.getItem("token");
+  const userType = localStorage.getItem("userType");
   const storeName = localStorage.getItem("storeName");
+
+  if (!token && userType !== "SELLER") {
+    alert("판매자 회원만 이용가능한 페이지 입니다!");
+    window.location.href = "./login.html";
+  }
 
   const storeNameText = document.querySelector(".dashbord_text span");
   storeNameText.textContent = storeName;

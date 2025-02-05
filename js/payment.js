@@ -1,5 +1,10 @@
 import { API_BASE_URL } from "./config.js";
 window.addEventListener("pageshow", (e) => {
+  if (!token && userType !== "BUYER") {
+    alert("구매자 회원만 이용가능한 페이지 입니다!");
+    window.location.href = "./login.html";
+  }
+
   const token = localStorage.getItem("token");
   const userType = localStorage.getItem("userType");
   const userMenuTwo = document.querySelector("#userMenu2");

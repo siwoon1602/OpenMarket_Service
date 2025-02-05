@@ -1,5 +1,13 @@
 import { API_BASE_URL } from "./config.js";
 window.addEventListener("pageshow", () => {
+  const token = localStorage.getItem("token");
+  const userType = localStorage.getItem("userType");
+
+  if (!token && userType !== "SELLER") {
+    alert("판매자 회원만 이용가능한 페이지 입니다!");
+    window.location.href = "./login.html";
+  }
+
   const deliveryBtn = document.querySelector(".delivery_btn");
   const parcelBtn = document.querySelector(".parcel_btn");
   const cancledBtn = document.querySelector(".cancled_btn");

@@ -7,6 +7,10 @@ window.addEventListener("pageshow", (e) => {
   const userMenu = document.querySelector(".user_menu");
   const productContainer = document.querySelector(".order_list_container");
 
+  if (!token && userType !== "BUYER") {
+    alert("구매자 회원만 이용가능한 페이지 입니다!");
+    window.location.href = "./login.html";
+  }
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
