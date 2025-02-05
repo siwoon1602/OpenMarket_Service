@@ -1,5 +1,5 @@
 main {
-  padding: 120px 100px;
+  padding: 50px 100px;
 }
 em {
   color: #eb5757;
@@ -20,8 +20,6 @@ h2 {
   gap: 40px;
 }
 aside {
-  flex-basis: 320px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
@@ -178,4 +176,57 @@ section {
   background-color: var(--maincolor);
   border: none;
   color: white;
+}
+
+@media screen and (max-width: 764px) {
+  .content_container {
+    flex-direction: column;
+  }
+  main {
+    padding: 50px 20px;
+  }
+
+  .text_area {
+    font-size: 14px;
+    width: 80vw;
+    padding: 20px;
+    background-color: #ffefe8;
+    line-height: 17.53px;
+    font-weight: 400;
+  }
+
+  .content_align {
+    flex-direction: column;
+  }
+
+  .img_area {
+    cursor: pointer;
+    width: 80vw;
+    height: auto;
+    background-color: #c4c4c4;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .item_name_input {
+    width: 80vw;
+  }
+
+  .item_datail_input {
+    width: 80vw;
+  }
+
+  .button_align {
+    justify-self: flex-start;
+  }
+
+  .align {
+    width: 80vw;
+  }
+
+  .info_area li {
+    width: 546px;
+    margin: none;
+  }
 }
