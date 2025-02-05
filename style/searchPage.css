@@ -1,0 +1,152 @@
+.allItem {
+  text-align: center;
+  margin: 50px 0 30px;
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.product-list-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.product_info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal {
+  width: 90%;
+  max-width: 360px;
+  border: 1px solid #c4c4c4;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal .close_btn {
+  width: 22px;
+  height: 22px;
+  background-image: url(../assets/icon-delete.svg);
+  background-color: white;
+  margin-left: 300px;
+  margin-bottom: 10px;
+}
+.modal p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.03px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.modal .no_btn,
+.modal .yes_btn {
+  font-size: 16px;
+  line-height: 20.03px;
+  font-weight: 400;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+
+.modal .no_btn {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+}
+
+.modal .yes_btn {
+  background-color: var(--maincolor);
+  color: white;
+}
+
+.modal_btn_area {
+  display: flex;
+  gap: 10px;
+  padding: 0 75px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 태블릿 (768px 이상) */
+@media screen and (min-width: 768px) {
+  .slide_banner {
+    height: 400px;
+    margin-bottom: 60px;
+  }
+
+  .slide_left,
+  .slide_right {
+    width: 50px;
+    height: 103px;
+    top: 148px;
+  }
+
+  .slide_left {
+    left: 20px;
+  }
+
+  .slide_right {
+    right: 20px;
+  }
+
+  .product-list-container {
+    padding: 20px 40px 120px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
+/* 데스크탑 (1024px 이상) */
+@media screen and (min-width: 1024px) {
+  .swiper {
+    height: 50vh;
+  }
+  .swiper-button-prev {
+    width: 120px;
+    height: 82px;
+    left: 30px;
+  }
+  .swiper-button-next {
+    width: 40px;
+    height: 82px;
+    right: 30px;
+  }
+  .slide_left,
+  .slide_right {
+    width: 60px;
+    height: 124px;
+    top: 188px;
+  }
+
+  .slide_left {
+    left: 30px;
+  }
+
+  .slide_right {
+    right: 30px;
+  }
+
+  .product-list-container {
+    padding: 20px 320px 180px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+  }
+
+  article img {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* 큰 데스크탑 (1440px 이상) */
+@media screen and (min-width: 1440px) {
+  .product-list-container {
+    padding: 20px calc((100% - 1280px) / 2) 180px;
+  }
+}
