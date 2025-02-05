@@ -154,6 +154,13 @@ window.addEventListener("pageshow", async () => {
 
       const data = await response.json();
 
+      if (data.payment_method === "deposit") {
+        const cancledBtn = document.querySelector(".cancled_btn");
+        cancledBtn.setAttribute("disabled", true);
+        cancledBtn.textContent = "주문취소 완료";
+        cancledBtn.style.backgroundColor = "#C4C4C4";
+      }
+
       const container = document.querySelector(".order_list_container");
       if (container) {
         const productHTML =
@@ -242,6 +249,7 @@ window.addEventListener("pageshow", async () => {
   if (canceldBtn) {
     canceldBtn.addEventListener("click", async () => {
       const orderId = localStorage.getItem("orderId");
+
       try {
         const response = await fetch(
           `https://estapi.openmarket.weniv.co.kr/order/${orderId}`,
