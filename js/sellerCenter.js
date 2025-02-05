@@ -56,7 +56,7 @@ window.addEventListener("pageshow", async () => {
     section.innerHTML += products
       .map(
         (item) => `
-      <div class="item" data-product-id="${item.product_id}">
+      <div class="item" data-product-id="${item.id}">
         <ul class="product_info_text">
           <img src="${item.image}" 
                class="image" 
@@ -70,10 +70,10 @@ window.addEventListener("pageshow", async () => {
         <ul class="edit_area">
           <li>${item.price.toLocaleString()}원</li>
           <li><button class="edit_item" data-product-id="${
-            item.product_id
+            item.id
           }">수정</button></li>
           <li><button class="delete_item" data-product-id="${
-            item.product_id
+            item.id
           }">삭제</button></li>
         </ul>
       </div>
@@ -97,7 +97,7 @@ window.addEventListener("pageshow", async () => {
         const productId = String(e.target.dataset.productId);
 
         const productToEdit = products.find((product) => {
-          return String(product.product_id) === productId;
+          return String(product.id) === productId;
         });
 
         if (productToEdit) {
@@ -107,6 +107,7 @@ window.addEventListener("pageshow", async () => {
           );
           window.location.href = "./editItem.html";
         } else {
+          console.error("상품을 찾을 수 없습니다:", productId);
         }
       });
     });
