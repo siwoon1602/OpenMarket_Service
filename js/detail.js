@@ -352,7 +352,7 @@ window.addEventListener("load", function () {
                 const orderData = {
                   items: [
                     {
-                      product_id: data.id,
+                      cartId_id: data.id,
                       image: data.image,
                       product_name: data.name,
                       price: data.price,
