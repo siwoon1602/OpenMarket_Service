@@ -1,8 +1,8 @@
 .allItem {
   text-align: center;
-  margin: 50px 0 30px;
+  margin: 5rem 0 3rem;
   color: black;
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 700;
 }
 
@@ -15,17 +15,17 @@
 }
 
 .load_more_btn {
-  width: 200px;
-  height: 50px;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #c4c4c4;
   background-color: #fff;
   cursor: pointer;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #767676;
   transition: all 0.3s ease;
-  margin: 0 auto 50px;
+  margin: 0 auto 5rem;
   display: block;
 }
 
@@ -38,57 +38,57 @@
 }
 .swiper {
   width: 100%;
-  height: 30vh;
+  aspect-ratio: 16 / 7;
   background-color: #767676;
 }
-
 .swiper-slide {
-  text-align: center;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: #eee;
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 20px;
+  font-size: 2rem;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 2rem;
 }
 
 .swiper-button-prev {
-  width: 90px;
-  height: 62px;
-  left: 20px;
+  width: 9rem;
+  height: 6.2rem;
+  left: 2rem;
 }
 
 .swiper-button-next {
-  width: 30px;
-  height: 62px;
-  right: 20px;
+  width: 3rem;
+  height: 6.22rem;
+  right: 2rem;
 }
 
 .swiper-button-prev {
   background-image: url(../assets/icon-swiper-1.svg);
-  width: 60px;
-  height: 41px;
+  width: 6rem;
+  height: 4.1rem;
   background-size: cover;
   background-repeat: no-repeat;
-  top: calc(50% - 20px);
-  left: 10px;
+  top: calc(50% - 2rem);
+  left: 1rem;
 }
+
 .swiper-button-next {
   background-image: url(../assets/icon-swiper-2.svg);
-  width: 20px;
-  height: 41px;
+  width: 2rem;
+  height: 4.1rem;
   background-size: contain;
   background-repeat: no-repeat;
-  top: calc(50% - 20px);
-  right: 10px;
+  top: calc(50% - 2rem);
+  right: 1rem;
 }
 
 .swiper-button-next::after,
@@ -102,102 +102,101 @@
   object-fit: cover;
 }
 
-/* 기본 스타일 (모바일 퍼스트) */
 .slide_banner {
   width: 100%;
-  height: 300px;
+  height: 30rem;
   background-color: #f2f2f2;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
   position: relative;
   z-index: -5;
 }
 
 .product-list-container {
-  padding: 20px;
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .product_info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 article ul li:nth-child(1) {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #767676;
   font-weight: 400;
-  line-height: 22px;
-  margin-top: 16px;
+  line-height: 2.2rem;
+  margin-top: 1.6rem;
 }
 
 article ul li:nth-child(2) {
   color: black;
-  line-height: 22px;
+  line-height: 2.2rem;
 }
 
 article ul li:nth-child(3) {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: black;
   font-weight: 700;
 }
 
 article ul li:nth-child(3) span {
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   font-weight: 400;
-  margin-left: 2px;
+  margin-left: 0.2rem;
 }
 
 article img {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
+  border: 0.1rem solid #c4c4c4;
+  border-radius: 1rem;
 }
 
 .modal {
   width: 90%;
-  max-width: 360px;
-  border: 1px solid #c4c4c4;
+  max-width: 36rem;
+  border: 0.1rem solid #c4c4c4;
   flex-direction: column;
   align-items: center;
 }
 
 .modal .close_btn {
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
   background-image: url(../assets/icon-delete.svg);
   background-color: white;
-  margin-left: 300px;
-  margin-bottom: 10px;
+  margin-left: 30rem;
+  margin-bottom: 1rem;
 }
+
 .modal p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .modal .no_btn,
 .modal .yes_btn {
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   font-weight: 400;
-  border-radius: 5px;
-  width: 100px;
-  height: 40px;
+  border-radius: 0.5rem;
+  width: 10rem;
+  height: 4rem;
 }
 
 .modal .no_btn {
   background-color: white;
-  border: 1px solid #c4c4c4;
+  border: 0.1rem solid #c4c4c4;
 }
-
 .modal .yes_btn {
   background-color: var(--maincolor);
   color: white;
@@ -205,8 +204,8 @@ article img {
 
 .modal_btn_area {
   display: flex;
-  gap: 10px;
-  padding: 0 75px;
+  gap: 1rem;
+  padding: 0 7.5rem;
 }
 
 button {
@@ -216,29 +215,29 @@ button {
 /* 태블릿 (768px 이상) */
 @media screen and (min-width: 768px) {
   .slide_banner {
-    height: 400px;
-    margin-bottom: 60px;
+    height: 40rem;
+    margin-bottom: 6rem;
   }
 
   .slide_left,
   .slide_right {
-    width: 50px;
-    height: 103px;
-    top: 148px;
+    width: 5rem;
+    height: 10.3rem;
+    top: 14.8rem;
   }
 
   .slide_left {
-    left: 20px;
+    left: 2rem;
   }
 
   .slide_right {
-    right: 20px;
+    right: 2rem;
   }
 
   .product-list-container {
-    padding: 20px 170px 180px;
+    padding: 2rem 17rem 18rem;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 5rem;
   }
 }
 
@@ -248,45 +247,38 @@ button {
     height: 50vh;
   }
   .swiper-button-prev {
-    width: 120px;
-    height: 82px;
-    left: 30px;
+    width: 12rem;
+    height: 8.2rem;
+    left: 3rem;
   }
   .swiper-button-next {
-    width: 40px;
-    height: 82px;
-    right: 30px;
+    width: 4rem;
+    height: 8.2rem;
+    right: 3rem;
   }
   .slide_left,
   .slide_right {
-    width: 60px;
-    height: 124px;
-    top: 188px;
+    width: 6rem;
+    height: 12.4rem;
+    top: 18.8rem;
   }
 
   .slide_left {
-    left: 30px;
+    left: 3rem;
   }
 
   .slide_right {
-    right: 30px;
+    right: 3rem;
   }
 
   .product-list-container {
-    padding: 20px 320px 30px;
+    padding: 2rem 32rem 3rem;
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 7rem;
   }
 
   article img {
-    width: 380px;
-    height: 380px;
-  }
-}
-
-/* 큰 데스크탑 (1440px 이상) */
-@media screen and (min-width: 1440px) {
-  .product-list-container {
-    padding: 20px 220px 50px;
+    width: 38rem;
+    height: 38rem;
   }
 }
