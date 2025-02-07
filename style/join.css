@@ -379,7 +379,7 @@ select {
     align-items: center;
     justify-content: center;
   }
-  /* 회원가입 페이지 스타일 시작 */
+
   header a {
     display: flex;
     background-image: url(../assets/Logo-hodu.png);
@@ -387,7 +387,7 @@ select {
     background-repeat: no-repeat;
     width: 21.8rem;
     height: 7.4rem;
-    margin: 10.6rem auto 13rem;
+    margin: 2.6rem auto 13rem;
   }
 
   .buyer_login {
