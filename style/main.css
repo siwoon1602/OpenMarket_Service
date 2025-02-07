@@ -112,12 +112,13 @@
 }
 
 .product-list-container {
+  max-width: 128rem;
+  margin: 0 auto;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
 }
-
 .product_info {
   display: flex;
   flex-direction: column;
@@ -235,9 +236,10 @@ button {
   }
 
   .product-list-container {
-    padding: 2rem 17rem 18rem;
+    padding: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
+    width: 90%;
   }
 }
 
@@ -272,13 +274,15 @@ button {
   }
 
   .product-list-container {
-    padding: 2rem 32rem 3rem;
+    padding: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 7rem;
+    width: 80%;
   }
 
   article img {
-    width: 38rem;
-    height: 38rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
