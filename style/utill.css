@@ -35,3 +35,122 @@ body {
 .hide {
   display: none;
 }
+
+.modal {
+  width: 90%;
+  max-width: 360px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal .close_btn {
+  width: 22px;
+  height: 22px;
+  background: url(../assets/icon-delete.svg) no-repeat center;
+  border: none;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.modal .close_btn:hover {
+  opacity: 0.7;
+}
+
+.modal p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 20px 30px;
+}
+
+.modal .no_btn,
+.modal .yes_btn {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.modal .no_btn {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+}
+
+.modal .no_btn:hover {
+  background-color: #f8f8f8;
+}
+
+.modal .yes_btn {
+  background-color: var(--maincolor);
+  color: white;
+  border: none;
+}
+
+.modal .yes_btn:hover {
+  background-color: #1fab42;
+}
+
+.modal_btn_area {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 90%;
+    max-width: 360px;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal .close_btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: url(../assets/icon-delete.svg) no-repeat center;
+    border: none;
+    margin-left: auto;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+
+  .modal .close_btn:hover {
+    opacity: 0.7;
+  }
+
+  .modal p {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0 2rem 3rem;
+  }
+
+  .modal .no_btn,
+  .modal .yes_btn {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+}
