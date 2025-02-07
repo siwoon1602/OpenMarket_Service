@@ -6,22 +6,24 @@
   font-weight: normal;
   font-style: normal;
 }
+
 body {
-  padding-top: 72px;
+  padding-top: 8.2rem;
 }
+
 * {
   font-family: "SpoqaHanSansNeo-Regular";
-  font-size: 16px;
+  font-size: 1.6rem;
   box-sizing: border-box;
 }
 
 /* 유틸리티 클래스 */
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.1rem;
+  height: 0.1rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.1rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -37,26 +39,26 @@ body {
 }
 
 /* 모바일 기본 스타일 */
-
 .seller_text {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 3rem;
 }
+
 .sellerCenter-btn {
   background-color: var(--maincolor);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   align-items: center;
   display: flex;
-  gap: 10px;
   color: white;
+  font-size: 1rem;
 }
-#sellerCenter-icon {
-  max-width: 25px;
-  width: 100%;
-}
-/* header */
 
+#sellerCenter-icon {
+  display: none;
+}
+
+/* header */
 .header_content {
   background-color: white;
   display: flex;
@@ -64,44 +66,49 @@ body {
   top: 0;
   left: 0;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 7px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0.5rem 0.7rem;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
   z-index: 100;
   width: 100%;
 }
 
 .header_contet_left {
   display: flex;
-  gap: 15px;
+  gap: 1.5rem;
   align-items: center;
 }
 
 .header_content .search {
   position: relative;
-  display: none; /* 모바일에서는 검색창 숨김 */
+  display: block;
 }
 
 .header_content .search input {
-  width: 100%;
-  min-width: 200px;
-  height: 46px;
-  border-radius: 50px;
+  width: 12rem;
+  min-width: 7rem;
+  height: 4rem;
+  border-radius: 5rem;
   background-color: white;
-  border: 2px solid var(--maincolor);
+  border: 0.2rem solid var(--maincolor);
   color: #767676;
   font-weight: 400;
-  font-size: 16px;
-  padding: 22px;
+  font-size: 1rem;
+  padding: 1.8rem;
+}
+.header_content .search input::placeholder {
+  color: white;
 }
 
 .search-icon {
   background-image: url(../assets/search.png);
-  width: 28px;
-  height: 28px;
+  width: 2rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
-  top: 9px;
-  right: 22px;
+  top: 0.9rem;
+  right: 1.8rem;
   cursor: pointer;
 }
 
@@ -110,13 +117,13 @@ body {
   background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 100px;
-  height: 32px;
+  width: 8rem;
+  height: 3.2rem;
 }
 
 .header_content .user_menu {
   display: flex;
-  gap: 15px;
+  gap: 0.5rem;
   align-items: center;
   position: relative;
 }
@@ -125,69 +132,74 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  font-size: 12px;
+  gap: 0.4rem;
+  font-size: 0.8rem;
   color: #767676;
-  line-height: 14px;
+  line-height: 1.4rem;
+}
+
+.header_content .user_menu li a img {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* 헤더 모달 스타일 */
 .header_modal {
-  width: 120px;
+  width: 12rem;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  box-shadow: 1px 1px 5px #0000002a;
+  box-shadow: 0.1rem 0.1rem 0.5rem #0000002a;
   text-align: center;
   border: none;
-  padding: 5px;
+  padding: 0.2rem;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   z-index: 30;
 }
 
 .buyer_modal {
-  left: 45px;
-  top: 50px;
+  left: 30%;
+  top: 5rem;
 }
 
 .seller_modal {
-  left: -30px;
-  top: 60px;
+  left: -3rem;
+  top: 6rem;
 }
 
 .triangle {
-  box-shadow: 1px 0px 6px #0000002a;
+  box-shadow: 0.1rem 0 0.6rem #0000002a;
   background-color: white;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   z-index: -20;
-  top: -8px;
-  left: 50px;
+  top: -0.8rem;
+  left: 5rem;
   transform: rotate(135deg);
 }
 
 .box {
   background-color: white;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 0.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .box button {
-  font-size: 14px;
-  padding: 5px;
-  border-radius: 3px;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   background-color: white;
   border: none;
   cursor: pointer;
 }
 
 .box button:hover {
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 
 .maincolor {
@@ -200,20 +212,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 4rem 2rem;
 }
 
 footer .footer_top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .footer_top .info {
   display: flex;
+  flex-direction: column;
   font-weight: 400;
-  line-height: 17.53px;
-  font-size: 14px;
+  line-height: 1.753rem;
+  font-size: 1rem;
   color: black;
   font-family: "SpoqaHanSansNeo-Regular";
 }
@@ -224,52 +238,52 @@ footer .footer_top {
 
 .footer_top .info > li:not(:first-child)::before {
   content: " | ";
-  margin: 14px;
+  margin: 0.2rem;
 }
 
 .footer_top .sns_icon {
   display: flex;
   list-style: none;
-  gap: 14px;
+  gap: 1.4rem;
 }
 
 .footer_top .insta {
   background: url(../assets/icon-insta.svg);
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   display: block;
 }
 
 .footer_top .facebook {
   background: url(../assets/icon-fb.svg);
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   display: block;
 }
 
 .footer_top .youtube {
   background: url(../assets/icon-yt.svg);
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   display: block;
 }
 
 footer .line {
-  height: 1px;
+  height: 0.1rem;
   background-color: #c4c4c4;
-  margin: 22px 0 30px;
+  margin: 2.2rem 0 3rem;
 }
 
 footer address ul {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.5rem;
   color: #767676;
   font: optional;
   font-family: "SpoqaHanSansNeo-Regular";
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 2.4rem;
 }
 
 footer address ul li span {
@@ -280,70 +294,139 @@ footer address ul li span {
 /* 태블릿 (768px 이상) */
 @media screen and (min-width: 768px) {
   .header_content {
-    padding: 20px 40px;
-  }
-
-  .header_content .search {
-    display: block;
+    padding: 2rem 4rem;
   }
 
   .header_content .search input {
-    width: 300px;
+    width: 30rem;
+    height: 4.6rem;
+    font-size: 1.6rem;
+    padding: 2.2rem;
+  }
+
+  .header_content .search input::placeholder {
+    color: #767676;
+  }
+
+  .header_content .user_menu li a img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .search-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    right: 2.2rem;
   }
 
   .header_contet_left {
-    gap: 20px;
+    gap: 2rem;
   }
 
   .header_content .logo {
-    width: 110px;
-    height: 35px;
+    width: 11rem;
+    height: 3.5rem;
+  }
+  .buyer_modal {
+    left: 30%;
+    top: 5rem;
   }
 
   .footer {
-    padding: 50px 40px;
+    padding: 5rem 4rem;
   }
 }
 
 /* 데스크탑 (1024px 이상) */
 @media screen and (min-width: 1024px) {
   * {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   .header_content {
-    padding: 26px 320px;
+    padding: 2.6rem 32rem;
   }
 
   .header_contet_left {
-    gap: 30px;
+    gap: 3rem;
   }
 
   .header_content .search input {
-    width: 400px;
+    width: 40rem;
   }
 
   .header_content .logo {
-    width: 124px;
-    height: 38px;
+    width: 12.4rem;
+    height: 3.8rem;
   }
 
   .header_content .user_menu {
-    gap: 26px;
+    gap: 2.6rem;
+  }
+  .sellerCenter-btn {
+    font-size: 1.2rem;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  #sellerCenter-icon {
+    display: none;
+  }
+  .footer {
+    padding: 6rem 20rem;
   }
 
-  .footer {
-    padding: 60px 200px;
+  footer .footer_top {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer_top .info {
+    flex-direction: row;
+  }
+  .buyer_modal {
+    left: 30%;
+    top: 5rem;
   }
 }
 
 /* 큰 데스크탑 (1440px 이상) */
 @media screen and (min-width: 1440px) {
   .header_content {
-    padding: 26px calc((100% - 1280px) / 2);
+    padding: 2.6rem calc((100% - 128rem) / 2);
+  }
+  .buyer_modal {
+    left: 30%;
+    top: 5rem;
+  }
+  .sellerCenter-btn {
+    font-size: 1.4rem;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  #sellerCenter-icon {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
+  .footer {
+    padding: 6rem calc((100% - 128rem) / 2);
   }
 
-  .footer {
-    padding: 60px calc((100% - 1280px) / 2);
+  footer .footer_top {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer_top .info {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    line-height: 1.753rem;
+    font-size: 1rem;
+    color: black;
+    font-family: "SpoqaHanSansNeo-Regular";
   }
 }
