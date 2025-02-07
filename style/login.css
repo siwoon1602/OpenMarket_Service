@@ -133,8 +133,13 @@
 
 @media screen and (max-width: 768px) {
   .login_header a {
-    width: 18rem;
-    margin: 5.6rem auto 10rem;
+    display: flex;
+    background-image: url(../assets/Logo-hodu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 23.8rem;
+    height: 7.4rem;
+    margin: 10.6rem auto 13rem;
   }
 
   .login_box {

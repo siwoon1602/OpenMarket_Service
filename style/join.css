@@ -4,67 +4,67 @@ header a {
   background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 238px;
-  height: 74px;
-  margin: 106px auto 130px;
+  width: 23.8rem;
+  height: 7.4rem;
+  margin: 10.6rem auto 13rem;
 }
 .tablist {
   display: table;
   margin: auto;
   position: relative;
-  width: 550px;
+  width: 55rem;
 }
 .tablist li {
   display: table-cell;
-  border: 1px solid #c4c4c4;
-  padding: 20px 77px 38px;
-  border-radius: 10px 10px 0 0;
+  border: 0.1rem solid #c4c4c4;
+  padding: 2rem 7.7rem 3.8rem;
+  border-radius: 1rem 1rem 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
-  line-height: 22px;
-  font-size: 18px;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
 }
 .buyer_login {
   position: absolute;
-  left: 0px;
-  top: -60px;
+  left: 0rem;
+  top: -6rem;
 }
 .seller_login {
   position: absolute;
-  right: 0px;
-  top: -60px;
+  right: 0rem;
+  top: -6rem;
 }
 
 .numInput {
-  width: 152px;
+  width: 15.2rem;
 }
 
 .join_tablist {
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 550px;
+  width: 55rem;
   position: relative;
 }
 .join_tablist li {
-  border: 1px solid #c4c4c4;
-  padding: 20px 87px 38px 88px;
-  border-radius: 10px 10px 0 0;
+  border: 0.1rem solid #c4c4c4;
+  padding: 2rem 8.7rem 3.8rem 8.8rem;
+  border-radius: 1rem 1rem 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
-  line-height: 22px;
-  font-size: 18px;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 .join_tablist .buyer_join {
-  left: 0px;
-  top: -60px;
+  left: 0rem;
+  top: -6rem;
   position: absolute;
 }
 .join_tablist .seller_join {
   position: absolute;
-  right: 0px;
-  top: -60px;
+  right: 0rem;
+  top: -6rem;
 }
 .btn_on {
   background-color: white;
@@ -76,118 +76,118 @@ header a {
   z-index: 0;
 }
 .join_white_box {
-  width: 274px;
-  height: 7px;
+  width: 27.4rem;
+  height: 0.7rem;
   background-color: white;
   position: absolute;
-  left: 1px;
+  left: 0.1rem;
 
   z-index: 15;
 }
 .join_white_box_R {
-  width: 274px;
-  height: 7px;
+  width: 27.4rem;
+  height: 0.7rem;
   background-color: white;
   position: absolute;
-  right: 1px;
+  right: 0.1rem;
   z-index: 15;
 }
 .join_box {
   position: relative;
 
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  padding: 34px 35px 36px 35px;
+  border: 0.1rem solid #c4c4c4;
+  border-radius: 1rem;
+  padding: 3.4rem 3.5rem 3.6rem 3.5rem;
   z-index: 10;
   background-color: white;
-  max-width: 550px;
-  margin: 0 auto 30px;
+  max-width: 55rem;
+  margin: 0 auto 3rem;
   align-items: center;
 }
 label {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   font-family: "SpoqaHanSansNeo-Regular";
   color: #767676;
   font-weight: 400;
 }
 .join_box input {
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-  height: 54px;
-  padding-left: 16px;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #c4c4c4;
+  height: 5.4rem;
+  padding-left: 1.6rem;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
 }
 .join_box .join_id {
-  width: 346px;
-  margin-bottom: 12px;
+  width: 34.6rem;
+  margin-bottom: 1.2rem;
 }
 .join_box .join_pw,
 .join_box .join_pwConfirm,
 .join_box .join_name {
-  width: 480px;
-  height: 54px;
+  width: 48rem;
+  height: 5.4rem;
 }
 .join_business {
-  width: 350px;
+  width: 38rem;
 }
 .confirmCircle_pw {
   background-image: url(../assets/icon-check-off.svg);
-  width: 28px;
-  height: 28px;
+  width: 2.8rem;
+  height: 2.8rem;
   background-size: cover;
   position: absolute;
-  right: 16px;
-  top: 40px;
+  right: 1.6rem;
+  top: 3rem;
 }
 
 .confirmCircle_pwC {
   background-image: url(../assets/icon-check-off.svg);
-  width: 28px;
-  height: 28px;
+  width: 2.8rem;
+  height: 2.8rem;
   background-size: cover;
   position: absolute;
-  right: 16px;
-  top: 40px;
+  right: 1.6rem;
+  top: 3rem;
 }
 .confirmCircle_pwC_on {
   background-image: url(../assets/icon-check-on.svg);
-  width: 28px;
-  height: 28px;
+  width: 2.8rem;
+  height: 2.8rem;
   background-size: cover;
   position: absolute;
-  right: 16px;
-  top: 40px;
+  right: 1.6rem;
+  top: 3rem;
 }
 .confirmCircle_pw_on {
   background-image: url(../assets/icon-check-on.svg);
-  width: 28px;
-  height: 28px;
+  width: 2.8rem;
+  height: 2.8rem;
   background-size: cover;
   position: absolute;
-  right: 16px;
-  top: 40px;
+  right: 1.6rem;
+  top: 3rem;
 }
 .join_box .join_pw {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
   position: relative;
 }
 
 .join_box .join_pw {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 
 .idForm {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
   position: relative;
 }
 .businessForm {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: end;
   position: relative;
 }
@@ -226,63 +226,63 @@ label {
 .numberMessage,
 .businessMessage,
 .storeMessage {
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 20.03px;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   font-weight: 400;
   display: block;
 }
 .storeMessage {
-  margin: 10px 0 20px;
+  margin: 1rem 0 2rem;
 }
 .businessMessage {
-  margin: 10px 0 20px;
+  margin: 1rem 0 2rem;
 }
 .numberMessage {
-  margin: 10px 0 20px;
+  margin: 1rem 0 2rem;
 }
 .pwcMessage {
-  margin: 10px 0 20px;
+  margin: 1rem 0 2rem;
 }
 .nameMessage {
-  margin: 10px 0 20px;
+  margin: 1rem 0 2rem;
 }
 select {
-  width: 152px;
-  height: 54px;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
+  width: 15.2rem;
+  height: 5.4rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #c4c4c4;
   text-align: center;
 }
 .phonNumber {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
 }
 .checkId {
   background-color: var(--maincolor);
   color: white;
-  font-size: 16px;
-  line-height: 20.03px;
-  width: 122px;
-  height: 54px;
-  border-radius: 5px;
-  margin-top: 15px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
+  width: 12.2rem;
+  height: 5.4rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
 }
 .checkBusinessNumber {
   background-color: var(--maincolor);
   color: white;
-  font-size: 16px;
-  line-height: 20.03px;
-  width: 122px;
-  height: 54px;
-  border-radius: 5px;
-  margin-top: 15px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
+  width: 12.2rem;
+  height: 5.4rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 .btn_login {
-  width: 480px;
-  height: 60px;
-  border-radius: 5px;
+  width: 48rem;
+  height: 6rem;
+  border-radius: 0.5rem;
   background-color: var(--maincolor);
   color: white;
   text-align: center;
@@ -292,16 +292,16 @@ select {
 .join_warp {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 3rem;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   font-family: "SpoqaHanSansNeo-Regular";
 }
 
 .join_warp li:nth-child(1) a:after {
   content: "|";
-  margin: auto 14px;
+  margin: auto 1.4rem;
 }
 .agreeArea {
   display: flex;
@@ -310,19 +310,19 @@ select {
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 400;
   color: #767676;
-  font-size: 16px;
-  max-width: 550px;
+  font-size: 1.6rem;
+  max-width: 55rem;
   position: relative;
 }
 
 .agreeCheck {
   display: flex;
   align-items: center;
-  line-height: 20.03px;
+  line-height: 2.003rem;
 }
 
 .agreeCheck label {
-  line-height: 20.03px;
+  line-height: 2.003rem;
 }
 
 .agreeArea #check_agree {
@@ -335,40 +335,412 @@ select {
 
 .agreeArea #check_agree + label > span {
   vertical-align: middle;
-  padding-left: 5px;
+  padding-left: 0.5rem;
 }
 
 .agreeArea #check_agree + label:before {
   content: "";
   background-image: url(../assets/check-box.svg);
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 .agreeArea #check_agree:checked + label::before {
   content: "";
   background-image: url(../assets/check-fill-box.svg);
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 .agreeCheck .strong {
   font-weight: 700;
   text-decoration: underline;
-  line-height: 20.03px;
+  line-height: 2.003rem;
 }
 
 .joinBtn {
-  margin-top: 34px;
+  margin-top: 3.4rem;
   background-color: #c4c4c4;
-  max-width: 550px;
+  max-width: 55rem;
   color: white;
-  padding: 19px 207px;
-  border-radius: 10px;
+  padding: 1.9rem 20.7rem;
+  border-radius: 0.1rem;
+}
+@media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* 회원가입 페이지 스타일 시작 */
+  header a {
+    display: flex;
+    background-image: url(../assets/Logo-hodu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 21.8rem;
+    height: 7.4rem;
+    margin: 10.6rem auto 13rem;
+  }
+
+  .buyer_login {
+    position: absolute;
+    left: 0rem;
+    top: -6rem;
+  }
+  .seller_login {
+    position: absolute;
+    right: 0rem;
+    top: -6rem;
+  }
+
+  .numInput {
+    width: 10.2rem;
+  }
+
+  .join_tablist {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 35rem;
+    position: relative;
+  }
+  .join_tablist li {
+    border: 0.1rem solid #c4c4c4;
+    padding: 2rem 5.2rem 3.8rem;
+    border-radius: 1rem 1rem 0 0;
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-weight: 500;
+    line-height: 2.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .join_tablist .buyer_join {
+    left: 0rem;
+    top: -6rem;
+    position: absolute;
+  }
+  .join_tablist .seller_join {
+    position: absolute;
+    right: 0rem;
+    top: -6rem;
+  }
+  .btn_on {
+    background-color: white;
+    z-index: 5;
+  }
+
+  .btn_off {
+    background-color: #f2f2f2;
+    z-index: 0;
+  }
+  .join_white_box {
+    width: 18rem;
+    height: 0.7rem;
+    background-color: white;
+    position: absolute;
+    left: 0.1rem;
+    z-index: 15;
+  }
+  .join_white_box_R {
+    width: 18rem;
+    height: 0.7rem;
+    background-color: white;
+    position: absolute;
+    right: 0.1rem;
+    z-index: 15;
+  }
+  .join_box {
+    position: relative;
+    border: 0.1rem solid #c4c4c4;
+    border-radius: 1rem;
+    padding: 3.4rem 3.5rem 3.6rem 3.5rem;
+    z-index: 10;
+    background-color: white;
+    max-width: 35rem;
+    margin: 0 auto 3rem;
+    align-items: center;
+  }
+  label {
+    margin-bottom: 1rem;
+    font-family: "SpoqaHanSansNeo-Regular";
+    color: #767676;
+    font-weight: 400;
+  }
+  .join_box input {
+    border-radius: 0.5rem;
+    border: 0.1rem solid #c4c4c4;
+    height: 4.4rem;
+    padding-left: 1.6rem;
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.003rem;
+  }
+  .join_box .join_id {
+    width: 20.6rem;
+  }
+  .join_box .join_pw,
+  .join_box .join_pwConfirm,
+  .join_box .join_name {
+    width: 100%;
+    height: 4.4rem;
+  }
+  .join_business {
+    width: 20rem;
+  }
+  .confirmCircle_pw {
+    background-image: url(../assets/icon-check-off.svg);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: cover;
+    position: absolute;
+    right: 1.6rem;
+    top: 3rem;
+  }
+
+  .confirmCircle_pwC {
+    background-image: url(../assets/icon-check-off.svg);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: cover;
+    position: absolute;
+    right: 1.6rem;
+    top: 3rem;
+  }
+  .confirmCircle_pwC_on {
+    background-image: url(../assets/icon-check-on.svg);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: cover;
+    position: absolute;
+    right: 1.6rem;
+    top: 3rem;
+  }
+  .confirmCircle_pw_on {
+    background-image: url(../assets/icon-check-on.svg);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: cover;
+    position: absolute;
+    right: 1.6rem;
+    top: 3rem;
+  }
+  .join_box .join_pw {
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+
+  .join_box .join_pw {
+    margin-bottom: 1.2rem;
+  }
+
+  .idForm {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: relative;
+  }
+  .businessForm {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    position: relative;
+  }
+  .pwForm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .storeForm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .nameForm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .numberForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .idAlign {
+    display: flex;
+    flex-direction: column;
+  }
+  .businessFormAlign {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .idMessage,
+  .pwMessage,
+  .pwcMessage,
+  .nameMessage,
+  .numberMessage,
+  .businessMessage,
+  .storeMessage {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 2.003rem;
+    font-weight: 400;
+    display: block;
+  }
+  .storeMessage {
+    margin: 1rem 0 2rem;
+  }
+  .businessMessage {
+    margin: 1rem 0 2rem;
+  }
+  .numberMessage {
+    margin: 1rem 0 2rem;
+  }
+  .pwcMessage {
+    margin: 1rem 0 2rem;
+  }
+  .nameMessage {
+    margin: 1rem 0 2rem;
+  }
+  select {
+    width: 15.2rem;
+    height: 4.4rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #c4c4c4;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .phonNumber {
+    display: flex;
+    gap: 1.2rem;
+  }
+  .checkId {
+    background-color: var(--maincolor);
+    color: white;
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 4.4rem;
+
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+  }
+  .checkBusinessNumber {
+    background-color: var(--maincolor);
+    color: white;
+    font-size: 1.6rem;
+    line-height: 2.003rem;
+    width: 12.2rem;
+    height: 4.4rem;
+    border-radius: 0.5rem;
+  }
+
+  .btn_login {
+    width: 48rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    background-color: var(--maincolor);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .join_warp {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.003rem;
+    font-family: "SpoqaHanSansNeo-Regular";
+  }
+
+  .join_warp li:nth-child(1) a:after {
+    content: "|";
+    margin: auto 1.4rem;
+  }
+  .agreeArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-weight: 400;
+    color: #767676;
+    font-size: 1.2rem;
+    position: relative;
+  }
+
+  .agreeCheck {
+    display: flex;
+    align-items: center;
+    line-height: 2.003rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .agreeCheck label {
+    line-height: 2.003rem;
+  }
+
+  .agreeArea #check_agree {
+    display: none;
+  }
+
+  .agreeArea #check_agree + label {
+    cursor: pointer;
+  }
+
+  .agreeArea #check_agree + label > span {
+    vertical-align: middle;
+    padding-left: 0.1rem;
+  }
+
+  .agreeArea #check_agree + label:before {
+    content: "";
+    background-image: url(../assets/check-box.svg);
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .agreeArea #check_agree:checked + label::before {
+    content: "";
+    background-image: url(../assets/check-fill-box.svg);
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+
+  .agreeCheck .strong {
+    font-weight: 700;
+    text-decoration: underline;
+    line-height: 2.003rem;
+  }
+
+  .joinBtn {
+    margin: 3.4rem 0 2.4rem;
+    background-color: #c4c4c4;
+    width: 35rem;
+    border-radius: 1rem;
+    color: white;
+    padding: 1.9rem 1.7rem;
+    border-radius: 1rem;
+  }
 }
