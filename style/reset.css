@@ -134,3 +134,7 @@ button {
 input {
   border: none;
 }
+
+html {
+  font-size: 10px;
+}
