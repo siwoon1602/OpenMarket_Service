@@ -322,7 +322,7 @@
 
 @media screen and (min-width: 390px) and (max-width: 599px) {
   .product_detail ul li {
-    min-width: 110px;
+    min-width: 100px;
   }
 }
 

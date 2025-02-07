@@ -211,17 +211,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 5px;
   }
 
   .total_area ul:not(:last-child) li:nth-child(1) {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 20.03px;
     font-weight: 400;
   }
 
   .total_area ul:not(:last-child) li:nth-child(2) {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 30.03px;
     font-weight: 700;
   }
@@ -235,8 +235,8 @@ main {
 
   .minus_circle,
   .plus_circle {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     background-color: white;
     border-radius: 50px;
     display: flex;
@@ -246,7 +246,7 @@ main {
 
   .minus_circle img,
   .plus_circle img {
-    width: 18px;
+    width: 12px;
   }
 
   .total_area ul:last-child {
@@ -260,7 +260,7 @@ main {
   }
 
   .total_area ul:last-child li:nth-child(2) {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 45.03px;
     font-weight: 700;
     color: red;
