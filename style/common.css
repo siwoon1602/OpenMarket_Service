@@ -258,7 +258,7 @@ footer address ul li span {
 /* 태블릿 (768px 이상) */
 @media screen and (min-width: 768px) {
   .header_content {
-    padding: 2rem 4rem;
+    padding: 2rem 8rem;
   }
 
   .header_content .search input {
@@ -324,7 +324,7 @@ footer address ul li span {
   }
 
   .header_content {
-    padding: 2.6rem 3.2rem;
+    padding: 2.6rem 22.2rem;
   }
 
   .header_contet_left {
@@ -386,7 +386,7 @@ footer address ul li span {
 /* 큰 데스크탑 (1440px 이상) */
 @media screen and (min-width: 1440px) {
   .header_content {
-    padding: 2rem 5.2rem;
+    padding: 2rem 22.2rem;
   }
   .buyer_modal {
     left: 35%;
