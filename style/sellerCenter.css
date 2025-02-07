@@ -132,9 +132,15 @@ main {
   margin-top: 20px;
   gap: 20px;
 }
+.edit_area li:nth-child(1) {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  color: tomato;
+}
 
 .edit_area button {
-  padding: 10px 25px;
+  padding: 10px 10px;
   border-radius: 5px;
 }
 
@@ -185,7 +191,7 @@ button {
     font-weight: 400;
   }
   .info_text li:nth-child(1) {
-    flex: 0 1 830px;
+    flex: 0 1 1230px;
     text-align: center;
   }
   .info_text li:nth-child(2) {
@@ -216,6 +222,7 @@ button {
   }
 
   .edit_area {
+    text-align: center;
     margin-top: 0;
   }
 
@@ -301,5 +308,9 @@ button {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
+  }
+  .edit_area li:nth-child(1) {
+    font-size: 18px;
+    text-align: center;
   }
 }
