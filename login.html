@@ -4,48 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/utill.css" />
     <link rel="stylesheet" href="./style/login.css" />
-    <link rel="stylesheet" href="./style/join.css" />
     <link rel="icon" href="./assets/favicon.svg" />
     <script type="module" src="./js/config.js"></script>
     <script type="module" src="./js/login.js"></script>
 
     <title>로그인</title>
   </head>
-  <body>
-    <header class="header">
+  <body class="login-page">
+    <header class="login_header">
       <h1 class="sr-only">HODU!</h1>
       <a href="/OpenMarket_Service/" alt="HODU!"></a>
     </header>
 
-    <ul class="tablist">
-      <li class="buyer_login btn_on" data-user-type="BUYER">구매회원 로그인</li>
-      <div class="white_box"></div>
-      <li class="seller_login btn_off" data-user-type="SELLER">
-        판매회원 로그인
-      </li>
-    </ul>
-
-    <form
-      action="https://estapi.openmarket.weniv.co.kr/accounts/login/"
-      class="login_box"
-      method="post"
-    >
-      <input type="text" name="id" id="id" placeholder="아이디" />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="비밀번호"
-      />
-      <span class="loginerror"></span>
-      <button type="submit" class="btn_login">로그인</button>
-    </form>
-
-    <ul class="join_warp">
-      <li><a href="#" class="joinPage">회원가입</a></li>
-      <li><a href="./constructionZone.html">비밀번호 찾기</a></li>
-    </ul>
+    <main class="main_box">
+      <ul class="tablist">
+        <li class="buyer_login btn_on" data-user-type="BUYER">
+          구매회원 로그인
+        </li>
+        <div class="white_box"></div>
+        <li class="seller_login btn_off" data-user-type="SELLER">
+          판매회원 로그인
+        </li>
+      </ul>
+      <form
+        action="https://estapi.openmarket.weniv.co.kr/accounts/login/"
+        class="login_box"
+        method="post"
+      >
+        <input type="text" name="id" id="id" placeholder="아이디" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="비밀번호"
+        />
+        <span class="loginerror"></span>
+        <button type="submit" class="btn_login">로그인</button>
+      </form>
+      <ul class="join_warp">
+        <li><a href="#" class="joinPage">회원가입</a></li>
+        <li><a href="./constructionZone.html">비밀번호 찾기</a></li>
+      </ul>
+    </main>
   </body>
 </html>

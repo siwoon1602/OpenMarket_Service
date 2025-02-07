@@ -1,37 +1,44 @@
-header a {
+.login_header a {
   display: flex;
   background-image: url(../assets/Logo-hodu.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 238px;
-  height: 74px;
-  margin: 106px auto 130px;
+  width: 21.8rem;
+  height: 7.4rem;
+  margin: 5.6rem auto 13rem;
+}
+.main_box {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 .tablist {
   display: table;
   margin: auto;
   position: relative;
-  width: 550px;
+  width: 55rem;
 }
 .tablist li {
+  cursor: pointer;
   display: table-cell;
-  border: 1px solid #c4c4c4;
-  padding: 20px 77px 38px;
-  border-radius: 10px 10px 0 0;
+  border: 0.1rem solid #c4c4c4;
+  padding: 2rem 7.7rem 3.8rem;
+  border-radius: 1rem 1rem 0 0;
   font-family: "SpoqaHanSansNeo-Regular";
   font-weight: 500;
-  line-height: 22px;
-  font-size: 18px;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
 }
 .buyer_login {
   position: absolute;
-  left: 0px;
-  top: -60px;
+  left: 0;
+  top: -6rem;
 }
 .seller_login {
   position: absolute;
-  right: 0px;
-  top: -60px;
+  right: 0;
+  top: -6rem;
 }
 
 .btn_on {
@@ -44,53 +51,53 @@ header a {
   z-index: 0;
 }
 .white_box {
-  width: 273px;
-  height: 10px;
+  width: 27.3rem;
+  height: 1rem;
   background-color: white;
   position: absolute;
-  left: 1px;
-  top: -3px;
+  left: 0.1rem;
+  top: -0.3rem;
   z-index: 15;
 }
 .white_box_R {
-  width: 272.5px;
-  height: 10px;
+  width: 27.25rem;
+  height: 1rem;
   background-color: white;
   position: absolute;
-  right: 1px;
-  top: -3px;
+  right: 0.1rem;
+  top: -0.3rem;
   z-index: 15;
 }
 .login_box {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  padding: 34px 35px 36px 35px;
+  border: 0.1rem solid #c4c4c4;
+  border-radius: 1rem;
+  padding: 3.4rem 3.5rem 3.6rem 3.5rem;
   z-index: 10;
   background-color: white;
-  max-width: 550px;
+  max-width: 55rem;
   margin: auto;
   align-items: center;
 }
 
 .login_box input:nth-child(1) {
-  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
 }
 .login_box input:nth-child(2) {
-  margin-bottom: 36px;
+  margin-bottom: 3.6rem;
 }
 
 .login_box input {
-  width: 480px;
-  height: 60px;
-  border-bottom: 1px solid #c4c4c4;
+  width: 48rem;
+  height: 6rem;
+  border-bottom: 0.1rem solid #c4c4c4;
 }
 .btn_login {
-  width: 480px;
-  height: 60px;
-  border-radius: 5px;
+  width: 48rem;
+  height: 6rem;
+  border-radius: 0.5rem;
   background-color: var(--maincolor);
   color: white;
   text-align: center;
@@ -103,16 +110,16 @@ header a {
 .join_warp {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 3rem;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20.03px;
+  font-size: 1.6rem;
+  line-height: 2.003rem;
   font-family: "SpoqaHanSansNeo-Regular";
 }
 
 .join_warp li:nth-child(1) a:after {
   content: "|";
-  margin: auto 14px;
+  margin: auto 1.4rem;
 }
 
 .loginerror {
@@ -120,6 +127,89 @@ header a {
 }
 
 .border_red {
-  border: 2px solid #eb5757;
-  border-bottom: 2px solid;
+  border: 0.2rem solid #eb5757;
+  border-bottom: 0.2rem solid;
+}
+
+@media screen and (max-width: 768px) {
+  .login_header a {
+    width: 18rem;
+    margin: 5.6rem auto 10rem;
+  }
+
+  .login_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid #c4c4c4;
+    border-radius: 1rem;
+    padding: 3.4rem 3.5rem 3.6rem 3.5rem;
+    z-index: 10;
+    background-color: white;
+    max-width: 35rem;
+    margin: auto;
+    align-items: center;
+  }
+
+  .login_box input {
+    width: 30rem;
+    height: 6rem;
+    border-bottom: 0.1rem solid #c4c4c4;
+    font-size: 1.6rem;
+  }
+  .btn_login {
+    width: 30rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    background-color: var(--maincolor);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .tablist {
+    display: table;
+    margin: auto;
+    position: relative;
+    width: 35rem;
+  }
+  .tablist li {
+    display: table-cell;
+    border: 0.1rem solid #c4c4c4;
+    padding: 2rem 4rem 3.8rem;
+    border-radius: 1rem 1rem 0 0;
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-weight: 500;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+  }
+  .buyer_login {
+    position: absolute;
+    left: 0;
+    top: -6rem;
+  }
+  .seller_login {
+    position: absolute;
+    right: 0;
+    top: -6rem;
+  }
+
+  .white_box {
+    width: 18rem;
+    height: 1rem;
+    background-color: white;
+    position: absolute;
+    left: 0.1rem;
+    top: -0.3rem;
+    z-index: 15;
+  }
+  .white_box_R {
+    width: 18rem;
+    height: 1rem;
+    background-color: white;
+    position: absolute;
+    right: 0.1rem;
+    top: -0.3rem;
+    z-index: 15;
+  }
 }
