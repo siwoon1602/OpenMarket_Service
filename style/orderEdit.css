@@ -25,7 +25,7 @@ main {
   margin-left: 200px;
 }
 .product_sale {
-  margin-left: 370px;
+  margin-left: 330px;
 }
 .product_shipping_fee {
   margin-left: 190px;
@@ -42,14 +42,12 @@ main {
 .order_text li:nth-child(2) {
   color: #767676;
   font-size: 18px;
-  margin-left: 80px;
-  text-align: center;
-  width: 100px;
+  margin-left: 100px;
 }
 .order_text li:nth-child(3) {
   color: black;
   font-weight: 700;
-  margin-left: 80px;
+  margin-left: 110px;
 }
 .cart_list {
   width: 1280px;
@@ -64,18 +62,21 @@ main {
   margin-right: 70px;
 }
 
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .image {
-  width: 120px;
-  height: 120px;
+  width: 104px;
+  height: 104px;
   background-color: black;
   border-radius: 20px;
-  margin-right: 70px;
+  margin-right: 46px;
 }
+.image img {
+  width: 104px;
+  height: 104px;
+  background-color: black;
+  border-radius: 20px;
+  margin-right: 46px;
+}
+
 .prodcut_info_text {
   display: flex;
   flex-direction: column;
@@ -148,9 +149,8 @@ button {
 .delivery_info_area {
   justify-content: space-between;
   margin-top: 100px;
+  margin-right: auto;
   margin-bottom: 70px;
-  width: 1280px;
-  max-width: 100%;
 }
 
 .delivery_info_area h2 {
@@ -174,16 +174,31 @@ input {
   font-size: 16px;
   color: #383838;
 }
-.recipient_address_input_one {
-  width: 800px;
-}
+
 .info_titles {
   width: 150px;
+}
+
+.orderer_name,
+.orderer_phone_number,
+.orderer_email {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 10px 0 10px 10px;
+}
+
+#orderer_firstPhoneNumber {
+  width: 95px;
 }
 
 .numInput {
   width: 100px;
   height: 40px;
+}
+
+.orderer_info {
+  margin-bottom: 40px;
 }
 
 .recipient,
@@ -207,15 +222,23 @@ input {
   gap: 10px;
 }
 
+.orderer_info {
+  margin-bottom: 40px;
+}
 .join_address_align {
   display: flex;
   gap: 10px;
 }
-
-.delivery_address_align
-  input:nth-child(1)
-  .delivery_address_align
-  input:nth-child(2),
+.join_address {
+  background-color: var(--maincolor);
+  color: white;
+  padding: 8px 32px;
+  border-radius: 5px;
+}
+.delivery_address_align input:nth-child(1) {
+  width: 170px;
+}
+.delivery_address_align input:nth-child(2),
 .delivery_address_align input:nth-child(3),
 .recipient_delivery_message_input {
   width: 800px;
@@ -295,6 +318,33 @@ input {
   background-color: #c4c4c4;
 }
 
+.final_order_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.final_order_area li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.final_order_area li input {
+  width: 16px;
+  border: 1px solid #c4c4c4;
+}
+.final_order_area li button {
+  padding: 19px 65px;
+  background-color: var(--maincolor);
+  color: white;
+  font-size: 24px;
+  line-height: 30.05px;
+  font-weight: 700;
+  border-radius: 5px;
+}
 .pay_btn:disabled {
   background-color: #767676;
 }
@@ -313,13 +363,198 @@ input {
   border-color: var(--maincolor);
   background-color: var(--maincolor);
 }
-
 .cancled_btn {
   background-color: var(--maincolor);
   color: white;
-  font-size: 24px;
-  font-weight: 700;
-  padding: 20px 40px;
-  border-radius: 10px;
-  margin-bottom: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .info_box {
+    width: 90vw;
+  }
+  .prodcut_info {
+    margin-left: 5vw;
+  }
+  .product_sale {
+    margin-left: 5vw;
+  }
+  .product_shipping_fee {
+    margin-left: 5vw;
+  }
+  .product_price {
+    margin-left: 5vw;
+  }
+  .cart_list {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .prodcut_info_text {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image {
+    display: none;
+  }
+
+  .order_text {
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .order_text li:nth-child(2) {
+    margin-left: 0px;
+  }
+  .order_text li:nth-child(2)::before {
+    content: "배송비 ";
+    font-size: 12px;
+  }
+  .order_text li:nth-child(3) {
+    margin-left: 0px;
+    color: #eb5757;
+  }
+
+  .order_text li:nth-child(3)::before {
+    content: "총 금액 ";
+    font-size: 12px;
+  }
+
+  .delivery_info_area h2 {
+    font-size: 16px;
+    width: 100%;
+  }
+  .payment_area {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+  }
+  .totla_price {
+    display: none;
+  }
+  .delivery_info_area {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h3 {
+    width: 100%;
+  }
+  .info_titles {
+    width: 60px;
+    margin-right: 20px;
+    font-size: 12px;
+  }
+  .delivery_address_align input:nth-child(2),
+  .delivery_address_align input:nth-child(3),
+  .recipient_delivery_message_input {
+    width: 334px;
+  }
+  .delivery_info_area {
+    margin-right: 0px;
+  }
+
+  .final_pay_info_box {
+    width: 90vw;
+  }
+  .orderer_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .join_address {
+    font-size: 12px;
+  }
+  .payment_area {
+    align-items: center;
+  }
+  .pay_method_list {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .pay_method_list li {
+    flex: 0 1 auto;
+  }
+  .pay_method_list input {
+    width: 10px;
+  }
+  .payment_method_select h3 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30.05px;
+    border-bottom: 2px solid #c4c4c4;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .final_price li {
+    width: 80vw;
+  }
+  .orderer_name,
+  .orderer_phone_number,
+  .orderer_email {
+    width: 80vw;
+    font-size: 2px;
+  }
+  .numInput {
+    width: 20vw;
+    height: 40px;
+  }
+  input {
+    width: 100%;
+  }
+  .numInput {
+    width: 33%;
+    height: 40px;
+  }
+  #orderer_firstPhoneNumber {
+    width: 33%;
+  }
+  .recipient,
+  .recipient_phone_number,
+  .recipient_address,
+  .recipient_delivery_message {
+    width: 80vw;
+  }
+  .recipient_phone_number {
+    font-size: 2px;
+  }
+  .recipient_address_input_one {
+    width: 100%;
+  }
+  .delivery_address_align {
+    width: 100%;
+  }
+
+  .delivery_address_align input {
+    width: 100%;
+  }
+
+  .delivery_address_align input:nth-child(1) {
+    width: 100%;
+  }
+
+  .join_address_align {
+    width: 100%;
+  }
+
+  .delivery_address_align input:nth-child(2),
+  .delivery_address_align input:nth-child(3),
+  .recipient_delivery_message_input {
+    width: 100%;
+  }
 }

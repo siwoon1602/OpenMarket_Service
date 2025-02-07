@@ -210,16 +210,18 @@ button {
     border-radius: 10px;
     background-color: #f2f2f2;
     align-items: center;
-    padding: 20px 20px;
+    font-size: 12px;
+    padding: 20px 5px;
+    justify-content: space-between;
   }
 
   .prodcut_info {
-    margin-left: 60px;
+    margin-left: 40px;
   }
   .product_ea {
-    margin-left: 60px;
+    margin-left: 40px;
   }
   .product_price {
-    margin-left: 60px;
+    margin-left: 40px;
   }
 }
