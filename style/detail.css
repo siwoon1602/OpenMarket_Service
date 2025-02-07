@@ -2,12 +2,10 @@
 
 .inCart_modal {
   position: fixed;
-  width: 90%;
-  max-width: 36px;
+  width: 80vw;
   height: auto;
-  min-height: 20px;
   background-color: white;
-  border: 0.1px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
   border-radius: 1px;
   z-index: 200;
   left: 50%;
@@ -15,24 +13,28 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 30px;
   align-items: center;
-  padding: 5px 4px;
+  padding: 50px 120px;
   box-shadow: 0 0.4px 2px rgba(0, 0, 0, 0.1);
+}
+.inCart_modal p {
+  width: 200px;
+  font-size: 14px;
 }
 
 .cartModal_btn_align {
   display: flex;
-  gap: 1.5px;
-  width: 100%;
+  gap: 15px;
 }
 
 .move_inCart,
 .close_Cartmodal {
   font-weight: 500;
-  font-size: 1.6px;
-  line-height: 0.125rem;
-  padding: 1.3px;
+  width: 120px;
+  font-size: 12px;
+  line-height: 12.5px;
+  padding: 10px 15px;
   border-radius: 0.8px;
   cursor: pointer;
   flex: 1;
@@ -368,6 +370,24 @@
   .product_detail ul li {
     min-width: 180px;
   }
+  /* 장바구니 모달 */
+
+  .inCart_modal {
+    width: 80vw;
+    max-width: 360px;
+    padding: 50px;
+    gap: 30px;
+  }
+
+  .cartModal_btn_align {
+    gap: 15px;
+  }
+  .move_inCart,
+  .close_Cartmodal {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 13px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -411,5 +431,11 @@
   .now_sell,
   .in_cart {
     height: 60px;
+  }
+
+  .move_inCart,
+  .close_Cartmodal {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
