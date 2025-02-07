@@ -3,7 +3,7 @@
 ![프로젝트 기간](https://img.shields.io/badge/프로젝트_기간-2024.10.14~2024.10.21_필수기능_구현-fab2ac?style=flat&logoColor=white)<br>
 ![추가 기능 구현](https://img.shields.io/badge/구매자_페이지_추가_구현-2025.01.28~2025.02.03-fab2ac?style=flat&logoColor=white)<br>
 ![추가 기능 구현](https://img.shields.io/badge/판매자_페이지_추가_구현-2025.02.04~2025.02.05-fab2ac?style=flat&logoColor=white)<br>
-![추가 기능 구현](https://img.shields.io/badge/최종_QA/QC-2025.02.05~-fab2ac?style=flat&logoColor=white)
+![추가 기능 구현](https://img.shields.io/badge/최종_QA/QC-2025.02.05~2025.02.07-fab2ac?style=flat&logoColor=white)
 
 > 배포주소: https://siwoon1602.github.io/OpenMarket_Service/
 
